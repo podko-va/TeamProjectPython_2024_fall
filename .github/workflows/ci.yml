@@ -143,4 +143,4 @@ jobs:
       - name: Deploy to gitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
-        continue-on-error: true
+#        continue-on-error: true
