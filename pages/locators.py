@@ -55,7 +55,7 @@ class BaseLocators:
     PAGE_NAME = ".base"
     PAGE_TITLE = 'h1'
     BREADCRUMBS_LIST = ".breadcrumbs li"
-    BREADCRUMBS_LINKS = (By.CSS_SELECTOR, '.breadcrumbs > ul  > li > a')
+    BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
 
 
 class SearchTermsLocators:
