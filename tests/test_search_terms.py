@@ -11,4 +11,8 @@ def test_015_001_001_search_terms_title_is_visible():
     s(Base.PAGE_TITLE).should(have.text("Popular Search Terms"))
 
 
+@allure.link('https://trello.com/c/9oDGaMAB')
+def test_015_001_002_count_search_terms():
+    browser.open(ST.LINK_SEARCH_TERMS)
+    ss(ST.TERMS_FOR_SEARCH_LIST_QTY).should(have.size(100))
 
