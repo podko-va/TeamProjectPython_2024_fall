@@ -29,3 +29,15 @@ def test_004_005_001_login_unsuccessful():
     s(LoginLocators.FIELD_PASSWORD).type("")
     s(LoginLocators.BUTTON_SUBMIT).click()
     s(LoginLocators.MESSAGE_UNSUCCESSFUL).should(have.text("This is a required field."))
+
+
+@allure.link("https://trello.com/c/otpjtX3K")
+@allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
+def test_004_005_002_login_successful():
+    browser.open(LoginLocators.LINK_LOGIN)
+    s(LoginLocators.FIELD_NAME).type("ahahah1@gmail.com")
+    s(LoginLocators.FIELD_PASSWORD).type("jk$34_tor")
+    s(LoginLocators.BUTTON_SUBMIT).click()
+    browser.should(have.url(LoginLocators.LINK_ACCOUNT))
+    s(LoginLocators.USER_NAME_IN_WELCOME).should(have.text("фы ывф"))
+    s(LoginLocators.AUTHORIZATION_LINK).should(have.no.text("Sign In"))
