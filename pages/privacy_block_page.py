@@ -1,4 +1,3 @@
-import allure
 from selene import browser, by, be, have, support
 from selene.support.shared.jquery_style import s
 
