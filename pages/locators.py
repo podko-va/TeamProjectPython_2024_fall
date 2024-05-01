@@ -92,3 +92,14 @@ class WhatsNewPageLocators:
 
 class PrivacyPolicyPageLocators:
     PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
+
+
+class LoginLocators:
+    LINK_LOGIN = 'https://magento.softwaretestingboard.com/customer/account/login'
+    FIELD_NAME = 'div.login-container #email'
+    FIELD_PASSWORD = 'div.login-container #pass'
+    BUTTON_SUBMIT = 'div.login-container #send2'
+    MESSAGE_UNSUCCESSFUL = '#pass-error'
+    USER_NAME_IN_WELCOME = '.logged-in'
+    AUTHORIZATION_LINK = 'authorization-link'
+    LINK_ACCOUNT = 'https://magento.softwaretestingboard.com/customer/account/'
