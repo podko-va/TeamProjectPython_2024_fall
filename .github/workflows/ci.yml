@@ -91,6 +91,15 @@ jobs:
           PYTHONUNBUFFERED: 1
 #        continue-on-error: true
 
+      - name: Attach driver page_source and screenshot on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: driver-report
+          path: 
+            driver-report
+          retention-days: 1
+        
       - name: Store allure results
         uses: actions/upload-artifact@v3
         if: always()
