@@ -32,9 +32,6 @@ def browser_management(request):
     browser.config.timeout = 25
     # browser.config.log_outer_html_on_failure = True !!! DISABLES STEPS !!!
     browser.config.reports_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "driver-report")
-    if os.environ.get('CI_RUN'):
-        browser.config.save_screenshot_on_failure = False
-        browser.config.save_page_source_on_failure = False
 
     browser.config._wait_decorator = support._logging.wait_with(
         context=allure_commons._allure.StepContext
