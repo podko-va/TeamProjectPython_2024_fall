@@ -22,6 +22,7 @@ class ProductLocators:
     RADIANT_TEE_COLOR = '[option-label="Orange"]'
     RADIANT_TEE_QTY = '#qty'
     ADD_TO_CART_BUTTON = '#product-addtocart-button'
+    ADD_TO_CART_BUTTON_FROM_MAINPAGE = 'form[data-product-sku="WS12"] button'
 
     ARGUS_All_WEATHER_TANK = '[alt="Argus All-Weather Tank"]'
     ARGUS_All_WEATHER_TANK_SIZE = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="M"]'
@@ -39,6 +40,10 @@ class HomeLocators:
     GEAR_URL = 'https://magento.softwaretestingboard.com/gear.html'
     TRAINING_URL = 'https://magento.softwaretestingboard.com/training.html'
     SALE_URL = 'https://magento.softwaretestingboard.com/sale.html'
+    CART_ICON = 'a.showcart'
+    MINICART = '#ui-id-1'
+    MINICART_VIEW = 'a.viewcart'
+
 
 
 class NavigatorLocators:

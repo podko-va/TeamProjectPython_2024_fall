@@ -3,6 +3,7 @@ from selene.support.shared.jquery_style import s
 from data.links import MAIN_PAGE_LINK
 from pages.locators import BaseLocators as BL
 from pages.locators import NavigatorLocators as Nav
+from pages.locators import HomeLocators as HL
 
 
 class MainPage:
@@ -79,3 +80,29 @@ class MainPage:
 
     def is_men_bottoms_have_text(self):
         return self.find_men_bottoms_link().should(have.text('Bottoms'))
+
+    def find_cart_icon(self):
+        return s(HL.CART_ICON)
+
+    def is_find_cart_icon_present(self):
+        return self.find_cart_icon().should(be.present)
+
+    def find_minicart(self):
+        return s(HL.MINICART)
+    def is_minicart_present(self):
+        return self.find_minicart().should(be.present)
+
+    def is_minicart_visible(self):
+        return self.find_minicart().should(be.visible)
+
+    def find_minicart_view(self):
+        return s(HL.MINICART_VIEW)
+
+    def is_minicart_view_present(self):
+        return self.find_minicart_view().should(be.present)
+
+    def is_minicart_view_visible(self):
+        return self.find_minicart_view().should(be.visible)
+
+    def is_minicart_have_link(self):
+        return self.find_minicart_view().should(have.attribute('href').value('https://magento.softwaretestingboard.com/checkout/cart/'))
