@@ -1,7 +1,5 @@
 import allure
-from selene import browser, by, be, have, support
-from selene.support.shared.jquery_style import s
-from selene import browser
+from selene import browser, be, have, support
 from selene.support.shared.jquery_style import s
 
 base_url = "https://magento.softwaretestingboard.com/"
