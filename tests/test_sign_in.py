@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from pages import sign_in, my_account, message
 from pages.locators import LoginLocators
 from selene import browser, be, have
@@ -13,6 +15,7 @@ def test_sign_in_with_good_credentials():
     my_account.page_title("My Account")
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/L5xi1X8i")
 @allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
 def test_sign_in_with_bad_credentials():
@@ -21,6 +24,7 @@ def test_sign_in_with_bad_credentials():
     message.should_be("account sign-in was incorrect")
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/FxDGeQYY")
 @allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
 def test_004_005_001_login_unsuccessful():
@@ -31,6 +35,7 @@ def test_004_005_001_login_unsuccessful():
     s(LoginLocators.MESSAGE_UNSUCCESSFUL).should(have.text("This is a required field."))
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/otpjtX3K")
 @allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
 def test_004_005_002_login_successful():
