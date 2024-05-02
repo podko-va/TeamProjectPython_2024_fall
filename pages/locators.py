@@ -120,3 +120,10 @@ class LoginLocators:
     AUTHORIZATION_LINK = 'authorization-link'
     LINK_ACCOUNT = 'https://magento.softwaretestingboard.com/customer/account/'
 
+class ContactUsLocators:
+    CONTACT_US_LINK = "//*[@id='maincontent']/div[3]/div/div[3]/div[1]/p[33]/a"
+
+
+class PrivacyPolicy:
+    GO_BACK_LINK = "//*[@id='maincontent']/div[3]/div[1]/dl[2]/dd[2]/ul/li[1]/a"
+    PRIVACY_POLICY_TITLE = "span[data-ui-id='page-title-wrapper']"
