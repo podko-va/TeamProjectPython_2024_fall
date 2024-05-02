@@ -36,14 +36,21 @@ class HomeLocators:
     BASE_URL = 'https://magento.softwaretestingboard.com'
     WHAT_NEW_URL = 'https://magento.softwaretestingboard.com/what-is-new.html'
     MEN_URL = 'https://magento.softwaretestingboard.com/men.html'
+    TOPS_MEN_URL = 'https://magento.softwaretestingboard.com/men/tops-men.html'
+    BOTTOMS_MEN_URL = 'https://magento.softwaretestingboard.com/men/bottoms-men.html'
     WOMEN_URL = 'https://magento.softwaretestingboard.com/women.html'
+    TOPS_WOMEN_URL = 'https://magento.softwaretestingboard.com/women/tops-women.html'
+    BOTTOMS_WOMEN_URL = 'https://magento.softwaretestingboard.com/women/bottoms-women.html'
     GEAR_URL = 'https://magento.softwaretestingboard.com/gear.html'
+    GEAR_BAGS_URL = 'https://magento.softwaretestingboard.com/gear/bags.html'
+    GEAR_FITNESS_URL = 'https://magento.softwaretestingboard.com/gear/fitness-equipment.html'
+    GEAR_WATCHES_URL = 'https://magento.softwaretestingboard.com/gear/watches.html'
     TRAINING_URL = 'https://magento.softwaretestingboard.com/training.html'
+    VIDEO_DOWNLOAD_URL = 'https://magento.softwaretestingboard.com/training/training-video.html'
     SALE_URL = 'https://magento.softwaretestingboard.com/sale.html'
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
     MINICART_VIEW = 'a.viewcart'
-
 
 
 class NavigatorLocators:
@@ -119,6 +126,11 @@ class LoginLocators:
     USER_NAME_IN_WELCOME = '.logged-in'
     AUTHORIZATION_LINK = 'authorization-link'
     LINK_ACCOUNT = 'https://magento.softwaretestingboard.com/customer/account/'
+
+
+class FooterLocators:
+    FOOTER_LINKS = ('xpath', '//footer[@class="page-footer"]//li')
+
 
 class ContactUsLocators:
     CONTACT_US_LINK = "//*[@id='maincontent']/div[3]/div/div[3]/div[1]/p[33]/a"
