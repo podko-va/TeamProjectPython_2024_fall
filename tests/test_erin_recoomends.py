@@ -18,7 +18,7 @@ class TestErinRecommends:
             link.click()
         page = ErinRecommendsPage(browser=browser)
         with allure.step("Assert current url == Erin Recommends Page url"):
-            assert check_current_url() == ERIN_RECOMMENDS_URL
+            assert page.check_current_url() == ERIN_RECOMMENDS_URL
         with allure.step("Find header"):
             header = page.is_header_present()
         with allure.step("Assert header contains text 'Erin Recommends'"):

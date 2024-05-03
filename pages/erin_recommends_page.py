@@ -5,13 +5,10 @@ from pages.locators import ErinRecommendLocators as ERL
 from data.links import *
 
 
-def check_current_url():
-    return browser.driver.current_url
-
-
 class ErinRecommendsPage:
     def __init__(self, browser):
         self.browser = browser
+
     def visit(self):
         browser.open(ERIN_RECOMMENDS_URL)
 
@@ -26,4 +23,3 @@ class ErinRecommendsPage:
 
     def is_element_text_correct(self, element, text):
         return element.should(have.text(text))
-

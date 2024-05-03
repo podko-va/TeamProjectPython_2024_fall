@@ -124,7 +124,11 @@ class PrivacyPolicy:
     GO_BACK_LINK = "//*[@id='maincontent']/div[3]/div[1]/dl[2]/dd[2]/ul/li[1]/a"
     PRIVACY_POLICY_TITLE = "span[data-ui-id='page-title-wrapper']"
 
-
 class ErinRecommendLocators:
     HOME_ERIN_BLOCK = "//a[@class='block-promo home-erin']"
     PAGE_HEADER = "//span[@data-ui-id='page-title-wrapper']"
+
+
+
+
+

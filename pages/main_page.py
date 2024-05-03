@@ -71,3 +71,5 @@ class MainPage:
 
     def is_erin_block_present(self):
         return s(ERL.HOME_ERIN_BLOCK).should(be.present)
+
+
