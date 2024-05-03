@@ -1,4 +1,3 @@
-from selene import browser, have
 from pages import redirect_inside_cart_LK
 from pages.redirect_inside_cart_LK import *
 
