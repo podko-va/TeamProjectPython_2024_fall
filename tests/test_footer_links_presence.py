@@ -2,8 +2,8 @@ from selene import browser
 from selene.support.conditions import be, have
 from selene.support.shared.jquery_style import s, ss
 import allure
-
-from pages.locators import HomeLocators, FooterLocators, BaseLocators
+import data.links
+from pages.locators import FooterLocators, BaseLocators
 
 
 @allure.link('https://trello.com/c/PMzBgZUn')
@@ -27,62 +27,62 @@ def test_012_001_001_verify_footer_links():
             "Orders and Returns"
         ))
 
-    visit(HomeLocators.BASE_URL)
+    visit(data.links.BASE_URL)
     check_header("Home Page")
     check_links_texts()
 
-    visit(HomeLocators.WHAT_NEW_URL)
+    visit(data.links.WHATS_NEW_PAGE_LINK)
     check_header("What's New")
     check_links_texts()
 
-    visit(HomeLocators.WOMEN_URL)
+    visit(data.links.WOMEN_PAGE_LINK)
     check_header("Women")
     check_links_texts()
 
-    visit(HomeLocators.TOPS_WOMEN_URL)
+    visit(data.links.TOPS_WOMEN_PAGE_LINK)
     check_header("Tops")
     check_links_texts()
 
-    visit(HomeLocators.BOTTOMS_WOMEN_URL)
+    visit(data.links.BOTTOMS_WOMEN_PAGE_LINK)
     check_header("Bottoms")
     check_links_texts()
 
-    visit(HomeLocators.MEN_URL)
+    visit(data.links.MEN_PAGE_URL)
     check_header("Men")
     check_links_texts()
 
-    visit(HomeLocators.TOPS_MEN_URL)
+    visit(data.links.MEN_TOPS_PAGE_URL)
     check_header("Tops")
     check_links_texts()
 
-    visit(HomeLocators.BOTTOMS_MEN_URL)
+    visit(data.links.MEN_BOTTOMS_PAGE_URL)
     check_header("Bottoms")
     check_links_texts()
 
-    visit(HomeLocators.GEAR_URL)
+    visit(data.links.GEAR_PAGE_URL)
     check_header("Gear")
     check_links_texts()
 
-    visit(HomeLocators.GEAR_BAGS_URL)
+    visit(data.links.GEAR_BAGS_URL)
     check_header("Bags")
     check_links_texts()
 
-    visit(HomeLocators.GEAR_FITNESS_URL)
+    visit(data.links.GEAR_FITNESS_URL)
     check_header("Fitness Equipment")
     check_links_texts()
 
-    visit(HomeLocators.GEAR_WATCHES_URL)
+    visit(data.links.GEAR_WATCHES_URL)
     check_header("Watches")
     check_links_texts()
 
-    visit(HomeLocators.TRAINING_URL)
+    visit(data.links.TRAINING_URL)
     check_header("Training")
     check_links_texts()
 
-    visit(HomeLocators.VIDEO_DOWNLOAD_URL)
+    visit(data.links.VIDEO_DOWNLOAD_URL)
     check_header("Video Download")
     check_links_texts()
 
-    visit(HomeLocators.SALE_URL)
+    visit(data.links.SALE_PAGE_URL)
     check_header("Sale")
     check_links_texts()

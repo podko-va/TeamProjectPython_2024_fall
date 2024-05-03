@@ -1,8 +1,5 @@
-from selene import browser, have
 from pages import redirect_inside_cart_LK
 from pages.redirect_inside_cart_LK import *
-
-
 
 def test_redirect_inside_cart():
     redirect_inside_cart_LK.open_main_page()
