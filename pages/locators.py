@@ -138,6 +138,10 @@ class PrivacyPolicy:
     PRIVACY_POLICY_TITLE = "span[data-ui-id='page-title-wrapper']"
 
 
+class CreateAccountLocators:
+    CREATE_AN_ACCOUNT_LINK = "(//a[.='Create an Account'])[1]"
+
+
 class ErinRecommendLocators:
     HOME_ERIN_BLOCK = "//a[@class='block-promo home-erin']"
     PAGE_HEADER = "//span[@data-ui-id='page-title-wrapper']"
