@@ -5,3 +5,7 @@ class MainPageData:
 
 class PrivacyPolicyPageData:
     page_main_header = "Privacy Policy"
+
+class FooterData:
+    copyright_info = "Copyright © 2013-present Magento, Inc. All rights reserved."
+
