@@ -20,6 +20,6 @@ def test_remove_item_from_wishlist(login):
     with allure.step("Hover cursor on the item"):
         wish_list.hover_over_item()
     with allure.step("Click on ‘trash bin’ icon of item"):
-        wish_list.remove_item()
+        item_title = wish_list.remove_item()
     with allure.step("Verify that the item with saved name doesnt appear in wish list"):
-        wish_list.is_item_removed()
+        wish_list.is_item_removed(item_title)
