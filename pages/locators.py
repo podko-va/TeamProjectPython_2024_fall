@@ -104,6 +104,7 @@ class WhatsNewPageLocators:
     LUMAS_LATEST_LIST = '.products-grid>ol'
     LUMAS_LATEST_ITEMS = '.products-grid>ol>li'
     BUTTON_MORE = 'span.more.button'
+    LUMAS_LATEST_IMAGES = '.product-image-photo'
 
 
 class PrivacyPolicyPageLocators:
