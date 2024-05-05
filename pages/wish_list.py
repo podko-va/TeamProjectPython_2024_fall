@@ -29,7 +29,9 @@ def url_should_contain(param):
     browser.should(have.url_containing(param))
 
 def remove_item():
+    item_title = browser.driver.find_element(By.XPATH, ITEM_TITLE).text
     s(REMOVE_ITEM).should(be.visible).click()
+    return item_title
 
 def add_item_to_wish_list():
     visit(product_url)
@@ -39,7 +41,6 @@ def add_item_to_wish_list():
 def hover_over_item():
     s(ITEM_CARD).should(be.present).hover()
 
-def is_item_removed():
-    item_title = browser.driver.find_element(By.XPATH, ITEM_TITLE).text
-    s(ITEM_TITLE).should(have.text(item_title))
+def is_item_removed(item):
+    s(ITEM_TITLE).should(have.no.text(item))
 
