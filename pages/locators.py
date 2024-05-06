@@ -1,3 +1,6 @@
+from selene import browser
+
+
 class SalePageLocators:
     GEAR_DEALS_TITLE = "//*[text()='Gear Deals']"
     BAGS_LINK = "//a[text()='Bags']"
@@ -152,6 +155,9 @@ class CreateAccountLocators:
 class ErinRecommendLocators:
     HOME_ERIN_BLOCK = "//a[@class='block-promo home-erin']"
     PAGE_HEADER = "//span[@data-ui-id='page-title-wrapper']"
+    FOOTER = "//footer[@class='page-footer']"
+    PAGINATION_CONTROL = "//div[@class='pages']"
+    PAGE_NEXT = "(//a[@title='Next'])[2]"
 
 
 class PerformanceSportswear:
