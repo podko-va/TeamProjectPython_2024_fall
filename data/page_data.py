@@ -4,3 +4,8 @@ class MainPageData:
 
 class PrivacyPolicyPageData:
     page_main_header = "Privacy Policy"
+
+
+class SignInData():
+    email = "yukkatest@gmail.com"
+    password = "yukka83@@@"

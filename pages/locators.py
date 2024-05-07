@@ -14,6 +14,7 @@ class SalePageLocators:
                                       'https://magento.softwaretestingboard.com/women/tops-women.html']
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
+    SALE_TAP = "//*[@id='ui-id-8']"
 
 
 class ProductLocators:
@@ -104,7 +105,7 @@ class LoginPage:
     PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
     MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
 
-    
+
 class LoginLocators:
     LINK_LOGIN = 'https://magento.softwaretestingboard.com/customer/account/login'
     FIELD_NAME = 'div.login-container #email'
@@ -115,6 +116,7 @@ class LoginLocators:
     AUTHORIZATION_LINK = 'authorization-link'
     LINK_ACCOUNT = 'https://magento.softwaretestingboard.com/customer/account/'
 
+
 class ContactUsLocators:
     CONTACT_US_LINK = "//*[@id='maincontent']/div[3]/div/div[3]/div[1]/p[33]/a"
 
@@ -122,3 +124,11 @@ class ContactUsLocators:
 class PrivacyPolicy:
     GO_BACK_LINK = "//*[@id='maincontent']/div[3]/div[1]/dl[2]/dd[2]/ul/li[1]/a"
     PRIVACY_POLICY_TITLE = "span[data-ui-id='page-title-wrapper']"
+
+
+class SaleWomenDealsLocators:
+    JACKETS = "//*[@id='maincontent']/div[4]/div[2]/div/div/ul[1]/li[2]/a"
+    ITEM_ONE = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[1]/div/div/div[3]/div/div[2]/a[2]"
+    ITEM_TWO = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[5]/div/div/div[4]/div/div[2]/a[2]"
+    QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
+    # //*[@id="maincontent"]/div[4]/div[3]/div[1]/div[1]/span
