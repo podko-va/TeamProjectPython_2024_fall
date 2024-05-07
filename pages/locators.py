@@ -154,7 +154,7 @@ class PrivacyPolicy:
 class SaleWomenDealsLocators:
     JACKETS = "//*[@id='maincontent']/div[4]/div[2]/div/div/ul[1]/li[2]/a"
     ITEM_ONE = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[1]/div/div/div[3]/div/div[2]/a[2]"
-    ITEM_TWO = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[5]/div/div/div[4]/div/div[2]/a[2]"
+    ITEM_TWO = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[2]/div/div/div[4]/div/div[2]/a[2]"
     QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
 
     
