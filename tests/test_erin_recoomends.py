@@ -23,3 +23,22 @@ class TestErinRecommends:
             header = page.is_header_present()
         with allure.step("Assert header contains text 'Erin Recommends'"):
             page.is_element_text_correct(header, "Erin Recommends")
+
+    @allure.title("TC_001.002.003 | Main Page > Erin Recommendations > Paginated Product Catalog Display")
+    def test_pagination_controls(self):
+        with allure.step("Open Erin Recommends page"):
+            page = ErinRecommendsPage(browser=browser)
+            page.open_page()
+        with allure.step("Scroll to the bottom of controls presence"):
+            page.scroll_to_footer()
+        with allure.step("Assert pagination control include at least two page numbers and a 'Next' button"):
+            assert page.verify_minimum_page_numbers(2), "Less than two page numbers are present."
+            page.is_next_button_visible()
+        with allure.step("Assert the functionality of the pagination control"):
+            page.click_next()
+            browser.should(have.url_containing("p=2"))
+
+
+
+
+
