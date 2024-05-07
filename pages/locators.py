@@ -158,6 +158,8 @@ class ErinRecommendLocators:
     FOOTER = "//footer[@class='page-footer']"
     PAGINATION_CONTROL = "//div[@class='pages']"
     PAGE_NEXT = "(//a[@title='Next'])[2]"
+    PAGE_DROPDOWN = "(//select[@data-role='limiter'])[2]"
+    PRODUCTS = browser.all(".product-item")
 
 
 class PerformanceSportswear:
