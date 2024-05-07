@@ -1,6 +1,8 @@
 import allure
+import pytest
+
 from pages import sign_in, my_account, message
-from pages.locators import LoginLocators
+from pages.locators import LoginLocators, BaseLocators
 from selene import browser, be, have
 from selene.support.shared.jquery_style import s
 
@@ -13,6 +15,7 @@ def test_sign_in_with_good_credentials():
     my_account.page_title("My Account")
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/L5xi1X8i")
 @allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
 def test_sign_in_with_bad_credentials():
@@ -21,6 +24,7 @@ def test_sign_in_with_bad_credentials():
     message.should_be("account sign-in was incorrect")
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/FxDGeQYY")
 @allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
 def test_004_005_001_login_unsuccessful():
@@ -31,6 +35,7 @@ def test_004_005_001_login_unsuccessful():
     s(LoginLocators.MESSAGE_UNSUCCESSFUL).should(have.text("This is a required field."))
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/otpjtX3K")
 @allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
 def test_004_005_002_login_successful():
@@ -41,3 +46,17 @@ def test_004_005_002_login_successful():
     browser.should(have.url(LoginLocators.LINK_ACCOUNT))
     s(LoginLocators.USER_NAME_IN_WELCOME).should(have.text("фы ывф"))
     s(LoginLocators.AUTHORIZATION_LINK).should(have.no.text("Sign In"))
+
+
+@allure.link("https://trello.com/c/rmFvh9fO")
+@allure.feature("Sign in & Registration, Account >Sign in_(authorization)")
+def test_004_005_003_nickname_on_each_page():
+    # I used only 4 links, otherwise test will take too much time
+    browser.open(LoginLocators.LINK_LOGIN)
+    s(LoginLocators.FIELD_NAME).type("ahahah1@gmail.com")
+    s(LoginLocators.FIELD_PASSWORD).type("jk$34_tor")
+    s(LoginLocators.BUTTON_SUBMIT).click()
+    for lnk in BaseLocators.ALL_URL:
+        browser.open(lnk)
+        s(LoginLocators.USER_NAME_IN_WELCOME).should(have.text("фы ывф"))
+

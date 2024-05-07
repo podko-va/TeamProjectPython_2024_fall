@@ -1,4 +1,4 @@
-from selenium.webdriver.common.by import By
+from selene import browser
 
 
 class SalePageLocators:
@@ -23,6 +23,7 @@ class ProductLocators:
     RADIANT_TEE_COLOR = '[option-label="Orange"]'
     RADIANT_TEE_QTY = '#qty'
     ADD_TO_CART_BUTTON = '#product-addtocart-button'
+    ADD_TO_CART_BUTTON_FROM_MAINPAGE = 'form[data-product-sku="WS12"] button'
 
     ARGUS_All_WEATHER_TANK = '[alt="Argus All-Weather Tank"]'
     ARGUS_All_WEATHER_TANK_SIZE = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="M"]'
@@ -32,14 +33,12 @@ class ProductLocators:
 
 
 class HomeLocators:
+    CONSENT_COOKIES_BTN = '(//p[@class="fc-button-label"])[1]'
+    COOKIES_MSG = '//h1[@class="fc-dialog-headline"]'
     STORE_LOGO = 'a.logo'
-    BASE_URL = 'https://magento.softwaretestingboard.com'
-    WHAT_NEW_URL = 'https://magento.softwaretestingboard.com/what-is-new.html'
-    MEN_URL = 'https://magento.softwaretestingboard.com/men.html'
-    WOMEN_URL = 'https://magento.softwaretestingboard.com/women.html'
-    GEAR_URL = 'https://magento.softwaretestingboard.com/gear.html'
-    TRAINING_URL = 'https://magento.softwaretestingboard.com/training.html'
-    SALE_URL = 'https://magento.softwaretestingboard.com/sale.html'
+    CART_ICON = 'a.showcart'
+    MINICART = '#ui-id-1'
+    MINICART_VIEW = 'a.viewcart'
 
 
 class NavigatorLocators:
@@ -52,6 +51,14 @@ class NavigatorLocators:
     NAV_MENU = '#ui-id-2'
     NAV_MEN_TOPS = '#ui-id-17'
     NAV_MEN_BOTTOMS = '#ui-id-18'
+    NAV_MEN_TOPS_JACKET = '#ui-id-19'
+    NAV_MEN_TOPS_HOODIES = '#ui-id-20'
+    NAV_MEN_TOPS_TEES = '#ui-id-21'
+    NAV_MEN_TOPS_TANKS = '#ui-id-22'
+    NAV_MEN_SUBMENU = "li[class='level1 nav-3-1 category-item first parent ui-menu-item']"
+    NAV_MEN_BOTTOMS_SUBMENU = "li[class='level1 nav-3-2 category-item last parent ui-menu-item']"
+    NAV_MEN_TOPS_SUBMENU_HREFS = ".nav-3-1 > ul  > li > a"
+    NAV_MEN_BOTTOMS_SUBMENU_HREFS = ".nav-3-2 > ul  > li > a"
 
 
 class SideBarLocators:
@@ -63,11 +70,24 @@ class SideBarLocators:
 
 
 class BaseLocators:
+    # locators for all pages
     PAGE_NAME = ".base"
-    PAGE_TITLE = 'h1'
+    PAGE_TITLE = "h1"
+    PAGE_HEADER = "#page-title-heading"
     BREADCRUMBS_LIST = ".breadcrumbs li"
     BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
     PRIVACY_COOKIE_POLICY_LOCATOR = "//a[contains(@href, 'privacy-policy-cookie')]"
+    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'  # каждый товар на любой странице в каталоге
+    PRODUCT_PRICE = 'price-label'
+    PRODUCT_NAME = 'product-item-link'
+    PRODUCT_IMAGE = 'product-image-photo'
+    ALL_URL = ["https://magento.softwaretestingboard.com/",
+               "https://magento.softwaretestingboard.com/what-is-new.html",
+               "https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html,"
+               "https://magento.softwaretestingboard.com/training.html"
+                ]
+    NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
+    NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
 
 
 class SearchTermsLocators:
@@ -90,18 +110,19 @@ class WhatsNewPageLocators:
     LUMAS_LATEST_LIST = '.products-grid>ol'
     LUMAS_LATEST_ITEMS = '.products-grid>ol>li'
     BUTTON_MORE = 'span.more.button'
+    LUMAS_LATEST_IMAGES = '.product-image-photo'
 
 
 class PrivacyPolicyPageLocators:
     PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
 
 
-class ProductItem:
+class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
     ITEM_INFO = ".product-item-info"
 
 
-class LoginPage:
+class LoginPageLocators:
     PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
     MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
 
@@ -115,6 +136,10 @@ class LoginLocators:
     USER_NAME_IN_WELCOME = '.logged-in'
     AUTHORIZATION_LINK = 'authorization-link'
     LINK_ACCOUNT = 'https://magento.softwaretestingboard.com/customer/account/'
+
+
+class FooterLocators:
+    FOOTER_LINKS = ('xpath', '//footer[@class="page-footer"]//li')
 
 
 class ContactUsLocators:
@@ -131,4 +156,32 @@ class SaleWomenDealsLocators:
     ITEM_ONE = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[1]/div/div/div[3]/div/div[2]/a[2]"
     ITEM_TWO = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[5]/div/div/div[4]/div/div[2]/a[2]"
     QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
-    # //*[@id="maincontent"]/div[4]/div[3]/div[1]/div[1]/span
+
+    
+class CreateAccountLocators:
+    CREATE_AN_ACCOUNT_LINK = "(//a[.='Create an Account'])[1]"
+
+
+class ErinRecommendLocators:
+    HOME_ERIN_BLOCK = "//a[@class='block-promo home-erin']"
+    PAGE_HEADER = "//span[@data-ui-id='page-title-wrapper']"
+    FOOTER = "//footer[@class='page-footer']"
+    PAGINATION_CONTROL = "//div[@class='pages']"
+    PAGE_NEXT = "(//a[@title='Next'])[2]"
+
+
+class PerformanceSportswear:
+    LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
+
+
+class WishListLocators:
+    EMPTY_MESSAGE = '.message.info.empty span'
+    DELETE_BUCKET = '.btn-remove.action.delete'
+    SUCCESS_MESSAGE = '.message-success.success.message'
+    PRODUCT_ITEM = '.products-grid.wishlist .product-item'
+    ITEM_ACTIONS = ".product-item-actions"
+    QUALITY = "input[name='qty']"
+    COLORS = "div.swatch-attribute.color .swatch-option.color"
+    SIZES = "div.swatch-attribute.size .swatch-option.text"
+    UPDATED = "a.action.towishlist.updated"
+
