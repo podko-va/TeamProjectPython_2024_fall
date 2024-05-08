@@ -32,9 +32,10 @@ def test_015_001_003_check_if_search_terms_has_size_from_76_till_136():
     assert min(list_font_sizes) <= 76 and max(list_font_sizes) >= 136, "Font sizes not between 76 and 136"
 
 
-@pytest.skip('Test have a bug')
+@pytest.mark.skip('Test have a bug')
 @allure.link('https://trello.com/c/8jDgYDYW')
 def test_015_002_006_order_search_terms():
     browser.open(ST.LINK_SEARCH_TERMS)
     search_terms_page.order_search_terms()
+
 
