@@ -186,3 +186,7 @@ class WishListLocators:
 
 class TrainingPageLocators:
     VIDEO_DOWNLOAD_LINK = '#narrow-by-list2 li a'
+
+
+class YogaPageLocators:
+    PAGE_TITLE = '#page-title-heading > span'
