@@ -45,7 +45,8 @@ class HomeLocators:
     STORE_LOGO = 'a.logo'
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
-    MINICART_VIEW = 'a.viewcart'
+    MINICART_VIEW = '.action.viewcart'
+    MINICART_COUNTER = '.counter-label'
 
 
 class NavigatorLocators:
@@ -190,11 +191,13 @@ class WishListLocators:
     SIZES = "div.swatch-attribute.size .swatch-option.text"
     UPDATED = "a.action.towishlist.updated"
 
+class CartLocators:
+    QTY = '.input-text.qty'
+    UPDATE_SHOPPING_CART_BUTTON = '.action.update'
 
 class TrainingPageLocators:
     VIDEO_DOWNLOAD_LINK = '#narrow-by-list2 li a'
     VIDEO_DOWNLOAD_TRAINING_TITLE = 'span[data-ui-id="page-title-wrapper"'
-
 
 class PerformanceSportswear:
     LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
