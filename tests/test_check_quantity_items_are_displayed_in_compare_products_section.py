@@ -1,5 +1,3 @@
-import time
-
 import data.page_data
 import data.links
 import pages
@@ -17,8 +15,13 @@ def test_check_quantity_value_in_compare_product_section(browser_management):
     browser.element(pages.locators.SalePageLocators.SALE_TAP).click()
     browser.should(have.url(data.links.SALE_SECTION_LINK))
     browser.element(pages.locators.SaleWomenDealsLocators.JACKETS).click()
-    browser.should((have.url(data.links.WOMEN_JACKET_LINK)))
-    time.sleep(5)
-    browser.element(pages.locators.SaleWomenDealsLocators.ITEM_ONE).click()
-    browser.element(pages.locators.SaleWomenDealsLocators.ITEM_TWO).click()
-    browser.element(pages.locators.SaleWomenDealsLocators.QUANTITY_ITEMS).should(have.text("2 items"))
+    s(pages.locators.SaleWomenDealsLocators.ELEMENT_ONE).hover()
+    s(pages.locators.SaleWomenDealsLocators.ADD_TO_COMPARE_BTN_ONE).hover().click()
+    s(pages.locators.SaleWomenDealsLocators.ELEMENT_TWO).wait_until(be.present)
+    s(pages.locators.SaleWomenDealsLocators.ELEMENT_TWO).hover()
+    s(pages.locators.SaleWomenDealsLocators.ADD_TO_COMPARE_BTN_ONE_TWO).wait_until(be.present)
+    s(pages.locators.SaleWomenDealsLocators.ADD_TO_COMPARE_BTN_ONE_TWO).hover().click()
+    s(pages.locators.SaleWomenDealsLocators.QUANTITY_ITEMS).should(have.text("2 items"))
+    s(by.id("compare-clear-all")).click()
+    s(by.css("button[class='action-primary action-accept']")).wait_until(be.present)
+    s(by.css("button[class='action-primary action-accept']")).click()

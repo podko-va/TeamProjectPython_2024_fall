@@ -153,8 +153,10 @@ class PrivacyPolicy:
 
 class SaleWomenDealsLocators:
     JACKETS = "//*[@id='maincontent']/div[4]/div[2]/div/div/ul[1]/li[2]/a"
-    ITEM_ONE = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[1]/div/div/div[3]/div/div[2]/a[2]"
-    ITEM_TWO = "//*[@id='maincontent']/div[3]/div[1]/div[4]/ol/li[2]/div/div/div[4]/div/div[2]/a[2]"
+    ADD_TO_COMPARE_BTN_ONE = ".actions-secondary a[data-post*='1396']:nth-child(2)"
+    ADD_TO_COMPARE_BTN_ONE_TWO = ".actions-secondary a[data-post*='1380']:nth-child(2)"
+    ELEMENT_ONE = "img[alt='Olivia 1/4 Zip Light Jacket']"
+    ELEMENT_TWO = "img[alt='Juno Jacket']"
     QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
 
     
