@@ -51,6 +51,19 @@ class TestErinRecommends:
         with allure.step("Assert number of product displayed matches to selection"):
             page.verify_number_of_product_displayed(13,24)
 
+    @allure.title("TC_001.002.005 | Main Page > Erin Recommendations > Arrangement of Products Display")
+    def test_switch_to_list_view(self):
+        with allure.step("Open Erin Recommends page"):
+            page = ErinRecommendsPage(browser=browser)
+            page.open_page()
+        with allure.step("Switch to list view"):
+            page.switch_to_list_view()
+        with allure.step("Assert that the layout is now in list view"):
+            assert page.is_list_view_activate(), "The product layout did not switch to list view."
+
+
+
+
 
 
 
