@@ -47,6 +47,7 @@ class HomeLocators:
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
     MINICART_VIEW = 'a.viewcart'
+    MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
 
 
