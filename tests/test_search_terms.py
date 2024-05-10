@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 from pages.locators import SearchTermsLocators as ST
@@ -54,3 +56,12 @@ def test_015_001_006_check_if_search_terms_are_sorted():
         list_of_goods.append(keyword)
     list_of_goods_sorted = sorted(list_of_goods)
     assert list_of_goods_from_terms == list_of_goods_sorted
+
+
+@allure.link('https://trello.com/c/RGOSzLMa')
+def test_015_002_005_unique_search_terms():
+    browser.open(ST.LINK_SEARCH_TERMS)
+    keyword_elements = ss(ST.LIST_OF_SEARCH_TERMS)
+    keyword_texts = [k.get(query.attribute("text")).strip() for k in keyword_elements]
+    keywords_set = set(keyword_texts)
+    assert len(keyword_texts) == len(keywords_set)
