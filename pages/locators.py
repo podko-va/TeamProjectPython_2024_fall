@@ -14,6 +14,7 @@ class SalePageLocators:
                                       'https://magento.softwaretestingboard.com/women/tops-women.html']
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
+    SALE_TAP = "//*[@id='ui-id-8']"
 
 
 class ProductLocators:
@@ -162,6 +163,15 @@ class PrivacyPolicy:
     PRIVACY_POLICY_TITLE = "span[data-ui-id='page-title-wrapper']"
 
 
+class SaleWomenDealsLocators:
+    JACKETS = "//*[@id='maincontent']/div[4]/div[2]/div/div/ul[1]/li[2]/a"
+    ADD_TO_COMPARE_BTN_ONE = ".actions-secondary a[data-post*='1396']:nth-child(2)"
+    ADD_TO_COMPARE_BTN_ONE_TWO = ".actions-secondary a[data-post*='1380']:nth-child(2)"
+    ELEMENT_ONE = "img[alt='Olivia 1/4 Zip Light Jacket']"
+    ELEMENT_TWO = "img[alt='Juno Jacket']"
+    QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
+
+    
 class CreateAccountLocators:
     CREATE_AN_ACCOUNT_LINK = "(//a[.='Create an Account'])[1]"
 

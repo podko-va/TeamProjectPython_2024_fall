@@ -8,6 +8,11 @@ class PrivacyPolicyPageData:
     page_main_header = "Privacy Policy"
 
 
+class SignInData():
+    email = "yukkatest@gmail.com"
+    password = "yukka83@@@"
+    
+
 class FooterData:
     copyright_info = "Copyright © 2013-present Magento, Inc. All rights reserved."
 
