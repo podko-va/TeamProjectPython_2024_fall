@@ -48,6 +48,15 @@ class HomeLocators:
     MINICART = '#ui-id-1'
     MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
+    MINI_CART_PRICE = '.price-wrapper'
+    AMOUNT_PRICE = ".amount.price-container"
+    TO_CART_BUTTON = "button.action.tocart.primary"
+    SIZES = ".swatch-attribute.size .swatch-option"
+    COLORS = ".swatch-attribute.color .swatch-option"
+    TOTALS = 'tr.totals .amount .price'
+    SUB_TOTAL = 'tr.totals.sub .amount .price'
+    TAX_AMOUNT = 'tr.totals-tax .amount .price'
+    GRAND_TOTALS = 'tr.grand.totals .amount .price'
 
 
 class NavigatorLocators:
@@ -79,7 +88,7 @@ class SideBarLocators:
 
 
 class BaseLocators:
-    # locators for all pages
+    SUCCESS_MESSAGE = '.message-success.success.message'
     PAGE_NAME = ".base"
     PAGE_TITLE = "h1"
     PAGE_HEADER = "#page-title-heading"
@@ -87,7 +96,7 @@ class BaseLocators:
     BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
     BREADCRUMBS = ".breadcrumbs > ul"
     PRIVACY_COOKIE_POLICY_LOCATOR = "//a[contains(@href, 'privacy-policy-cookie')]"
-    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'  # каждый товар на любой странице в каталоге
+    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'
     PRODUCT_PRICE = 'price-label'
     PRODUCT_NAME = 'product-item-link'
     PRODUCT_IMAGE = 'product-image-photo'
@@ -131,6 +140,7 @@ class PrivacyPolicyPageLocators:
 
 class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
+    PRODUCTS_GRID = ".products-grid.grid"
     ITEM_INFO = ".product-item-info"
 
 
@@ -193,7 +203,6 @@ class PerformanceSportswear:
 class WishListLocators:
     EMPTY_MESSAGE = '.message.info.empty span'
     DELETE_BUCKET = '.btn-remove.action.delete'
-    SUCCESS_MESSAGE = '.message-success.success.message'
     PRODUCT_ITEM = '.products-grid.wishlist .product-item'
     ITEM_ACTIONS = ".product-item-actions"
     QUALITY = "input[name='qty']"

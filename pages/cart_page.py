@@ -1,25 +1,18 @@
-from selene.support.shared.jquery_style import s
 from selene import be
+from selene.core import query
+from selene.support.shared.jquery_style import s
 
 from data.links import CART_LINK
+from pages.base_page import BasePage
 from pages.locators import CartLocators as Cart
 from pages.locators import HomeLocators as HL
-from pages.components.nav_wigdet import NavComponent
 
 
-class CartPage:
-    def __init__(self, browser):
-        self.browser = browser
-        self.nav = NavComponent(browser)
+class CartPage(BasePage):
 
     def open_page(self):
-        self.browser.open(CART_LINK)
-
-    def find_cart_icon(self):
-        return s(HL.CART_ICON)
-
-    def is_cart_icon_clickable(self):
-        return self.find_cart_icon().should(be.clickable)
+        self.visit(CART_LINK)
+        return self
 
     def find_qty(self):
         return s(Cart.QTY)
@@ -50,3 +43,10 @@ class CartPage:
 
     def is_counter_number_visible(self):
         return self.find_counter_number().should(be.visible)
+
+    def get_cart_totals(self):
+        tax = self.get_text(HL.TAX_AMOUNT)
+        discount = self.get_text(HL.TOTALS)
+        subtotal = self.get_text(HL.SUB_TOTAL)
+        total = self.get_text(HL.GRAND_TOTALS)
+        return f"Total: {total}, Price: {discount}, tax: {tax}, subtotal: {subtotal}"
