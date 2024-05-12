@@ -17,7 +17,6 @@ def click_dropdown_tops_link():
 
 
 def move_to_tops_menu():
-    # s(WPL.TOPS_LINK).wait_until(be.visible)
     s(WPL.TOPS_LINK).hover()
 
 
