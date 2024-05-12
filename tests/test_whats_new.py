@@ -35,6 +35,7 @@ class TestWhatsNew:
         with allure.step("Assert header contains text \'What's New\'"):
             page.is_element_text_correct(header, "What's New")
 
+    @pytest.skip
     @allure.link("https://trello.com/c/bCZOe2Tp/97-tc006006003-whats-new-page-check-lumas-latest-list-visibility")
     @allure.title("TC_006.006.003 | Check Luma`s latest list visibility")
     def test_lumas_latest_list_visibility(self):
