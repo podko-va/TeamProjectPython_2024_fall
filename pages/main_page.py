@@ -1,4 +1,5 @@
-from selene.support.conditions import be
+from selene import query
+from selene.support.conditions import be, have
 from selene.support.shared.jquery_style import s, ss
 
 from data.links import MAIN_PAGE_LINK
@@ -55,3 +56,43 @@ class MainPage(BasePage):
     def handle_cookies_popup():
         if ss(HomeLocators.COOKIES_MSG):
             s(HomeLocators.CONSENT_COOKIES_BTN).click()
+
+            
+    @staticmethod
+    def open_mini_cart():
+        s(HomeLocators.CART_ICON).click()
+
+
+    @staticmethod
+    def check_product_qty_inside_minicart(value):
+        s(HomeLocators.MINICART_PRODUCT_QTY).should(have.attribute('data-item-qty', value))
+
+
+    @staticmethod
+    def clear_minicart():
+        if s(HomeLocators.CART_COUNTER).get(query.text) != "0":
+            s(HomeLocators.CART_ICON).click()
+            s(HomeLocators.MINICART_DELETE_BUTTONS).wait_until(be.visible)
+            delete_btns = ss(HomeLocators.MINICART_DELETE_BUTTONS)
+            if len(delete_btns) > 1:
+                for btn in delete_btns:
+                    btn.click()
+                    s(HomeLocators.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
+                    s(HomeLocators.DELETE_ITEM_CONFIRM_OK).click()
+            elif len(delete_btns) == 1:
+                s(HomeLocators.MINICART_DELETE_BUTTONS).click()
+                s(HomeLocators.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
+                s(HomeLocators.DELETE_ITEM_CONFIRM_OK).click()
+            s(HomeLocators.MINICART_CLOSE).click()
+
+
+    @staticmethod
+    def close_minicart():
+        s(HomeLocators.MINICART_CLOSE).click()
+
+
+    def add_item_to_cart(self, size, color, add_to_cart_button):
+        s(size).click()
+        s(color).click()
+        s(add_to_cart_button).click()
+

@@ -30,10 +30,12 @@ class ProductLocators:
     ARGUS_All_WEATHER_TANK_COLOR = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="Gray"]'
     ARGUS_All_WEATHER_TANK_ADD_TO_CARD = '//*[@title="Argus All-Weather Tank"]/../..//*[@title="Add to Cart"]'
     MINI_BASKET_WINDOW = '[class="action showcart"]'
-    RADIANT_TEE_LINK = "//*[contains(text(), 'Radiant Tee')]"
-    RADIANT_TEE_IMG = 'img[alt="Radiant Tee"]'
+    RADIANT_TEE_LINK = "//a[contains(text(), 'Radiant Tee ')]"
+    RADIANT_TEE_IMG = '//div[1]/div[3]/div[1]/img[@alt="Radiant Tee"]'
     RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
     RADIANT_TEE_PRICE = '#product-price-1556'
+    PRODUCT_PRICE = '//div[2]/main/div[2]/div/div[2]/div[3]/div/span/span/span[2]/span'
+    ADDING_TO_CART_SUCCESSFULL_MSG = "//div[contains(text(), 'You added')]"
     SIZE_XS = '#option-label-size-143-item-166'
     COLOR_BLUE = '#option-label-color-93-item-50'
     SHOULD_CHOOSE_SIZE_AND_COLOR = '.swatch-input super-attribute-select'
@@ -46,6 +48,14 @@ class HomeLocators:
     STORE_LOGO = 'a.logo'
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
+    EMPTY_MINICART_MSG = 'strong[class="subtitle empty"]'
+    MINICART_RADIANT_TEE_NAME = "//*[@id='mini-cart']/li/div/div/strong/a[contains(text(), 'Radiant Tee')]"
+    MINICART_PRODUCT_QTY = 'input[class="item-qty cart-item-qty"]'
+    MINICART_SUBTOTAL = '//*[@id="minicart-content-wrapper"]/div[2]/div[2]/div/span/span'
+    MINICART_DELETE_BUTTONS = "a[class='action delete']"
+    DELETE_ITEM_CONFIRM_OK = 'button[class="action-primary action-accept"]'
+    MINICART_CLOSE = '#btn-minicart-close'
+    CART_COUNTER = 'span[class="counter-number"]'
     MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
     MINI_CART_PRICE = '.price-wrapper'
