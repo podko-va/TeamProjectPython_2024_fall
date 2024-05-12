@@ -60,35 +60,35 @@ class MainPage(BasePage):
             
     @staticmethod
     def open_mini_cart():
-        s(HL.CART_ICON).click()
+        s(HomeLocators.CART_ICON).click()
 
 
     @staticmethod
     def check_product_qty_inside_minicart(value):
-        s(HL.MINICART_PRODUCT_QTY).should(have.attribute('data-item-qty', value))
+        s(HomeLocators.MINICART_PRODUCT_QTY).should(have.attribute('data-item-qty', value))
 
 
     @staticmethod
     def clear_minicart():
-        if s(HL.CART_COUNTER).get(query.text) != "0":
-            s(HL.CART_ICON).click()
-            s(HL.MINICART_DELETE_BUTTONS).wait_until(be.visible)
-            delete_btns = ss(HL.MINICART_DELETE_BUTTONS)
+        if s(HomeLocators.CART_COUNTER).get(query.text) != "0":
+            s(HomeLocators.CART_ICON).click()
+            s(HomeLocators.MINICART_DELETE_BUTTONS).wait_until(be.visible)
+            delete_btns = ss(HomeLocators.MINICART_DELETE_BUTTONS)
             if len(delete_btns) > 1:
                 for btn in delete_btns:
                     btn.click()
-                    s(HL.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
-                    s(HL.DELETE_ITEM_CONFIRM_OK).click()
+                    s(HomeLocators.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
+                    s(HomeLocators.DELETE_ITEM_CONFIRM_OK).click()
             elif len(delete_btns) == 1:
-                s(HL.MINICART_DELETE_BUTTONS).click()
-                s(HL.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
-                s(HL.DELETE_ITEM_CONFIRM_OK).click()
-            s(HL.MINICART_CLOSE).click()
+                s(HomeLocators.MINICART_DELETE_BUTTONS).click()
+                s(HomeLocators.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
+                s(HomeLocators.DELETE_ITEM_CONFIRM_OK).click()
+            s(HomeLocators.MINICART_CLOSE).click()
 
 
     @staticmethod
     def close_minicart():
-        s(HL.MINICART_CLOSE).click()
+        s(HomeLocators.MINICART_CLOSE).click()
 
 
     def add_item_to_cart(self, size, color, add_to_cart_button):
