@@ -18,13 +18,9 @@ def check_radiant_tee_name_in_minicart_is_visible():
     s(HL.MINICART_RADIANT_TEE_NAME).should(be.visible)
 
 
-
-
-
 def select_product_quantity(qty):
     s(PL.RADIANT_TEE_QTY).click()
     s(PL.RADIANT_TEE_QTY).type(Keys.DELETE)
-    # s(PL.RADIANT_TEE_QTY).clear()
     s(PL.RADIANT_TEE_QTY).type(qty)
 
 
