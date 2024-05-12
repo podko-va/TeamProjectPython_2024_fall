@@ -109,19 +109,14 @@ class MainPage(BasePage):
     @staticmethod
     def clear_minicart():
         if s(HL.CART_COUNTER).get(query.text) != "0":
-            # Открываем мини-корзину
             s(HL.CART_ICON).click()
-            # Ищем кнопки "удалить товар"
             s(HL.MINICART_DELETE_BUTTONS).wait_until(be.visible)
-            # Составляем список этих кнопок
             delete_btns = ss(HL.MINICART_DELETE_BUTTONS)
-            # Если кнопка "удалить товар" не одна, то есть в корзине несколько разных товаров, то кликаем их по очереди
             if len(delete_btns) > 1:
                 for btn in delete_btns:
                     btn.click()
                     s(HL.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
                     s(HL.DELETE_ITEM_CONFIRM_OK).click()
-            # Если кнопка одна, то просто кликаем по ней
             elif len(delete_btns) == 1:
                 s(HL.MINICART_DELETE_BUTTONS).click()
                 s(HL.DELETE_ITEM_CONFIRM_OK).wait_until(be.visible)
