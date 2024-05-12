@@ -29,3 +29,7 @@ class TrainingPage(BasePage):
             if s(TPLoc.CONTENT_BLOCK_1).should(have.text(text)):
                 found_texts.append(text)
         return found_texts, expected_text
+
+    def check_size(self, expected_height, expected_width):
+        s(TPLoc.IMG_BLOCK_1).should(have.css_property('height', expected_height))
+        s(TPLoc.IMG_BLOCK_1).should(have.css_property('width', expected_width))

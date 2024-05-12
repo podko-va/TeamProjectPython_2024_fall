@@ -14,6 +14,7 @@ class SalePageLocators:
                                       'https://magento.softwaretestingboard.com/women/tops-women.html']
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
+    SALE_TAP = "//*[@id='ui-id-8']"
 
 
 class ProductLocators:
@@ -57,6 +58,15 @@ class HomeLocators:
     CART_COUNTER = 'span[class="counter-number"]'
     MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
+    MINI_CART_PRICE = '.price-wrapper'
+    AMOUNT_PRICE = ".amount.price-container"
+    TO_CART_BUTTON = "button.action.tocart.primary"
+    SIZES = ".swatch-attribute.size .swatch-option"
+    COLORS = ".swatch-attribute.color .swatch-option"
+    TOTALS = 'tr.totals .amount .price'
+    SUB_TOTAL = 'tr.totals.sub .amount .price'
+    TAX_AMOUNT = 'tr.totals-tax .amount .price'
+    GRAND_TOTALS = 'tr.grand.totals .amount .price'
 
 
 class NavigatorLocators:
@@ -88,7 +98,7 @@ class SideBarLocators:
 
 
 class BaseLocators:
-    # locators for all pages
+    SUCCESS_MESSAGE = '.message-success.success.message'
     PAGE_NAME = ".base"
     PAGE_TITLE = "h1"
     PAGE_HEADER = "#page-title-heading"
@@ -96,7 +106,7 @@ class BaseLocators:
     BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
     BREADCRUMBS = ".breadcrumbs > ul"
     PRIVACY_COOKIE_POLICY_LOCATOR = "//a[contains(@href, 'privacy-policy-cookie')]"
-    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'  # каждый товар на любой странице в каталоге
+    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'
     PRODUCT_PRICE = 'price-label'
     PRODUCT_NAME = 'product-item-link'
     PRODUCT_IMAGE = 'product-image-photo'
@@ -140,6 +150,7 @@ class PrivacyPolicyPageLocators:
 
 class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
+    PRODUCTS_GRID = ".products-grid.grid"
     ITEM_INFO = ".product-item-info"
 
 
@@ -172,6 +183,15 @@ class PrivacyPolicy:
     PRIVACY_POLICY_TITLE = "span[data-ui-id='page-title-wrapper']"
 
 
+class SaleWomenDealsLocators:
+    JACKETS = "//*[@id='maincontent']/div[4]/div[2]/div/div/ul[1]/li[2]/a"
+    ADD_TO_COMPARE_BTN_ONE = ".actions-secondary a[data-post*='1396']:nth-child(2)"
+    ADD_TO_COMPARE_BTN_ONE_TWO = ".actions-secondary a[data-post*='1380']:nth-child(2)"
+    ELEMENT_ONE = "img[alt='Olivia 1/4 Zip Light Jacket']"
+    ELEMENT_TWO = "img[alt='Juno Jacket']"
+    QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
+
+    
 class CreateAccountLocators:
     CREATE_AN_ACCOUNT_LINK = "(//a[.='Create an Account'])[1]"
 
@@ -193,7 +213,6 @@ class PerformanceSportswear:
 class WishListLocators:
     EMPTY_MESSAGE = '.message.info.empty span'
     DELETE_BUCKET = '.btn-remove.action.delete'
-    SUCCESS_MESSAGE = '.message-success.success.message'
     PRODUCT_ITEM = '.products-grid.wishlist .product-item'
     ITEM_ACTIONS = ".product-item-actions"
     QUALITY = "input[name='qty']"
@@ -212,6 +231,7 @@ class TrainingPageLocators:
     VIDEO_DOWNLOAD_TRAINING_TITLE = 'span[data-ui-id="page-title-wrapper"'
     BLOCK_1 = '.blocks-promo a:first-child'
     CONTENT_BLOCK_1 = '.blocks-promo a:first-child .title'
+    IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
 
 
 class PerformanceSportswear:
@@ -235,3 +255,8 @@ class MenSaleLocators:
     PAGE_TITLE = "[data-ui-id='page-title-wrapper']"
     LIST_ITEM = "li.product-item"
     TOOLBAR_NUMBER = "#toolbar-amount>span"
+
+
+class SetYogaStrapsLocators:
+    SPRITE_YOGA_STRAP_10_FOOT = '//input[@data-selector = "super_group[35]"]'
+    NOT_AVAILABLE_MESSAGE = '//div[contains(text(),"The requested qty is not available")]'
