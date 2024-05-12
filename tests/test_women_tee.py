@@ -43,7 +43,6 @@ def test_011_016_002_breadcrumbs_redirection_from_women_tees_var2():
         assert expected_links[i] == item.get(query.attribute('href'))
 
 
-
 @allure.suite('US_002.001 | Page of any product')
 @allure.title('TC_002.001.001 | Radiant Tee product page > Visibility of product name, price and photo')
 @allure.link('https://trello.com/c/SKLAh5ku/')
@@ -85,12 +84,6 @@ def test_002_001_002_adding_product_to_cart(login):
         main_page.MainPage.close_minicart()
     with allure.step('Clearing mini-cart'):
         main_page.MainPage.clear_minicart()
-
-
-
-
-
-
 
 
 
