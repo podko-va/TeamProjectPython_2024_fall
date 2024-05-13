@@ -14,7 +14,7 @@ class SalePageLocators:
                                       'https://magento.softwaretestingboard.com/women/tops-women.html']
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
-    SALE_TAP = "//*[@id='ui-id-8']"
+    SALE_TAB = "//*[@id='ui-id-8']"
 
 
 class ProductLocators:
