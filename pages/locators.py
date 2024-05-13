@@ -30,10 +30,12 @@ class ProductLocators:
     ARGUS_All_WEATHER_TANK_COLOR = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="Gray"]'
     ARGUS_All_WEATHER_TANK_ADD_TO_CARD = '//*[@title="Argus All-Weather Tank"]/../..//*[@title="Add to Cart"]'
     MINI_BASKET_WINDOW = '[class="action showcart"]'
-    RADIANT_TEE_LINK = "//*[contains(text(), 'Radiant Tee')]"
-    RADIANT_TEE_IMG = 'img[alt="Radiant Tee"]'
+    RADIANT_TEE_LINK = "//a[contains(text(), 'Radiant Tee ')]"
+    RADIANT_TEE_IMG = '//div[1]/div[3]/div[1]/img[@alt="Radiant Tee"]'
     RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
     RADIANT_TEE_PRICE = '#product-price-1556'
+    PRODUCT_PRICE = '//div[2]/main/div[2]/div/div[2]/div[3]/div/span/span/span[2]/span'
+    ADDING_TO_CART_SUCCESSFULL_MSG = "//div[contains(text(), 'You added')]"
     SIZE_XS = '#option-label-size-143-item-166'
     COLOR_BLUE = '#option-label-color-93-item-50'
     SHOULD_CHOOSE_SIZE_AND_COLOR = '.swatch-input super-attribute-select'
@@ -46,8 +48,28 @@ class HomeLocators:
     STORE_LOGO = 'a.logo'
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
+<<<<<<< HEAD
+=======
+    EMPTY_MINICART_MSG = 'strong[class="subtitle empty"]'
+    MINICART_RADIANT_TEE_NAME = "//*[@id='mini-cart']/li/div/div/strong/a[contains(text(), 'Radiant Tee')]"
+    MINICART_PRODUCT_QTY = 'input[class="item-qty cart-item-qty"]'
+    MINICART_SUBTOTAL = '//*[@id="minicart-content-wrapper"]/div[2]/div[2]/div/span/span'
+    MINICART_DELETE_BUTTONS = "a[class='action delete']"
+    DELETE_ITEM_CONFIRM_OK = 'button[class="action-primary action-accept"]'
+    MINICART_CLOSE = '#btn-minicart-close'
+    CART_COUNTER = 'span[class="counter-number"]'
+>>>>>>> main
     MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
+    MINI_CART_PRICE = '.price-wrapper'
+    AMOUNT_PRICE = ".amount.price-container"
+    TO_CART_BUTTON = "button.action.tocart.primary"
+    SIZES = ".swatch-attribute.size .swatch-option"
+    COLORS = ".swatch-attribute.color .swatch-option"
+    TOTALS = 'tr.totals .amount .price'
+    SUB_TOTAL = 'tr.totals.sub .amount .price'
+    TAX_AMOUNT = 'tr.totals-tax .amount .price'
+    GRAND_TOTALS = 'tr.grand.totals .amount .price'
 
 
 class NavigatorLocators:
@@ -79,7 +101,7 @@ class SideBarLocators:
 
 
 class BaseLocators:
-    # locators for all pages
+    SUCCESS_MESSAGE = '.message-success.success.message'
     PAGE_NAME = ".base"
     PAGE_TITLE = "h1"
     PAGE_HEADER = "#page-title-heading"
@@ -87,7 +109,7 @@ class BaseLocators:
     BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
     BREADCRUMBS = ".breadcrumbs > ul"
     PRIVACY_COOKIE_POLICY_LOCATOR = "//a[contains(@href, 'privacy-policy-cookie')]"
-    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'  # каждый товар на любой странице в каталоге
+    PRODUCT_ITEM_IN_CATALOG = 'li.product-item'
     PRODUCT_PRICE = 'price-label'
     PRODUCT_NAME = 'product-item-link'
     PRODUCT_IMAGE = 'product-image-photo'
@@ -95,7 +117,7 @@ class BaseLocators:
                "https://magento.softwaretestingboard.com/what-is-new.html",
                "https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html,"
                "https://magento.softwaretestingboard.com/training.html"
-                ]
+               ]
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
 
@@ -131,6 +153,7 @@ class PrivacyPolicyPageLocators:
 
 class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
+    PRODUCTS_GRID = ".products-grid.grid"
     ITEM_INFO = ".product-item-info"
 
 
@@ -193,7 +216,6 @@ class PerformanceSportswear:
 class WishListLocators:
     EMPTY_MESSAGE = '.message.info.empty span'
     DELETE_BUCKET = '.btn-remove.action.delete'
-    SUCCESS_MESSAGE = '.message-success.success.message'
     PRODUCT_ITEM = '.products-grid.wishlist .product-item'
     ITEM_ACTIONS = ".product-item-actions"
     QUALITY = "input[name='qty']"
@@ -206,9 +228,14 @@ class CartLocators:
     QTY = '.input-text.qty'
     UPDATE_SHOPPING_CART_BUTTON = '.action.update'
 
+
 class TrainingPageLocators:
     VIDEO_DOWNLOAD_LINK = '#narrow-by-list2 li a'
     VIDEO_DOWNLOAD_TRAINING_TITLE = 'span[data-ui-id="page-title-wrapper"'
+    BLOCK_1 = '.blocks-promo a:first-child'
+    CONTENT_BLOCK_1 = '.blocks-promo a:first-child .title'
+    IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
+
 
 class PerformanceSportswear:
     LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
@@ -226,3 +253,18 @@ class YogaPageLocators:
     GRID_BUTTON = '.modes-mode.mode-grid'
     WRAPPER_GRID_VIEW = '.products.wrapper.grid'
 
+
+class MenSaleLocators:
+    PAGE_TITLE = "[data-ui-id='page-title-wrapper']"
+    LIST_ITEM = "li.product-item"
+    TOOLBAR_NUMBER = "#toolbar-amount>span"
+
+
+class SetYogaStrapsLocators:
+    SPRITE_YOGA_STRAP_10_FOOT = '//input[@data-selector = "super_group[35]"]'
+    NOT_AVAILABLE_MESSAGE = '//div[contains(text(),"The requested qty is not available")]'
+
+
+class PopularSearchTermsLocators:
+    HOODIE_LINK = '//a[contains(text(),"HOODIE")]'
+    SEARCH_RESULTS_HEADER = '//h1/span[@data-ui-id="page-title-wrapper"]'
