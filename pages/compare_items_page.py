@@ -24,17 +24,9 @@ def compare_items_values_in_empty_compare_items_section():
     s(SaleWomenDealsLocators.ADD_TO_COMPARE_BTN_ONE_TWO).should(be.visible)
     s(SaleWomenDealsLocators.ADD_TO_COMPARE_BTN_ONE_TWO).hover().click()
     s(SaleWomenDealsLocators.QUANTITY_ITEMS).should(have.text("2 items"))
-    # s(by.id("compare-clear-all")).click()
-    # s(by.css("button[class='action-primary action-accept']")).should(be.visible)
-    # s(by.css("button[class='action-primary action-accept']")).click()
-    # s(by.text("You cleared the comparison list.")).should(be.visible)
-    # s(by.text("You cleared the comparison list.")).should(have.text("You cleared the comparison list."))
 
 
 def clear_compare_product_section_after_test():
-    browser.open(LoginLocators.LINK_LOGIN)
-    sign_in.login(SignInData.email, SignInData.password)
-    browser.element(SalePageLocators.SALE_TAB).click()
     s(by.id("compare-clear-all")).should(be.visible).click()
     s(by.css("button[class='action-primary action-accept']")).should(be.visible)
     s(by.css("button[class='action-primary action-accept']")).click()
