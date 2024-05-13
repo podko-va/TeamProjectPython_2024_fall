@@ -175,8 +175,7 @@ class FooterLocators:
 
 
 class ContactUsLocators:
-    CONTACT_US_LINK = ("//*[text()='Contact Us']"
-                       "")
+    CONTACT_US_LINK = "//*[text()='Contact Us']"
 
 
 class PrivacyPolicy:
