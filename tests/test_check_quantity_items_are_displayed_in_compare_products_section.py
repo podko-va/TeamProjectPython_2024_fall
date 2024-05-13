@@ -3,7 +3,6 @@ import allure
 import pytest
 
 
-
 @pytest.mark.skip
 @allure.title("check value of selected items to compare products section")
 def test_check_quantity_value_in_compare_product_section(browser_management):

@@ -48,8 +48,6 @@ class HomeLocators:
     STORE_LOGO = 'a.logo'
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
-<<<<<<< HEAD
-=======
     EMPTY_MINICART_MSG = 'strong[class="subtitle empty"]'
     MINICART_RADIANT_TEE_NAME = "//*[@id='mini-cart']/li/div/div/strong/a[contains(text(), 'Radiant Tee')]"
     MINICART_PRODUCT_QTY = 'input[class="item-qty cart-item-qty"]'
@@ -58,7 +56,6 @@ class HomeLocators:
     DELETE_ITEM_CONFIRM_OK = 'button[class="action-primary action-accept"]'
     MINICART_CLOSE = '#btn-minicart-close'
     CART_COUNTER = 'span[class="counter-number"]'
->>>>>>> main
     MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
     MINI_CART_PRICE = '.price-wrapper'
