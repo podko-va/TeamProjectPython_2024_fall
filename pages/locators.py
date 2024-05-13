@@ -175,7 +175,8 @@ class FooterLocators:
 
 
 class ContactUsLocators:
-    CONTACT_US_LINK = "//*[@id='maincontent']/div[3]/div/div[3]/div[1]/p[33]/a"
+    CONTACT_US_LINK = ("//*[text()='Contact Us']"
+                       "")
 
 
 class PrivacyPolicy:
