@@ -135,6 +135,7 @@ class BaseLocators:
                ]
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
+    ECO_COLLECTION_NAME = "//span[contains (text(), 'Shop Eco Friendly')]"
 
 
 class SearchTermsLocators:
@@ -170,6 +171,8 @@ class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
     PRODUCTS_GRID = ".products-grid.grid"
     ITEM_INFO = ".product-item-info"
+    LAYLA_TEE_PRODUCT_NAME = "a[title='Layla Tee']"
+    LAYLA_TEE_TITLE = "h1.page-title span"
 
 
 class LoginPageLocators:
@@ -209,7 +212,7 @@ class SaleWomenDealsLocators:
     ELEMENT_TWO = "img[alt='Juno Jacket']"
     QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
 
-    
+
 class CreateAccountLocators:
     CREATE_AN_ACCOUNT_LINK = "(//a[.='Create an Account'])[1]"
 

@@ -47,3 +47,17 @@ class TestWhatsNew:
         item_number = page.get_number_of_lumas_latest()
         assert item_number == 4
         assert page.are_men_and_women_items_present() is True
+
+    @allure.title(
+        "TC_006.002.004 I What's new > Eco Collection New* > Redirection to the product page by clicking on the product name")
+    @allure.link('https://trello.com/c/GO8VRlcn')
+    def test_eco_collection_redirection_to_pdp(self, login, browser_management):
+        with allure.step('Opening Eco Collection New page'):
+            page = WhatsNewPage(browser=browser)
+            page.open_eco_collection_url()
+        with allure.step('Opening Layla Tee page'):
+            page.click_layla_tee_name()
+        with allure.step('Checking redirection'):
+            page.check_redirection_to_layla_tee_pdp()
+        with allure.step('Checking Layla Tee title is visible'):
+            page.layla_tee_title_is_displayed()
