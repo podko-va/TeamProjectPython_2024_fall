@@ -20,6 +20,7 @@ CART_LINK = BASE_URL + '/checkout/cart/'
 YOGA_URL = BASE_URL + '/collections/yoga-new.html'
 MEN_SALE_PAGE_URL = BASE_URL + '/promotions/men-sale.html'
 YOGA_LIST_URL = BASE_URL + '/collections/yoga-new.html?product_list_mode=list'
+POPULAR_SEARCH_TERMS_URL = BASE_URL + '/search/term/popular'
 
 
 class MenUrls:
