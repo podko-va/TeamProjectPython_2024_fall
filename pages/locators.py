@@ -182,6 +182,8 @@ class ProductItemLocators:
     ITEM_INFO = ".product-item-info"
     LAYLA_TEE_PRODUCT_NAME = "a[title='Layla Tee']"
     LAYLA_TEE_TITLE = "h1.page-title span"
+    LAYLA_TEE_IMG = "img[alt='Layla Tee']"
+
 
 
 class LoginPageLocators:
