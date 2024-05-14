@@ -61,3 +61,17 @@ class TestWhatsNew:
             page.check_redirection_to_layla_tee_pdp()
         with allure.step('Checking Layla Tee title is visible'):
             page.layla_tee_title_is_displayed()
+
+    @allure.title(
+        "TC_006.002.003 I What's new > Eco Collection New* > Redirection to the product page by clicking on the image")
+    @allure.link('https://trello.com/c/aj3EgeOa')
+    def test_eco_collection_redirection_to_pdp_by_clicking_on_img(self, login, browser_management):
+        with allure.step('Opening Eco Collection New page'):
+            page = WhatsNewPage(browser=browser)
+            page.open_eco_collection_url()
+        with allure.step('Opening Layla Tee page'):
+            page.click_layla_tee_img()
+        with allure.step('Checking redirection'):
+            page.check_redirection_to_layla_tee_pdp()
+        with allure.step('Checking Layla Tee title is visible'):
+            page.layla_tee_title_is_displayed()

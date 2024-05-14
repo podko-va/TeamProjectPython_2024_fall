@@ -97,3 +97,6 @@ class WhatsNewPage(BasePage):
 
     def layla_tee_title_is_displayed(self):
         return s(Product.LAYLA_TEE_TITLE).should(be.visible)
+
+    def click_layla_tee_img(self):
+        s(Product.LAYLA_TEE_IMG).click()
