@@ -235,6 +235,8 @@ class ErinRecommendLocators:
     PAGE_NEXT = "(//a[@title='Next'])[2]"
     PAGE_DROPDOWN = "(//select[@data-role='limiter'])[2]"
     PRODUCTS = browser.all(".product-item")
+    LIST_VIEW_BUTTON = "//a[@id='mode-list']"
+    PRODUCT_LIST = "//div[@class='products wrapper list products-list']"
 
 
 class PerformanceSportswear:
