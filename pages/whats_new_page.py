@@ -85,6 +85,7 @@ class WhatsNewPage(BasePage):
     def new_yoga_link_click(self):
         return s(WNL.NEW_YOGA_LINK).click()
 
+
     def open_eco_collection_url(self):
         self.open_page()
         s(BaseLocators.ECO_COLLECTION_NAME).click()
@@ -97,3 +98,20 @@ class WhatsNewPage(BasePage):
 
     def layla_tee_title_is_displayed(self):
         return s(Product.LAYLA_TEE_TITLE).should(be.visible)
+
+    @staticmethod
+    def click_bras_and_tank_link():
+        return s(WNL.BRAS_TANKS).click()
+
+    def click_breathe_easy_tank_item(self):
+        return s(WNL.BREATHE_EASY_TANK).click()
+
+    def add_to_cart_button(self):
+        return s(WNL.ADD_TO_CART_BUTTON).click()
+
+    def add_to_compare_button(self):
+        return s(WNL.ADD_TO_COMPARE).click()
+
+    def add_to_wish_list_button(self):
+        return s(WNL.ADD_TO_WISH_LIST_BUTTON).click()
+

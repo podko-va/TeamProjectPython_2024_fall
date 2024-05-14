@@ -22,6 +22,22 @@ class TestCart:
         page_cart.find_counter_number().should(have.text(value_of_qty))
 
 
+    def test_the_product_is_deleted_from_the_cart(self):
+
+        page_cart = CartPage(browser=browser)
+        page = MainPage(browser=browser)
+
+        page.open_page()
+        page.add_item_to_cart('[option-label="XS"]', '[option-label="Orange"]', 'form[data-product-sku="WS12"] button')
+
+        page_cart.open_page()
+        page_cart.is_find_remove_item_icon_present()
+        page_cart.find_remove_item_icon().click()
+        page_cart.should_be_message_no_items('You have no items in your shopping cart.')
+        page_cart.should_be_message_click('Click here to continue shopping.')
+
+
+
     @allure.link("https://trello.com/c/lvLslLGD")
     def test_size_color_and_product_name_are_correct_in_the_checkout_cart_page_tc_005_001_016(self):
         page = MainPage(browser=browser)
@@ -45,3 +61,4 @@ class TestCart:
         cart_page.check_price_present_in_checkout_cart_page("$22.00")
         cart_page.check_subtotal_present_in_checkout_cart_page()
         cart_page.check_qty_present_in_checkout_cart_page()
+
