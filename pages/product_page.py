@@ -35,3 +35,11 @@ def check_minicart_subtotal(qty):
     assert subtotal == round(product_price * int(qty), 2)
 
 
+def check_minicart_quantity(qty):
+    minicart_qty = s(HL.MINICART_PRODUCT_QTY).get(query.attribute("data-item-qty"))
+    assert minicart_qty == qty
+
+
+def check_cart_icon_shows_correct_number(qty):
+    cart_icon_qty = s(HL.CART_COUNTER).get(query.text)
+    assert cart_icon_qty == qty

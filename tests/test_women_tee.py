@@ -55,7 +55,8 @@ def test_002_001_001_product_name_price_img_visibility(login):
     women_page.check_radiant_tee_img_are_visible()
     women_page.check_radiant_tee_price_is_visible()
 
-@pytest.mark.skip
+
+# @pytest.mark.skip
 @allure.suite('US_002.001 | Page of any product')
 @allure.title('TC_002.001.002 | Radiant Tee product page > Add to cart > Adding the product to cart')
 @allure.link('https://trello.com/c/xGtHnQaq/')
@@ -86,7 +87,31 @@ def test_002_001_002_adding_product_to_cart(login):
         main_page.MainPage.clear_minicart()
 
 
-
-
-
-
+@allure.suite('US_002.001 | Page of any product')
+@allure.link('https://trello.com/c/mtsK5CPx')
+@allure.title('TC_002.001.003 | Radiant Tee product page > Quantity of items> Quantity of items added to cart')
+def test_002_001_003_radiant_tee_quantity_added_to_cart(login, visit_page):
+    with allure.step('Opening Radiant Tee product page'):
+        visit_page(PL.RADIANT_TEE_URL)
+    with allure.step('Checking whether the cart is empty, if not - clearing the cart'):
+        main_page.MainPage.clear_minicart()
+    with allure.step('Selecting product size'):
+        product_page.select_product_size("M")
+    with allure.step('Selecting product color'):
+        product_page.select_product_color("Blue")
+    with allure.step('Entering product quantity'):
+        product_page.select_product_quantity('2')
+    with allure.step('Adding the product to cart'):
+        product_page.add_product_to_cart()
+    with allure.step('Opening mini-cart'):
+        main_page.MainPage.open_mini_cart()
+    with allure.step('Checking whether cart counter shows correct number'):
+        product_page.check_cart_icon_shows_correct_number("2")
+    with allure.step('Checking whether minicart quantity is correct'):
+        product_page.check_minicart_quantity("2")
+    with allure.step('Checking whether mini-cart Subtotal is correct'):
+        product_page.check_minicart_subtotal("2")
+    with allure.step('Closing mini-cart'):
+        main_page.MainPage.close_minicart()
+    with allure.step('Clearing mini-cart'):
+        main_page.MainPage.clear_minicart()

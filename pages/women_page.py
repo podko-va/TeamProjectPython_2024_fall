@@ -44,9 +44,3 @@ def check_radiant_tee_img_are_visible():
 
 def check_radiant_tee_price_is_visible():
     browser.element(PL.RADIANT_TEE_PRICE).should(be.visible)
-
-
-
-
-
-

@@ -52,7 +52,7 @@ class ProductLocators:
     RADIANT_TEE_IMG = '//div[1]/div[3]/div[1]/img[@alt="Radiant Tee"]'
     RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
     RADIANT_TEE_PRICE = '#product-price-1556'
-    PRODUCT_PRICE = '//div[2]/main/div[2]/div/div[2]/div[3]/div/span/span/span[2]/span'
+    PRODUCT_PRICE = 'span[id="product-price-1556"] span'
     ADDING_TO_CART_SUCCESSFULL_MSG = "//div[contains(text(), 'You added')]"
     SIZE_XS = '#option-label-size-143-item-166'
     COLOR_BLUE = '#option-label-color-93-item-50'
@@ -145,7 +145,7 @@ class SearchTermsLocators:
 
 class WomenPageLocators:
     WOMEN_MENU = "//*[@id='ui-id-4']"
-    TOPS_LINK = "//*[@id='ui-id-9']"
+    TOPS_LINK = 'li[class="level1 nav-2-1 category-item first parent ui-menu-item"]'
     TOPS_TITLE = ".page-title-wrapper"
     BOTTOMS_LINK = "//*[@id='ui-id-10']"
     BOTTOMS_TITLE = ".ui-corner-all ui-state-focus"
@@ -218,7 +218,7 @@ class SaleWomenDealsLocators:
     ELEMENT_TWO = "img[alt='Juno Jacket']"
     QUANTITY_ITEMS = "div[class='block-title'] span[class='counter qty']"
 
-    
+
 class CreateAccountLocators:
     CREATE_AN_ACCOUNT_LINK = "(//a[.='Create an Account'])[1]"
 
