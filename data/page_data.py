@@ -8,6 +8,11 @@ class PrivacyPolicyPageData:
     page_main_header = "Privacy Policy"
 
 
+class SignInData():
+    email = "yukkatest@gmail.com"
+    password = "yukka83@@@"
+    
+
 class FooterData:
     copyright_info = "Copyright © 2013-present Magento, Inc. All rights reserved."
 
@@ -30,3 +35,12 @@ class MenPageData:
 class TrainingPageData:
     block_promo_contains = ["Motivate yourself.", "Reach goals.", "Boost ambition.", "Max fitness.",
                             "Upgrade lifestyle."]
+
+
+class SetYogaStrapsData:
+    qty_is_not_available_message = 'The requested qty is not available'
+
+
+class PopularSearchTermsData:
+    result_page_header = 'Search results for: \'HOODIE\''
+

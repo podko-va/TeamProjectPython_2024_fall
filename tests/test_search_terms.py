@@ -72,3 +72,34 @@ def test_015_002_003_keywords_clickable():
     [k.should(be.visible).should(be.clickable) for k in keyword_elements]
 
 
+@allure.link("https://trello.com/c/I0RafTpi")
+def test_015_001_005_check_if_specified_words_is_bigger_than_88():
+    words = ["hoodie", "jacket", "pants", "shirt"]
+    browser.open(ST.LINK_SEARCH_TERMS)
+    list_of_goods = []
+    list_font_sizes = []
+    terms = ss(ST.LIST_OF_SEARCH_TERMS)
+    for keyword in terms:
+        word = keyword.get(query.attribute("text")).strip().replace(" ", "").lower()
+        if word in words:
+            list_of_goods.append(word)
+            g_font, g_size = keyword.get(query.attribute("style")).split(": ")
+            g_size = float(g_size.replace("%;", ""))
+            list_font_sizes.append(g_size)
+    assert set(list_of_goods) == set(words) and all(
+        [size > 88 for size in list_font_sizes]), "Selected words have font size bigger than 88%"
+
+
+@allure.link("https://trello.com/c/4DgqawVv")
+def test_015_001_004_check_if_5_search_terms_is_bigger():
+    browser.open(ST.LINK_SEARCH_TERMS)
+    list_font_sizes = []
+    terms = ss(ST.LIST_OF_SEARCH_TERMS)
+    for g in terms:
+        g_font, g_size = g.get(query.attribute("style")).split(": ")
+        g_size = float(g_size.replace("%;", ""))
+        list_font_sizes.append(g_size)
+    sizes_sorted = sorted(list_font_sizes, reverse=True)
+    for size in range(0, 5):
+        if sizes_sorted[size] < 88:
+            assert False, "List of search terms has not 5 elements which size is bigger than 88%"
