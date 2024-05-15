@@ -21,7 +21,7 @@ class ProductLocators:
     RADIANT_TEE_URL = 'https://magento.softwaretestingboard.com/radiant-tee.html'
     RADIANT_TEE_SIZE = '[option-label="XS"]'
     RADIANT_TEE_COLOR = '[option-label="Orange"]'
-    RADIANT_TEE_QTY = '#qty'
+    PRODUCT_QTY = '#qty'
     ADD_TO_CART_BUTTON = '#product-addtocart-button'
     ADD_TO_CART_BUTTON_FROM_MAINPAGE = 'form[data-product-sku="WS12"] button'
 
@@ -67,13 +67,13 @@ class HomeLocators:
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
     EMPTY_MINICART_MSG = 'strong[class="subtitle empty"]'
+    EMPTY_MINICART = 'span.counter.qty.empty'
     MINICART_RADIANT_TEE_NAME = "//*[@id='mini-cart']/li/div/div/strong/a[contains(text(), 'Radiant Tee')]"
     MINICART_PRODUCT_QTY = 'input[class="item-qty cart-item-qty"]'
     MINICART_SUBTOTAL = '//*[@id="minicart-content-wrapper"]/div[2]/div[2]/div/span/span'
-    MINICART_DELETE_BUTTONS = "a[class='action delete']"
-    DELETE_ITEM_CONFIRM_OK = 'button[class="action-primary action-accept"]'
-    MINICART_CLOSE = '#btn-minicart-close'
-    CART_COUNTER = 'span[class="counter-number"]'
+    MINICART_DELETE_BUTTON = "a[class='action delete']"
+    DELETE_ITEM_CONFIRM_OK = 'button.action-primary.action-accept'
+    MINICART_CLOSE = 'button#btn-minicart-close.action.close'
     MINICART_VIEW = '.action.viewcart'
     MINICART_COUNTER = '.counter-label'
     MINI_CART_PRICE = '.price-wrapper'
@@ -145,7 +145,7 @@ class SearchTermsLocators:
 
 class WomenPageLocators:
     WOMEN_MENU = "//*[@id='ui-id-4']"
-    TOPS_LINK = 'li[class="level1 nav-2-1 category-item first parent ui-menu-item"]'
+    TOPS_LINK = 'a#ui-id-9.ui-corner-all.ui-state-focus'
     TOPS_TITLE = ".page-title-wrapper"
     BOTTOMS_LINK = "//*[@id='ui-id-10']"
     BOTTOMS_TITLE = ".ui-corner-all ui-state-focus"
