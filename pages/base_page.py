@@ -2,10 +2,11 @@ from selene import have, be, Element
 from selene.core import command, query
 from selene.support.shared.jquery_style import s, ss
 from selenium.common import NoSuchElementException
+
 from data.links import CART_LINK
 from pages.components.mini_card import MiniCard
 from pages.components.nav_wigdet import NavComponent
-from pages.locators import BaseLocators, ProductItemLocators, HomeLocators, CreateAccountLocators, ProductLocators as PL, CartLocators as Cart
+from pages.locators import BaseLocators, ProductItemLocators, HomeLocators, ProductLocators as PL, CartLocators as Cart
 
 
 class BasePage:
@@ -110,7 +111,6 @@ class BasePage:
     def click_on_link(locator):
         s(locator).click()
 
-
     @staticmethod
     def is_cart_empty():
         s(HomeLocators.MINICART_COUNTER).wait_until(be.visible)
@@ -147,11 +147,3 @@ class BasePage:
     def is_cart_counter_shows_correct_number(self, qty):
         cart_icon_qty = self.find_counter_number().get(query.text)
         assert cart_icon_qty == qty
-
-    def is_create_account_link_visible(self) -> bool:
-        try:
-            s(CreateAccountLocators.CREATE_AN_ACCOUNT_LINK).should(have.text('Create an Account')).should(be.visible)
-            return True
-        except AssertionError:
-            return False
-

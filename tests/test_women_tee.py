@@ -68,8 +68,8 @@ class TestRadiantTeePage:
     @allure.title('TC_002.001.003 | Radiant Tee product page > Quantity of items> Quantity of items added to cart')
     def test_002_001_003_radiant_tee_quantity_added_to_cart(self, login):
         page = ProductPage(browser=browser)
+        page.clear_cart()
         page.open_radiant_tee_page()
-        page.is_cart_empty()
         page.add_product_to_cart_with_qty("M", "Blue", "2")
         page.goto_card_page()
         page.is_cart_counter_shows_correct_number("2")
