@@ -4,6 +4,7 @@ from pages.locators import BaseLocators, LoginLocators, PerformanceSportswear, P
 from selene import browser, have, command
 from selene.support.shared.jquery_style import s, ss
 from selene.support.conditions import be, have
+
 from pages import performans_new_page
 from selenium.webdriver.common.by import By
 
@@ -13,6 +14,12 @@ from selenium.webdriver.common.by import By
 def test_check_count_of_products(login):
     performans_new_page.visit()
     assert performans_new_page.items_count() == 5
+
+@allure.feature("What's new > Performance Sportswear> NewEach product card contains buttons for adding to cart, adding to wishlist and adding to comparison list")
+@allure.link("https://trello.com/c/YuNxu4x4")
+def test_product_card_buttons(login):
+    performans_new_page.visit()
+    performans_new_page.check_buttons()
 
 
 @allure.link("https://trello.com/c/9B5bXFEP")
