@@ -135,6 +135,7 @@ class BaseLocators:
                ]
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
+    ECO_COLLECTION_NAME = "//span[contains (text(), 'Shop Eco Friendly')]"
 
 
 class SearchTermsLocators:
@@ -179,6 +180,9 @@ class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
     PRODUCTS_GRID = ".products-grid.grid"
     ITEM_INFO = ".product-item-info"
+    LAYLA_TEE_PRODUCT_NAME = "a[title='Layla Tee']"
+    LAYLA_TEE_TITLE = "h1.page-title span"
+    LAYLA_TEE_IMG = "img[alt='Layla Tee']"
 
 
 class LoginPageLocators:
@@ -231,6 +235,8 @@ class ErinRecommendLocators:
     PAGE_NEXT = "(//a[@title='Next'])[2]"
     PAGE_DROPDOWN = "(//select[@data-role='limiter'])[2]"
     PRODUCTS = browser.all(".product-item")
+    LIST_VIEW_BUTTON = "//a[@id='mode-list']"
+    PRODUCT_LIST = "//div[@class='products wrapper list products-list']"
 
 
 class PerformanceSportswear:
