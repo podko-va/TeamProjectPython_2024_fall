@@ -55,8 +55,8 @@ class TestRadiantTeePage:
     @allure.link('https://trello.com/c/xGtHnQaq/')
     def test_002_001_002_adding_product_to_cart(self, login):
         page = ProductPage(browser=browser)
+        page.clear_cart()
         page.open_radiant_tee_page()
-        page.is_cart_empty()
         page.add_product_to_cart_with_qty("M", "Blue", "2")
         page.goto_card_page()
         page.is_radiant_tee_name_visible_in_minicart()

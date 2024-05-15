@@ -111,14 +111,15 @@ class BasePage:
     def click_on_link(locator):
         s(locator).click()
 
-    @staticmethod
-    def is_cart_empty():
+    def is_cart_empty(self):
+        self.visit(CART_LINK)
+        s(Cart.NO_ITEMS_MESSAGE).should(be.visible)
         s(HomeLocators.MINICART_COUNTER).wait_until(be.visible)
-        try:
-            s(HomeLocators.EMPTY_MINICART).should(be.present)
-            return True
-        except NoSuchElementException:
-            return False
+
+    def clear_cart(self):
+        if self.is_cart_empty() is False:
+            s(Cart.REMOVE_ITEM_ICON).click()
+            s(Cart.NO_ITEMS_MESSAGE).wait_until(be.visible)
 
     def delete_product_from_cart(self):
         self.visit(CART_LINK)
