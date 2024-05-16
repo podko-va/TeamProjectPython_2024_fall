@@ -144,6 +144,8 @@ class SearchTermsLocators:
     LINK_SEARCH_TERMS = "https://magento.softwaretestingboard.com/search/term/popular/"
     TERMS_FOR_SEARCH_LIST_QTY = '[class="item"]'
     LIST_OF_SEARCH_TERMS = '[class="item"] a'
+    PRODUCT_ITEM_NAMES = '[class=product-item-link]'
+    BASE_TITLE = '[class=base]'
 
 
 class WomenPageLocators:
