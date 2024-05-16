@@ -70,6 +70,7 @@ LINK_SHIPPING = "https://magento.softwaretestingboard.com/checkout/#shipping"
 LINK_PAYMENT = "https://magento.softwaretestingboard.com/checkout/#payment"
 
 
+
 class MenUrls:
 
     men_sub_urls = {
