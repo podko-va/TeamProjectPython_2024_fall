@@ -68,6 +68,7 @@ class TestWhatsNew:
         with allure.step('Checking Layla Tee title is visible'):
             page.layla_tee_title_is_displayed()
 
+
     @allure.title(
         "TC_006.002.003 I What's new > Eco Collection New* > Redirection to the product page by clicking on the image")
     @allure.link('https://trello.com/c/aj3EgeOa')
@@ -81,6 +82,7 @@ class TestWhatsNew:
             page.check_redirection_to_layla_tee_pdp()
         with allure.step('Checking Layla Tee title is visible'):
             page.layla_tee_title_is_displayed()
+
 
     @allure.title('TC_006.005.001 | Verify that User gets error message This this is required field in red color')
     def test_user_gets_error_message(self, browser_management):

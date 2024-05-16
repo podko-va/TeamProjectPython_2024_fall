@@ -1,8 +1,10 @@
-from pages.locators import SalePageLocators, BaseLocators
-from selene import browser, have, query
+from pages.product_page import ProductPage
+import pytest
+from pages.locators import SalePageLocators, BaseLocators, ProductLocators as PL
+from pages import women_page, main_page, product_page
+from selene import browser, be, have, by, query
 from selene.support.shared.jquery_style import s, ss
 import allure
-from pages.product_page import ProductPage
 
 
 @allure.link('https://trello.com/c/fhLdyS1l')

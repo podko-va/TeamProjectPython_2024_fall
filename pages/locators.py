@@ -15,6 +15,12 @@ class SalePageLocators:
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
     SALE_TAP = "//*[@id='ui-id-8']"
+    BLOCK_PROMO_SALE_20_OFF_TITLE = "a[class='block-promo sale-20-off'] strong[class='title']"
+    BLOCK_PROMO_SALE_20_OFF_INFO = "a[class='block-promo sale-20-off'] span[class='info']"
+    BLOCK_PROMO_SALE_FREE_SHIPPING_TITLE = "a[class='block-promo sale-free-shipping'] strong[class='title']"
+    BLOCK_PROMO_SALE_FREE_SHIPPING_INFO = "a[class='block-promo sale-free-shipping'] span[class='info']"
+    BLOCK_PROMO_SALE_WOMENS_T_SHIRTS_TITLE = "a[class='block-promo sale-womens-t-shirts'] strong[class='title']"
+    BLOCK_PROMO_SALE_WOMENS_T_SHIRTS_INFO = "a[class='block-promo sale-womens-t-shirts'] span[class='info']"
 
 
 class ProductLocators:
@@ -185,6 +191,7 @@ class ProductItemLocators:
     LAYLA_TEE_IMG = "img[alt='Layla Tee']"
 
 
+
 class LoginPageLocators:
     PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
     MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
@@ -237,6 +244,10 @@ class ErinRecommendLocators:
     PRODUCTS = browser.all(".product-item")
     LIST_VIEW_BUTTON = "//a[@id='mode-list']"
     PRODUCT_LIST = "//div[@class='products wrapper list products-list']"
+    ITEM_JADE_YOGA_JACKET = "//a[contains(text(), 'Jade Yoga Jacket')]"
+    ADD_TO_COMPARE = ".actions-secondary a[data-post*='1332']:nth-child(2)"
+    MESSAGE_ADD_TO_COMPARE = "//div[contains(text(), 'You added product Jade Yoga Jacket to the ')]"
+    TEXT_COMPARE_ITEMS = "//a[@title='Compare Products']"
 
 
 class PerformanceSportswear:
@@ -275,6 +286,7 @@ class TrainingPageLocators:
     IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
 
 
+
 class PerformanceSportswear:
     LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
     BUTTON_ADD_ITEM2 = '#maincontent li:nth-child(2) button'
@@ -306,3 +318,32 @@ class SetYogaStrapsLocators:
 class PopularSearchTermsLocators:
     HOODIE_LINK = '//a[contains(text(),"HOODIE")]'
     SEARCH_RESULTS_HEADER = '//h1/span[@data-ui-id="page-title-wrapper"]'
+
+
+class WomenLocators:
+    TANK_SIZE = '//*[@title="Breathe-Easy Tank"]/../..//*[@option-label="M"]'
+    TANK_COLOR = '//*[@title="Breathe-Easy Tank"]/../..//*[@option-label="Yellow"]'
+    TANK_BUTTON_ADD = '//*[@title="Breathe-Easy Tank"]/../..//*[@title="Add to Cart"]'
+    MESSAGE_SUCCESS_ADD = "div.messages [data-bind ^='html']"
+    SHOW_BASKET = ".action.showcart"
+    CHECKOUT_BUTTON = '#top-cart-btn-checkout'
+
+
+class Shipping:
+    FIELD_EMAIL = '#customer-email-fieldset #customer-email'
+    FIELD_FIRST_NAME = '[name="firstname"]'
+    FIELD_LAST_NAME = '[name="lastname"]'
+    FIELD_STREET = '[name="street[0]"]'
+    FIELD_CITY = '[name="city"]'
+    FIELD_REGION = '[name="region_id"]'
+    FIELD_COUNTRY = '[name="country_id"]'
+    FIELD_ZIPCODE = '[name="postcode"]'
+    FIELD_PHONE = '[name="telephone"]'
+    SHIPPING_METHOD = '#checkout-shipping-method-load input'
+    CONTINUE_BUTTON = '.continue'
+
+
+class Order:
+    BUTTON_PLACE_ORDER = '.primary.checkout'
+    MESSAGE_SUCCEES = '.checkout-success'
+    ORDER_PAGE_TITLE = '.page-title'

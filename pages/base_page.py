@@ -2,8 +2,6 @@ from selene import have, be, Element
 from selene.core import command, query
 from selene.core.exceptions import ConditionNotMatchedError
 from selene.support.shared.jquery_style import s, ss
-from selenium.common import NoSuchElementException
-
 from data.links import CART_LINK
 from pages.components.mini_card import MiniCard
 from pages.components.nav_wigdet import NavComponent
