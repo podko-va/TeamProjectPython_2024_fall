@@ -14,6 +14,7 @@ class SalePageLocators:
                                       'https://magento.softwaretestingboard.com/women/tops-women.html']
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
+
     SALE_TAB = "//*[@id='ui-id-8']"
     BLOCK_PROMO_SALE_20_OFF_TITLE = "a[class='block-promo sale-20-off'] strong[class='title']"
     BLOCK_PROMO_SALE_20_OFF_INFO = "a[class='block-promo sale-20-off'] span[class='info']"
@@ -214,7 +215,7 @@ class FooterLocators:
 
 
 class ContactUsLocators:
-    CONTACT_US_LINK = "//*[@id='maincontent']/div[3]/div/div[3]/div[1]/p[33]/a"
+    CONTACT_US_LINK = "//*[text()='Contact Us']"
 
 
 class PrivacyPolicy:
@@ -318,6 +319,18 @@ class SetYogaStrapsLocators:
 class PopularSearchTermsLocators:
     HOODIE_LINK = '//a[contains(text(),"HOODIE")]'
     SEARCH_RESULTS_HEADER = '//h1/span[@data-ui-id="page-title-wrapper"]'
+
+
+class TeesPageLocators:
+    FOUR_TEES_DISCOUNT_TAB = '//span[contains(text(),"4 tees for the price of 3. Right now")]'
+    TEES = 'img[alt="Desiree Fitness Tee"]'
+    TEES_SIZE = '#option-label-size-143-item-166'
+    TEES_COLORS = '#option-label-color-93-item-49'
+    TEES_QTY = "#qty"
+    VIEW_AND_EDIT_CART_LINK = '//span[contains(text(),"View and Edit Cart")]'
+    DISCOUNT_SUMM = 'td[data-th="Discount"] span.price'
+    REMOVE_TEES_BTN_FROM_CART_AFTER_TEST = 'a[class="action action-delete"]'
+    COUNT_NUMBER = 'span.counter-number'
 
 
 class WomenLocators:
