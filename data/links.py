@@ -1,4 +1,5 @@
 BASE_URL = 'https://magento.softwaretestingboard.com'
+LOGIN_LINK = BASE_URL + '/customer/account/login'
 MAIN_PAGE_LINK = BASE_URL + '/'
 WHATS_NEW_PAGE_LINK = BASE_URL + '/what-is-new.html'
 WOMEN_PAGE_LINK = BASE_URL + '/women.html'
@@ -30,6 +31,7 @@ LAYLA_TEE_URL = 'https://magento.softwaretestingboard.com/layla-tee.html'
 LINK_WOMEN = "https://magento.softwaretestingboard.com/women.html"
 LINK_SHIPPING = "https://magento.softwaretestingboard.com/checkout/#shipping"
 LINK_PAYMENT = "https://magento.softwaretestingboard.com/checkout/#payment"
+
 
 
 class MenUrls:
