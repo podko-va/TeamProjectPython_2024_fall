@@ -191,6 +191,7 @@ class ProductItemLocators:
     LAYLA_TEE_IMG = "img[alt='Layla Tee']"
 
 
+
 class LoginPageLocators:
     PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
     MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
