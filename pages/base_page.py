@@ -111,11 +111,6 @@ class BasePage:
     def click_on_link(locator):
         s(locator).click()
 
-    def is_cart_empty(self):
-        self.visit(CART_LINK)
-        s(Cart.NO_ITEMS_MESSAGE).should(be.visible)
-        s(HomeLocators.MINICART_COUNTER).wait_until(be.visible)
-
     def clear_cart(self):
         self.visit(CART_LINK)
         try:
@@ -141,7 +136,7 @@ class BasePage:
         s(HomeLocators.MINICART).wait_until(be.visible)
         product_price = float(s(PL.PRODUCT_PRICE).get(query.text).strip('$'))
         subtotal = self.get_subtotal()
-        assert subtotal == round(product_price * int(qty), 2)
+        assert subtotal == product_price * int(qty)
 
     @staticmethod
     def is_minicart_quantity_correct(qty):
