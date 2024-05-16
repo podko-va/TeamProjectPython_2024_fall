@@ -25,11 +25,16 @@ MEN_SALE_PAGE_URL = BASE_URL + '/promotions/men-sale.html'
 YOGA_LIST_URL = BASE_URL + '/collections/yoga-new.html?product_list_mode=list'
 SET_YOGA_STRAPS_URL = BASE_URL + '/set-of-sprite-yoga-straps.html'
 POPULAR_SEARCH_TERMS = BASE_URL + '/search/term/popular/'
+LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
+LINK_LOGIN = 'https://magento.softwaretestingboard.com/customer/account/login'
+LAYLA_TEE_URL = 'https://magento.softwaretestingboard.com/layla-tee.html'
+LINK_WOMEN = "https://magento.softwaretestingboard.com/women.html"
+LINK_SHIPPING = "https://magento.softwaretestingboard.com/checkout/#shipping"
+LINK_PAYMENT = "https://magento.softwaretestingboard.com/checkout/#payment"
 
 
 
 class MenUrls:
-
     men_sub_urls = {
         'Tops': BASE_URL + '/men/tops-men.html',
         'Bottoms': BASE_URL + '/men/bottoms-men.html'
@@ -46,4 +51,3 @@ class MenUrls:
         "Pants": BASE_URL + '/men/bottoms-men/pants-men.html',
         "Shorts": BASE_URL + '/men/bottoms-men/shorts-men.html'
     }
-

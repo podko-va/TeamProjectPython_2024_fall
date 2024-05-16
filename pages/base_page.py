@@ -1,10 +1,9 @@
 from selene import have, be, Element
 from selene.core import command, query
 from selene.support.shared.jquery_style import s, ss
-
 from pages.components.mini_card import MiniCard
 from pages.components.nav_wigdet import NavComponent
-from pages.locators import BaseLocators, ProductItemLocators, HomeLocators
+from pages.locators import BaseLocators, ProductItemLocators, HomeLocators, CreateAccountLocators
 
 
 class BasePage:
@@ -43,6 +42,9 @@ class BasePage:
 
     def is_counter_number_present(self):
         return self.find_counter_number().should(be.present)
+
+    def is_counter_number_visible(self):
+        return self.find_counter_number().should(be.visible)
 
     def add_product_to_cart(self, product: Element):
         product.hover()
@@ -105,3 +107,10 @@ class BasePage:
     @staticmethod
     def click_on_link(locator):
         s(locator).click()
+
+    def is_create_account_link_visible(self) -> bool:
+        try:
+            s(CreateAccountLocators.CREATE_AN_ACCOUNT_LINK).should(have.text('Create an Account')).should(be.visible)
+            return True
+        except AssertionError:
+            return False
