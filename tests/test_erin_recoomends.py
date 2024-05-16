@@ -49,3 +49,26 @@ class TestErinRecommends:
             page.select_per_page_option(24)
         with allure.step("Assert number of product displayed matches to selection"):
             page.verify_number_of_product_displayed(13,24)
+
+
+    @allure.title("TC_001.002.005 | Main Page > Erin Recommendations > Arrangement of Products Display")
+    def test_switch_to_list_view(self):
+        with allure.step("Open Erin Recommends page"):
+            page = ErinRecommendsPage(browser=browser)
+            page.open_page()
+        with allure.step("Switch to list view"):
+            page.switch_to_list_view()
+        with allure.step("Assert that the layout is now in list view"):
+            assert page.is_list_view_activate(), "The product layout did not switch to list view."
+
+    
+
+    @allure.title("TC_001.002.015_1 | Main Page > Erin Recommendations > Adding an Item for Comparison")
+    def test_add_item_to_compare(self):
+        with allure.step("Open Erin Recommends page"):
+            page = ErinRecommendsPage(browser=browser)
+            page.open_page()
+            page.hover_click_item()
+            page.assert_text_of_element(ERL.MESSAGE_ADD_TO_COMPARE, "You added product Jade Yoga Jacket to the ")
+            page.click_text_compare_products()
+            page.assert_text_of_element(ERL.ITEM_JADE_YOGA_JACKET, "Jade Yoga Jacket")
