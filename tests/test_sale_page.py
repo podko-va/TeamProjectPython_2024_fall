@@ -1,19 +1,22 @@
 from selene import browser, be, have
+from selene.support.shared.jquery_style import ss
+from data.links import SALE_SECTION_LINK
+from pages.locators import SalePageLocators, BaseLocators
+import allure
+from pages import sale_page
 from selene.support.shared.jquery_style import s, ss
-
 from pages.sale_page import SalePage
 from pages.locators import SalePageLocators, BaseLocators, NavigatorLocators
 from pages.main_page import MainPage
 from data.links import *
-import allure
 import pytest
 
 
 @allure.feature("Sale")
 @allure.link('https://trello.com/c/RF0vkTGW')
 def test_011_001_001_sale_breadcrumbs_is_correct():
-    browser.open(SalePageLocators.LINK_SALE)
-    ss(BaseLocators.BREADCRUMBS_LIST).should(have.texts('Home', 'Sale'))
+    sale_page.visit()
+    sale_page.check_if_breadcrumbs_have_all_parts()
 
 
 @allure.feature("Sale")
