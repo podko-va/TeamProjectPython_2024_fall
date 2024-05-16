@@ -146,7 +146,7 @@ class SearchTermsLocators:
 
 class WomenPageLocators:
     WOMEN_MENU = "//*[@id='ui-id-4']"
-    TOPS_LINK = 'a#ui-id-9.ui-corner-all.ui-state-focus'
+    TOPS_LINK = 'a#ui-id-9'
     TOPS_TITLE = ".page-title-wrapper"
     BOTTOMS_LINK = "//*[@id='ui-id-10']"
     BOTTOMS_TITLE = ".ui-corner-all ui-state-focus"

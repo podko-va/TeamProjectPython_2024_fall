@@ -1,12 +1,14 @@
 from selene import have, be, Element
 from selene.core import command, query
+from selene.core.exceptions import ConditionNotMatchedError
 from selene.support.shared.jquery_style import s, ss
 from selenium.common import NoSuchElementException
 
 from data.links import CART_LINK
 from pages.components.mini_card import MiniCard
 from pages.components.nav_wigdet import NavComponent
-from pages.locators import BaseLocators, ProductItemLocators, HomeLocators, ProductLocators as PL, CartLocators as Cart
+from pages.locators import BaseLocators, ProductItemLocators, HomeLocators, ProductLocators as PL, CartLocators as Cart, \
+    CreateAccountLocators
 
 
 class BasePage:
@@ -117,9 +119,11 @@ class BasePage:
         s(HomeLocators.MINICART_COUNTER).wait_until(be.visible)
 
     def clear_cart(self):
-        if self.is_cart_empty() is False:
-            s(Cart.REMOVE_ITEM_ICON).click()
-            s(Cart.NO_ITEMS_MESSAGE).wait_until(be.visible)
+        self.visit(CART_LINK)
+        try:
+            self.delete_product_from_cart()
+        except:
+            pass
 
     def delete_product_from_cart(self):
         self.visit(CART_LINK)
@@ -148,3 +152,10 @@ class BasePage:
     def is_cart_counter_shows_correct_number(self, qty):
         cart_icon_qty = self.find_counter_number().get(query.text)
         assert cart_icon_qty == qty
+
+    def is_create_account_link_visible(self) -> bool:
+        try:
+            s(CreateAccountLocators.CREATE_AN_ACCOUNT_LINK).should(have.text('Create an Account')).should(be.visible)
+            return True
+        except AssertionError:
+            return False
