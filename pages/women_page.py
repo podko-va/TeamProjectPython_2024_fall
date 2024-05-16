@@ -65,4 +65,3 @@ def check_breadcrumbs_from_women_sale_have_attribute():
 def check_breadcrumbs_from_women_sale_have_word():
     # assert error !!! 'Sale' is missing
     ss(BL.BREADCRUMBS_LIST).should(have.texts('Home', 'Sale', 'Women Sale'))
->>>>>>> main
