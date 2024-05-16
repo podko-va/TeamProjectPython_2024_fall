@@ -13,7 +13,7 @@ class TestTrainingPage:
         page = TrainingPage(browser=browser)
         page.visit(TRAINING_PAGE_URL)
         page.check_clickability_link()
-        page.check_visibility_link()
+        assert page.check_visibility_link()
 
     @allure.feature("Training page")
     @allure.title("Category Video Download>Check the redirection to the Video Download page.")
@@ -37,3 +37,17 @@ class TestTrainingPage:
         page.visit(TRAINING_PAGE_URL)
         found_texts, expected_text = page.verify_block_text()
         assert expected_text == found_texts
+
+    @allure.feature("Training page")
+    @allure.title('Block-promo training-main>Verify Block1 dimensions')
+    def test_verify_block1_consists_text(self):
+        page = TrainingPage(browser=browser)
+        page.visit(TRAINING_PAGE_URL)
+        page.check_size('372px', '1280px')
+
+    @allure.feature("Training page")
+    @allure.title('Block-promo training-main>Verify the picture format')
+    def test_verify_the_picture_format(self):
+        page = TrainingPage(browser=browser)
+        page.visit(TRAINING_PAGE_URL)
+        assert '.jpg' in page.check_img()

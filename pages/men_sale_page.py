@@ -9,7 +9,7 @@ from data.page_data import MenSalePageData as data
 class MenSalePage:
     def __init__(self, browser):
         self.browser = browser
-        self.nav = NavComponent(browser)
+        self.nav = NavComponent()
 
     def open_page(self):
         self.browser.open(MEN_SALE_PAGE_URL)
@@ -33,3 +33,11 @@ class MenSalePage:
     @staticmethod
     def is_page_title_correct():
         return s(ms_locators.PAGE_TITLE).should(have.text(data.page_title))
+
+    @staticmethod
+    def get_number_of_items_in_te_list():
+        return str(len(ss(ms_locators.LIST_ITEM)))
+
+    def is_number_of_items_in_toolbar_corresponds_to_amount_in_list(self):
+        number = self.get_number_of_items_in_te_list()
+        return s(ms_locators.TOOLBAR_NUMBER).should(have.text(number))

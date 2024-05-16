@@ -1,4 +1,4 @@
-from selene import be, have
+from selene import be, have, query
 from selene.support.shared.jquery_style import s
 from pages.base_page import BasePage
 from pages.locators import TrainingPageLocators as TPLoc
@@ -29,3 +29,11 @@ class TrainingPage(BasePage):
             if s(TPLoc.CONTENT_BLOCK_1).should(have.text(text)):
                 found_texts.append(text)
         return found_texts, expected_text
+
+    def check_size(self, expected_height, expected_width):
+        s(TPLoc.IMG_BLOCK_1).should(have.css_property('height').value(expected_height))
+        s(TPLoc.IMG_BLOCK_1).should(have.css_property('width').value(expected_width))
+
+    def check_img(self):
+        return s(TPLoc.IMG_BLOCK_1).get(query.attribute('src'))
+
