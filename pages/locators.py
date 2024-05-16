@@ -244,6 +244,10 @@ class ErinRecommendLocators:
     PRODUCTS = browser.all(".product-item")
     LIST_VIEW_BUTTON = "//a[@id='mode-list']"
     PRODUCT_LIST = "//div[@class='products wrapper list products-list']"
+    ITEM_JADE_YOGA_JACKET = "//a[contains(text(), 'Jade Yoga Jacket')]"
+    ADD_TO_COMPARE = ".actions-secondary a[data-post*='1332']:nth-child(2)"
+    MESSAGE_ADD_TO_COMPARE = "//div[contains(text(), 'You added product Jade Yoga Jacket to the ')]"
+    TEXT_COMPARE_ITEMS = "//a[@title='Compare Products']"
 
 
 class PerformanceSportswear:
