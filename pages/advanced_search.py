@@ -12,3 +12,8 @@ def open():
 
 def click_button():
     s(AS.BUTTON_SEARCH).perform(command.js.click)
+
+def message_text():
+    s(AS.ERROR_MESSAGE).should(have.text("Enter a search term and try again."))
+    font = Color.from_string('#e02b27').rgba
+    s(AS.ERROR_MESSAGE).should(have.css_property('color').value(font))
