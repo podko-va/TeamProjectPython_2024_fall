@@ -53,6 +53,19 @@ class TestRadiantTeePage:
         page.is_radiant_tee_img_visible()
         page.is_radiant_tee_price_is_visible()
 
+    @allure.link('https://trello.com/c/mtsK5CPx')
+    @allure.title('TC_002.001.003 | Radiant Tee product page > Quantity of items> Quantity of items added to cart')
+    def test_002_001_003_radiant_tee_quantity_added_to_cart(self, login):
+        page = ProductPage(browser=browser)
+        page.clear_cart()
+        page.open_radiant_tee_page()
+        page.add_product_to_cart_with_qty("M", "Blue", "2")
+        page.goto_card_page()
+        page.is_cart_counter_shows_correct_number("2")
+        page.is_minicart_quantity_correct("2")
+        page.is_minicart_subtotal_correct("2")
+        page.delete_product_from_cart()
+
     @allure.title('TC_002.001.002 | Radiant Tee product page > Add to cart > Adding the product to cart')
     @allure.link('https://trello.com/c/xGtHnQaq/')
     def test_002_001_002_adding_product_to_cart(self, login):
@@ -66,16 +79,4 @@ class TestRadiantTeePage:
         page.is_minicart_subtotal_correct("2")
         page.delete_product_from_cart()
 
-    @allure.link('https://trello.com/c/mtsK5CPx')
-    @allure.title('TC_002.001.003 | Radiant Tee product page > Quantity of items> Quantity of items added to cart')
-    def test_002_001_003_radiant_tee_quantity_added_to_cart(self, login):
-        page = ProductPage(browser=browser)
-        page.clear_cart()
-        page.open_radiant_tee_page()
-        page.add_product_to_cart_with_qty("M", "Blue", "2")
-        page.goto_card_page()
-        page.is_radiant_tee_name_visible_in_minicart()
-        page.is_minicart_subtotal_correct("2")
-        page.is_minicart_quantity_correct("2")
-        page.is_cart_counter_shows_correct_number("2")
-        page.delete_product_from_cart()
+    
