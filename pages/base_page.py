@@ -138,12 +138,14 @@ class BasePage:
         self.is_visible_success_message()
 
     def is_minicart_subtotal_correct(self, qty):
+        s(HomeLocators.MINICART).wait_until(be.visible)
         product_price = float(s(PL.PRODUCT_PRICE).get(query.text).strip('$'))
         subtotal = self.get_subtotal()
         assert subtotal == round(product_price * int(qty), 2)
 
     @staticmethod
     def is_minicart_quantity_correct(qty):
+        s(HomeLocators.MINICART).wait_until(be.visible)
         minicart_qty = s(HomeLocators.MINICART_PRODUCT_QTY).get(query.attribute("data-item-qty"))
         assert minicart_qty == qty
 
