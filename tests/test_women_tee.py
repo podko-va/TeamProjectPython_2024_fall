@@ -74,7 +74,7 @@ class TestRadiantTeePage:
         page.open_radiant_tee_page()
         page.add_product_to_cart_with_qty("M", "Blue", "2")
         page.goto_card_page()
-        page.is_cart_counter_shows_correct_number("2")
         page.is_minicart_quantity_correct("2")
         page.is_minicart_subtotal_correct("2")
+        page.is_cart_counter_shows_correct_number("2")
         page.delete_product_from_cart()
