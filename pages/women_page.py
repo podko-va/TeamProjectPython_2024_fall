@@ -18,30 +18,6 @@ def click_dropdown_tops_link():
 
 def click_dropdown_bottoms_link():
     s(WPL.BOTTOMS_LINK).click()
-<<<<<<< TC_002.001.003
-=======
-
-
-def click_dropdown_tees():
-    s(WPL.TEES_LINK).wait_until(be.clickable)
-    s(WPL.TEES_LINK).click()
-
-
-def click_radiant_tee():
-    s(PL.RADIANT_TEE_LINK).wait_until(be.visible)
-    s(PL.RADIANT_TEE_LINK).click()
-
-
-def check_radiant_tee_title_is_visible():
-    browser.element(PL.RADIANT_TEE_TITLE).should(be.visible)
-
-
-def check_radiant_tee_img_are_visible():
-    browser.element(PL.RADIANT_TEE_IMG).should(be.visible)
-
-
-def check_radiant_tee_price_is_visible():
-    browser.element(PL.RADIANT_TEE_PRICE).should(be.visible)
 
 
 def visit_women_tee():
