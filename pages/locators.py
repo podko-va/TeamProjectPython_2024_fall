@@ -346,3 +346,9 @@ class Order:
     BUTTON_PLACE_ORDER = '.primary.checkout'
     MESSAGE_SUCCEES = '.checkout-success'
     ORDER_PAGE_TITLE = '.page-title'
+
+
+class AdvancedSearchLocators:
+    BUTTON_SEARCH = '//button[contains(@class, "primary")]'
+    ERROR_MESSAGE = '//div[contains(@class, "error")]/div'
+    
