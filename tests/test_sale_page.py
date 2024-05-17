@@ -107,8 +107,6 @@ def test_each_image_includes_short_description_of_the_promotion():
                                  POPULAR_SEARCH_TERMS_URL, PRIVACY_POLICY_PAGE_LINK, ADVANCED_SEARCH_URL,
                                  ORDERS_RETURNS_URL, ERIN_RECOMMENDS_URL, YOGA_URL, PERFORMANCE_FABRICS_URL,
                                  ECO_FRIENDLY_URL, CART_URL])
-
-
 @pytest.mark.skip
 def test_011_001_004_user_can_see_sale_page(url):
     browser.open(url)
@@ -130,3 +128,12 @@ def test_11_005_003_check_items_in_list_for_compare():
     compared_items = compare_side_panel.collect_items_list_compare()
     compare_side_panel.compare_lists_from_page_and_from_compare(items_to_be_compared, compared_items)
 
+
+@allure.link('https://trello.com/c/mZOkRDzP/')
+@allure.title('TC_011.008.001 | Sale > Block “Men’s Deals”>Visibility of image and text')
+def test_011_008_001_men_s_deals_img_and_text_visibility():
+    sale_page.visit_sale()
+    sale_page.is_mens_deals_img_visible()
+    sale_page.is_mens_bargains_text_visible()
+    sale_page.is_stretch_your_budget_text_visible()
+    sale_page.is_shop_mens_deals_text_visible()
