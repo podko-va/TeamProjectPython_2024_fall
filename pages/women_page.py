@@ -92,4 +92,3 @@ def open_checkout():
     s(WomenLocators.CHECKOUT_BUTTON).should(be.visible)
     s(WomenLocators.CHECKOUT_BUTTON).should(be.clickable).click()
 
-

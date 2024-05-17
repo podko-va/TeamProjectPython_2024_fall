@@ -55,6 +55,8 @@ class ProductLocators:
     RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
     RADIANT_TEE_PRICE = '#product-price-1556'
     PRODUCT_PRICE = 'span[id="product-price-1556"] span'
+    PRODUCT_DETAILS_TEXT = 'div.product.attribute.description div p'
+    MORE_INFO_TAB = '#tab-label-additional-title'
     ADDING_TO_CART_SUCCESSFULL_MSG = "//div[contains(text(), 'You added')]"
     SIZE_XS = '#option-label-size-143-item-166'
     COLOR_BLUE = '#option-label-color-93-item-50'

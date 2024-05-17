@@ -1,3 +1,5 @@
+from selene import query
+from selene.support.shared.jquery_style import s, ss
 from pages.base_page import BasePage
 from pages.locators import ProductLocators as PL, HomeLocators as HL
 
@@ -20,3 +22,14 @@ class ProductPage(BasePage):
     def is_radiant_tee_name_visible_in_minicart(self):
         self.assert_visible_of_element(HL.MINICART_RADIANT_TEE_NAME)
 
+    def is_product_details_visible(self):
+        assert s(PL.PRODUCT_DETAILS_TEXT).get(query.text) != 0
+
+    def click_more_information_tab(self):
+        s(PL.MORE_INFO_TAB).click()
+
+    def is_more_information_visible(self):
+        text = []
+        for n in range(1, 5):
+            text.append(s(f'//tbody/tr[{n}]/td').get(query.text))
+        assert text != []
