@@ -42,7 +42,7 @@ SALE_PAGE_URL = BASE_URL + '/sale.html'
 
 random_product_url = BASE_URL + '/antonia-racer-tank.html'
 
-POPULAR_SEARCH_TERMS_URL = BASE_URL + '/search/term/popular/'
+POPULAR_SEARCH_TERMS_URL: str = BASE_URL + '/search/term/popular/'
 PRIVACY_POLICY_PAGE_LINK = BASE_URL + '/privacy-policy-cookie-restriction-mode'
 ADVANCED_SEARCH_URL = BASE_URL + '/catalogsearch/advanced/'
 ORDERS_RETURNS_URL = BASE_URL + '/sales/guest/form/'
