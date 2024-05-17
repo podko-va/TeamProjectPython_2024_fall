@@ -1,5 +1,6 @@
 from selene.support.shared.jquery_style import s, ss
-from pages.locators import WomenPageLocators as WPL, ProductLocators as PL, SalePageLocators as SPL, BaseLocators as BL
+from pages.locators import WomenLocators, WomenPageLocators, ProductLocators
+from pages.locators import BaseLocators, SalePageLocators
 from data.links import *
 from selene import browser, be, have, query
 
@@ -9,26 +10,27 @@ def visit():
 
 
 def move_to_woman_menu():
-    s(WPL.WOMEN_MENU).hover()
+    s(WomenPageLocators.WOMEN_MENU).hover()
 
 
 def click_dropdown_tops_link():
-    s(WPL.TOPS_LINK).click()
+    s(WomenPageLocators.TOPS_LINK).click()
 
 
 def click_dropdown_bottoms_link():
-    s(WPL.BOTTOMS_LINK).click()
+    s(WomenPageLocators.BOTTOMS_LINK).click()
+
 
 def visit_women_tee():
-    browser.open(SPL.LINK_TEES_WOMEN)
+    browser.open(SalePageLocators.LINK_TEES_WOMEN)
 
 
 def check_if_breadcrumbs_have_all_parts():
-    ss(BL.BREADCRUMBS_LIST).should(have.texts('Home', 'Women', 'Tops', 'Tees'))
+    ss(BaseLocators.BREADCRUMBS_LIST).should(have.texts('Home', 'Women', 'Tops', 'Tees'))
 
 
 def check_nr_of_links_from_women_tee_by_breadcrumbs():
-    elements = ss(BL.BREADCRUMBS_LINKS).by(have.attribute('href'))
+    elements = ss(BaseLocators.BREADCRUMBS_LINKS).by(have.attribute('href'))
     expected_links = ['https://magento.softwaretestingboard.com/',
                       'https://magento.softwaretestingboard.com/women.html',
                       'https://magento.softwaretestingboard.com/women/tops-women.html']
@@ -37,7 +39,7 @@ def check_nr_of_links_from_women_tee_by_breadcrumbs():
 
 
 def check_nr_of_links_from_women_tee_by_breadcrumbs_by_count():
-    elements = ss(BL.BREADCRUMBS_LINKS).by(have.attribute('href'))
+    elements = ss(BaseLocators.BREADCRUMBS_LINKS).by(have.attribute('href'))
     elements.should(have.size(3))
 
 
@@ -45,16 +47,16 @@ def check_nr_of_links_from_women_tee_by_breadcrumbs_by_get_attr():
     expected_links = ['https://magento.softwaretestingboard.com/',
                       'https://magento.softwaretestingboard.com/women.html',
                       'https://magento.softwaretestingboard.com/women/tops-women.html']
-    for i, item in enumerate(ss(BL.BREADCRUMBS_LINKS).by(have.attribute('href'))):
+    for i, item in enumerate(ss(BaseLocators.BREADCRUMBS_LINKS).by(have.attribute('href'))):
         assert expected_links[i] == item.get(query.attribute('href'))
 
 
 def visit_women_sale():
-    browser.open(SPL.LINK_WOMEN_SALE)
+    browser.open(SalePageLocators.LINK_WOMEN_SALE)
 
 
 def check_breadcrumbs_from_women_sale_have_attribute():
-    elements = ss(BL.BREADCRUMBS_LINKS).by(have.attribute('href'))
+    elements = ss(BaseLocators.BREADCRUMBS_LINKS).by(have.attribute('href'))
     expected_links = ['https://magento.softwaretestingboard.com/',
                       'https://magento.softwaretestingboard.com/sale.html']
     for i, element in enumerate(elements):
@@ -63,5 +65,30 @@ def check_breadcrumbs_from_women_sale_have_attribute():
 
 def check_breadcrumbs_from_women_sale_have_word():
     # assert error !!! 'Sale' is missing
-    ss(BL.BREADCRUMBS_LIST).should(have.texts('Home', 'Sale', 'Women Sale'))
+    ss(BaseLocators.BREADCRUMBS_LIST).should(have.texts('Home', 'Sale', 'Women Sale'))
+
+
+def choose_size_for_tank():
+    s(WomenLocators.TANK_SIZE).click()
+
+
+def choose_color_for_tank():
+    s(WomenLocators.TANK_COLOR).click()
+
+
+def button_add_to_cart_tank():
+    s(WomenLocators.TANK_BUTTON_ADD).click()
+
+
+def success_msg_is_present():
+    s(WomenLocators.MESSAGE_SUCCESS_ADD).should(have.text("You added"))
+
+
+def open_minicart():
+    s(WomenLocators.SHOW_BASKET).should(be.clickable).click()
+
+
+def open_checkout():
+    s(WomenLocators.CHECKOUT_BUTTON).should(be.visible)
+    s(WomenLocators.CHECKOUT_BUTTON).should(be.clickable).click()
 

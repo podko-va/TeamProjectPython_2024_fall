@@ -8,13 +8,11 @@ class SalePageLocators:
     LINK_SALE = "https://magento.softwaretestingboard.com/sale.html"
     LINK_WOMEN_SALE = "https://magento.softwaretestingboard.com/promotions/women-sale.html"
     LINK_TEES_WOMEN = "https://magento.softwaretestingboard.com/women/tops-women/tees-women.html"
-
     BREADCRUMBS_LINKS_ON_PAGE_TEES = ['https://magento.softwaretestingboard.com/',
                                       'https://magento.softwaretestingboard.com/women.html',
                                       'https://magento.softwaretestingboard.com/women/tops-women.html']
     BREADCRUMBS_LINKS_ON_PAGE_WOMEN_SALE = ['https://magento.softwaretestingboard.com/',
                                             'https://magento.softwaretestingboard.com/sale.html']
-
     SALE_TAB = "//*[@id='ui-id-8']"
     BLOCK_PROMO_SALE_20_OFF_TITLE = "a[class='block-promo sale-20-off'] strong[class='title']"
     BLOCK_PROMO_SALE_20_OFF_INFO = "a[class='block-promo sale-20-off'] span[class='info']"
@@ -31,7 +29,6 @@ class ProductLocators:
     PRODUCT_QTY = '#qty'
     ADD_TO_CART_BUTTON = '#product-addtocart-button'
     ADD_TO_CART_BUTTON_FROM_MAINPAGE = 'form[data-product-sku="WS12"] button'
-
     ARGUS_All_WEATHER_TANK = '[alt="Argus All-Weather Tank"]'
     ARGUS_All_WEATHER_TANK_SIZE = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="M"]'
     ARGUS_All_WEATHER_TANK_COLOR = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="Gray"]'
@@ -47,14 +44,12 @@ class ProductLocators:
     CART_SUBTOTAL = '.subtotal .price'
     QTY_FIELD = ".details-qty input"
     UPDATE = '[title="Update"]'
-
     NAME_ARGUS_ALL_WEATHER_TANK_CHECKOUT_CART = '//*[@id="shopping-cart-table"] //*[text()="Argus All-Weather Tank"]'
     SIZE_M_ARGUS_ALL_WEATHER_TANK_CHECKOUT_CART = '// *[contains(text(), "M")]/../..// *[ @ id = "shopping-cart-table"]'
     COLOR_GRAY_ARGUS_CHECKOUT_CART = '//*[@id="shopping-cart-table"]//*[contains(text(),"Gray")]'
     PRICE_ITEM_CHECKOUT_CART = '//*[@class="col price"] //*[text()="$22.00"]'
     CART_SUBTOTAL_CHECKOUT_CART = '//*[@class="col subtotal"] //*[text()="$22.00"]'
     QTY_FIELD_CHECKOUT_CART = '[class="field qty"] input'
-
     RADIANT_TEE_LINK = "//a[contains(text(), 'Radiant Tee ')]"
     RADIANT_TEE_IMG = '//div[1]/div[3]/div[1]/img[@alt="Radiant Tee"]'
     RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
@@ -151,6 +146,8 @@ class SearchTermsLocators:
     LINK_SEARCH_TERMS = "https://magento.softwaretestingboard.com/search/term/popular/"
     TERMS_FOR_SEARCH_LIST_QTY = '[class="item"]'
     LIST_OF_SEARCH_TERMS = '[class="item"] a'
+    PRODUCT_ITEM_NAMES = '[class=product-item-link]'
+    BASE_TITLE = '[class=base]'
 
 
 class WomenPageLocators:
@@ -288,15 +285,6 @@ class TrainingPageLocators:
     IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
 
 
-class PerformanceSportswear:
-    LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
-    BUTTON_ADD_ITEM2 = '#maincontent li:nth-child(2) button'
-    SUCCESS_MESSAGE = '#maincontent > div.page.messages > div:nth-child(2) > div > div > div'
-    TEXT_SUCCESS_MESSAGE = 'You added Helios Endurance Tank to your shopping cart'
-    IMAGE_2 = '#maincontent ol > li:nth-child(2) .product-image-container'
-    ITEM_2_IN_GENERAL = 'li.product-item:nth-child(2)'
-
-
 class YogaPageLocators:
     PAGE_TITLE = '#page-title-heading > span'
     LIST_BUTTON = '.modes-mode.mode-list'
@@ -360,3 +348,9 @@ class Order:
     BUTTON_PLACE_ORDER = '.primary.checkout'
     MESSAGE_SUCCEES = '.checkout-success'
     ORDER_PAGE_TITLE = '.page-title'
+
+
+class AdvancedSearchLocators:
+    BUTTON_SEARCH = '//button[contains(@class, "primary")]'
+    ERROR_MESSAGE = '//div[contains(@class, "error")]/div'
+    

@@ -1,9 +1,8 @@
 from pages.product_page import ProductPage
 import pytest
-from pages.locators import SalePageLocators, BaseLocators, ProductLocators as PL
+from pages.locators import ProductLocators
 from pages import women_page, main_page, product_page
-from selene import browser, be, have, by, query
-from selene.support.shared.jquery_style import s, ss
+from selene import browser
 import allure
 
 
