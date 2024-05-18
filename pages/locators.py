@@ -183,6 +183,10 @@ class WhatsNewPageLocators:
     YOU_ADDED_PRODUCT = '.product-social-links a:last-child'
     ADD_TO_WISH_LIST_BUTTON = '.product-social-links a:first-child'
     ERROR_MASSAGE_YOU_MUST_LOGIN_OR_REGISTER = '//*[@id="maincontent"]/div[2]/div[2]/div/div/div'
+    LAYLA_TEE_NAME = "//a[@title='Layla Tee']"
+    LAYLA_TEE_BLUE_COLOR = "//li[2]//div[@option-label='Blue']"
+    LAYLA_TEE_IMG = '//li[2]//img[@class="product-image-photo"]'
+    LAYLA_TEE_IMG_BLUE_SRC = 'https://magento.softwaretestingboard.com/pub/media/catalog/product/cache/7c4c1ed835fbbf2269f24539582c6d44/w/s/ws04-blue_main_1.jpg'
 
 
 class PrivacyPolicyPageLocators:
@@ -245,6 +249,7 @@ class CreateAccountLocators:
     PASSWORD = '//input[@id="password"]'
     CONF_PASS = '//input[@id="password-confirmation"]'
     CREATE_BUTTON = '//button[@title="Create an Account"]'
+
 
 class ErinRecommendLocators:
     HOME_ERIN_BLOCK = "//a[@class='block-promo home-erin']"

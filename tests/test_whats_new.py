@@ -9,8 +9,6 @@ from pages.whats_new_page import WhatsNewPage
 from pages.locators import WhatsNewPageLocators as WNPL
 
 
-
-
 @allure.suite("US_006.006 | Testing What's New Page")
 class TestWhatsNew:
     @allure.title("TC_006.006.001 | Test visibility of What's New link on the home page")
@@ -51,7 +49,6 @@ class TestWhatsNew:
         assert item_number == 4
         assert page.are_men_and_women_items_present() is True
 
-
     @allure.title(
         "TC_006.002.004 I What's new > Eco Collection New* > Redirection to the product page by clicking on the product name")
     @allure.link('https://trello.com/c/GO8VRlcn')
@@ -66,8 +63,8 @@ class TestWhatsNew:
         with allure.step('Checking Layla Tee title is visible'):
             page.layla_tee_title_is_displayed()
 
-
-    @allure.title("TC_006.002.003 I What's new > Eco Collection New* > Redirection to the product page by clicking on the image")
+    @allure.title(
+        "TC_006.002.003 I What's new > Eco Collection New* > Redirection to the product page by clicking on the image")
     @allure.link('https://trello.com/c/aj3EgeOa')
     def test_eco_collection_redirection_to_pdp_by_clicking_on_img(self, login, browser_management):
         with allure.step('Opening Eco Collection New page'):
@@ -80,7 +77,6 @@ class TestWhatsNew:
         with allure.step('Checking Layla Tee title is visible'):
             page.layla_tee_title_is_displayed()
 
-
     @allure.title('TC_006.005.001 | Verify that User gets error message This this is required field in red color')
     def test_user_gets_error_message(self):
         page = MainPage(browser=browser)
@@ -92,3 +88,12 @@ class TestWhatsNew:
         whats_new_page.add_to_cart_button()
         s(WNPL.ERROR_MASSAGE_UNDER_SIZE).should(have.text('This is a required field.'))
         s(WNPL.ERROR_MASSAGE_UNDER_COLOR).should(have.text('This is a required field.'))
+
+    @allure.link('https://trello.com/c/lbjGjlg5/')
+    @allure.title("TC_006.002.001| What's new > Eco Collection New* > Changing the color in product list")
+    def test_eco_collection_change_color_in_product_list(self, login):
+        page = WhatsNewPage(browser=browser)
+        page.open_eco_collection_url()
+        page.change_layla_tee_color()
+        page.is_blue_color_selected()
+        page.is_layla_tee_img_blue()

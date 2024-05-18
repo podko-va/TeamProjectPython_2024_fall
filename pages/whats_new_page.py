@@ -1,6 +1,7 @@
-from selene import browser, command, Element
+from selene import browser, command, Element, query
 from selene.support.conditions import have, be
 from selene.support.shared.jquery_style import s, ss
+from selenium.webdriver.support.color import Color
 
 from data.links import WHATS_NEW_PAGE_LINK, LAYLA_TEE_URL
 from data.page_data import WishListData as Data
@@ -85,7 +86,6 @@ class WhatsNewPage(BasePage):
     def new_yoga_link_click(self):
         return s(WNL.NEW_YOGA_LINK).click()
 
-
     def open_eco_collection_url(self):
         self.open_page()
         s(BaseLocators.ECO_COLLECTION_NAME).click()
@@ -118,3 +118,16 @@ class WhatsNewPage(BasePage):
     def add_to_wish_list_button(self):
         return s(WNL.ADD_TO_WISH_LIST_BUTTON).click()
 
+    def change_layla_tee_color(self):
+        s(WNL.LAYLA_TEE_NAME).hover()
+        s(WNL.LAYLA_TEE_BLUE_COLOR).click()
+        s(WNL.LAYLA_TEE_NAME).hover()
+
+    def is_blue_color_selected(self):
+        s(WNL.LAYLA_TEE_BLUE_COLOR).should(have.css_property('outline-color', Color.from_string('#ff5501').rgba))
+
+    def is_layla_tee_img_blue(self):
+        s(WNL.LAYLA_TEE_IMG).wait_until(have.attribute('src', WNL.LAYLA_TEE_IMG_BLUE_SRC))
+        blue_color_img_name = 'ws04-blue_main_1.jpg'
+        img_src_name = s(WNL.LAYLA_TEE_IMG).get(query.attribute('src'))
+        assert blue_color_img_name in img_src_name
