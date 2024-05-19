@@ -126,11 +126,11 @@ class WhatsNewPage(BasePage):
 
     def is_color_selected(self, color_name, color_hex):
         color_selector = f"//li[2]//div[@option-label='{color_name}']"
-        s(color_selector).should(have.css_property('outline-color', Color.from_string(color_hex).rgba))
+        s(color_selector).should(have.css_property('outline-color').value(Color.from_string(color_hex).rgba))
 
     def is_layla_tee_img_color_correct(self, color):
         img_url = f"https://magento.softwaretestingboard.com/pub/media/catalog/product/cache/7c4c1ed835fbbf2269f24539582c6d44/w/s/ws04-{color}_main_1.jpg"
-        s(WNL.LAYLA_TEE_IMG).wait_until(have.attribute('src', img_url))
+        s(WNL.LAYLA_TEE_IMG).wait_until(have.attribute('src').value(img_url))
         color_img_name = f'ws04-{color}_main_1.jpg'
         img_src_name = s(WNL.LAYLA_TEE_IMG).get(query.attribute('src'))
         assert color_img_name in img_src_name
