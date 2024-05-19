@@ -34,6 +34,7 @@ def is_mens_deals_img_clickable():
 
 def click_mens_deals_img():
     s(SalePageLocators.MENS_DEALS_IMG).click()
+    
 def check_redirection_mens_deals():
     assert browser.driver.current_url == 'https://magento.softwaretestingboard.com/promotions/men-sale.html'
 
