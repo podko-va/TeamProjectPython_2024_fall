@@ -85,7 +85,6 @@ class WhatsNewPage(BasePage):
     def new_yoga_link_click(self):
         return s(WNL.NEW_YOGA_LINK).click()
 
-
     def open_eco_collection_url(self):
         self.open_page()
         s(BaseLocators.ECO_COLLECTION_NAME).click()
@@ -118,3 +117,9 @@ class WhatsNewPage(BasePage):
     def add_to_wish_list_button(self):
         return s(WNL.ADD_TO_WISH_LIST_BUTTON).click()
 
+    def check_buttons_visibility_on_product_card(self):
+        for i in range(1, 6):
+            s(f"//li[{i}]/div/div").hover()
+            s(f'//li[{i}]//button[@class="action tocart primary"]').should(be.visible)
+            s(f'//li[{i}]//a[@class="action towishlist"]').should(be.visible)
+            s(f'//li[{i}]//a[@class="action tocompare"]').should(be.visible)
