@@ -74,7 +74,10 @@ def add_one_tees_green_color_size_s():
 
 
 def add_one_tees_yellow_color_size_m():
-    s("div[class='ea-stickybox-hide']").click()
+    try:
+        s("div[class='ea-stickybox-hide']").should(be.visible).click()
+    except Exception as e:
+        print("window not founded", e)
     s(TeesPageLocators.TEES_THREE).click()
     s(TeesPageLocators.TEES_SIZE_M).click()
     s(TeesPageLocators.TEES_COLOR_YELLOW).click()
@@ -95,6 +98,7 @@ def add_one_tees_black_color_size_l():
 def check_quantity_items_in_the_shopping_list():
     items_list = ss("tr.item-info")
     assert len(items_list) == 4, "error"
+    s("span.counter-number").should(have.text("4"))
 
 
 def clear_the_cart_with_all_items():
