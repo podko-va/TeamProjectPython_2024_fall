@@ -97,3 +97,10 @@ class TestWhatsNew:
         page.change_layla_tee_color('Blue')
         page.is_color_selected('Blue', '#ff5501')
         page.is_layla_tee_img_color_correct('blue')
+
+    @allure.link('https://trello.com/c/E9ZewRUB')
+    @allure.title("TC_006.002.002| What's new > Eco Collection New* > Visibility of buttons on product card")
+    def test_eco_collections_new_products_buttons_visibility(self, login):
+        page = WhatsNewPage(browser=browser)
+        page.open_eco_collection_url()
+        page.check_buttons_visibility_on_product_card()

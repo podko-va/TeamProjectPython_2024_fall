@@ -134,3 +134,10 @@ class WhatsNewPage(BasePage):
         color_img_name = f'ws04-{color}_main_1.jpg'
         img_src_name = s(WNL.LAYLA_TEE_IMG).get(query.attribute('src'))
         assert color_img_name in img_src_name
+
+    def check_buttons_visibility_on_product_card(self):
+        for i in range(1, 6):
+            s(f"//li[{i}]/div/div").hover()
+            s(f'//li[{i}]//button[@class="action tocart primary"]').should(be.visible)
+            s(f'//li[{i}]//a[@class="action towishlist"]').should(be.visible)
+            s(f'//li[{i}]//a[@class="action tocompare"]').should(be.visible)
