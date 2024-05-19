@@ -187,6 +187,7 @@ class WhatsNewPageLocators:
     ERROR_MASSAGE_YOU_MUST_LOGIN_OR_REGISTER = '//*[@id="maincontent"]/div[2]/div[2]/div/div/div'
     LAYLA_TEE_NAME = "//a[@title='Layla Tee']"
     LAYLA_TEE_IMG = '//li[2]//img[@class="product-image-photo"]'
+    LAYLA_TEE_IMG_LINK = 'a.block-promo.sale-mens'
 
 class PrivacyPolicyPageLocators:
     PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
