@@ -2,7 +2,7 @@ import time
 from data.page_data import SignInData
 from pages import sign_in
 from selene import be, have
-from selene.support.shared.jquery_style import s
+from selene.support.shared.jquery_style import s, ss
 from pages.locators import *
 
 email = SignInData()
