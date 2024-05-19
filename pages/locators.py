@@ -21,6 +21,7 @@ class SalePageLocators:
     BLOCK_PROMO_SALE_WOMENS_T_SHIRTS_TITLE = "a[class='block-promo sale-womens-t-shirts'] strong[class='title']"
     BLOCK_PROMO_SALE_WOMENS_T_SHIRTS_INFO = "a[class='block-promo sale-womens-t-shirts'] span[class='info']"
     MENS_DEALS_IMG = 'a.block-promo.sale-mens img'
+    MENS_DEALS_IMG_LINK = 'a.block-promo.sale-mens'
     MENS_BARGAINS_TEXT = 'a.block-promo.sale-mens span strong'
     STRETCH_YOUR_BUDGET_TEXT = "//span[text()='Stretch your budget with active attire']"
     SHOP_MENS_DEALS = "//span[text()='Shop Men’s Deals']"
@@ -185,7 +186,8 @@ class WhatsNewPageLocators:
     YOU_ADDED_PRODUCT = '.product-social-links a:last-child'
     ADD_TO_WISH_LIST_BUTTON = '.product-social-links a:first-child'
     ERROR_MASSAGE_YOU_MUST_LOGIN_OR_REGISTER = '//*[@id="maincontent"]/div[2]/div[2]/div/div/div'
-
+    LAYLA_TEE_NAME = "//a[@title='Layla Tee']"
+    LAYLA_TEE_IMG = '//li[2]//img[@class="product-image-photo"]'
 
 class PrivacyPolicyPageLocators:
     PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
@@ -247,6 +249,7 @@ class CreateAccountLocators:
     PASSWORD = '//input[@id="password"]'
     CONF_PASS = '//input[@id="password-confirmation"]'
     CREATE_BUTTON = '//button[@title="Create an Account"]'
+
 
 class ErinRecommendLocators:
     HOME_ERIN_BLOCK = "//a[@class='block-promo home-erin']"

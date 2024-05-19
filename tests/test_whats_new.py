@@ -63,8 +63,8 @@ class TestWhatsNew:
         with allure.step('Checking Layla Tee title is visible'):
             page.layla_tee_title_is_displayed()
 
-
-    @allure.title("TC_006.002.003 I What's new > Eco Collection New* > Redirection to the product page by clicking on the image")
+    @allure.title(
+        "TC_006.002.003 I What's new > Eco Collection New* > Redirection to the product page by clicking on the image")
     @allure.link('https://trello.com/c/aj3EgeOa')
     def test_eco_collection_redirection_to_pdp_by_clicking_on_img(self, login, browser_management):
         with allure.step('Opening Eco Collection New page'):
@@ -88,6 +88,15 @@ class TestWhatsNew:
         whats_new_page.add_to_cart_button()
         s(WNPL.ERROR_MASSAGE_UNDER_SIZE).should(have.text('This is a required field.'))
         s(WNPL.ERROR_MASSAGE_UNDER_COLOR).should(have.text('This is a required field.'))
+
+    @allure.link('https://trello.com/c/lbjGjlg5/')
+    @allure.title("TC_006.002.001| What's new > Eco Collection New* > Changing the color in product list")
+    def test_eco_collection_change_color_in_product_list(self, login):
+        page = WhatsNewPage(browser=browser)
+        page.open_eco_collection_url()
+        page.change_layla_tee_color('Blue')
+        page.is_color_selected('Blue', '#ff5501')
+        page.is_layla_tee_img_color_correct('blue')
 
     @allure.link('https://trello.com/c/E9ZewRUB')
     @allure.title("TC_006.002.002| What's new > Eco Collection New* > Visibility of buttons on product card")
