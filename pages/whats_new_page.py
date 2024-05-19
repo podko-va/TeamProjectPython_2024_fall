@@ -118,16 +118,19 @@ class WhatsNewPage(BasePage):
     def add_to_wish_list_button(self):
         return s(WNL.ADD_TO_WISH_LIST_BUTTON).click()
 
-    def change_layla_tee_color(self):
-        s(WNL.LAYLA_TEE_NAME).hover()
-        s(WNL.LAYLA_TEE_BLUE_COLOR).click()
-        s(WNL.LAYLA_TEE_NAME).hover()
+    def change_layla_tee_color(self, color):
+        layla_tee = s(WNL.LAYLA_TEE_NAME)
+        layla_tee.hover()
+        s(f"//li[2]//div[@option-label='{color}']").click()
+        layla_tee.hover()
 
-    def is_blue_color_selected(self):
-        s(WNL.LAYLA_TEE_BLUE_COLOR).should(have.css_property('outline-color', Color.from_string('#ff5501').rgba))
+    def is_color_selected(self, color_name, color_hex):
+        color_selector = f"//li[2]//div[@option-label='{color_name}']"
+        s(color_selector).should(have.css_property('outline-color', Color.from_string(color_hex).rgba))
 
-    def is_layla_tee_img_blue(self):
-        s(WNL.LAYLA_TEE_IMG).wait_until(have.attribute('src', WNL.LAYLA_TEE_IMG_BLUE_SRC))
-        blue_color_img_name = 'ws04-blue_main_1.jpg'
+    def is_layla_tee_img_color_correct(self, color):
+        img_url = f"https://magento.softwaretestingboard.com/pub/media/catalog/product/cache/7c4c1ed835fbbf2269f24539582c6d44/w/s/ws04-{color}_main_1.jpg"
+        s(WNL.LAYLA_TEE_IMG).wait_until(have.attribute('src', img_url))
+        color_img_name = f'ws04-{color}_main_1.jpg'
         img_src_name = s(WNL.LAYLA_TEE_IMG).get(query.attribute('src'))
-        assert blue_color_img_name in img_src_name
+        assert color_img_name in img_src_name

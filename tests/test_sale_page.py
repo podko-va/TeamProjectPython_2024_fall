@@ -137,3 +137,12 @@ def test_011_008_001_men_s_deals_img_and_text_visibility():
     sale_page.is_mens_bargains_text_visible()
     sale_page.is_stretch_your_budget_text_visible()
     sale_page.is_shop_mens_deals_text_visible()
+
+@allure.link('https://trello.com/c/kH80u6ta')
+@allure.title("TC_011.008.002 |Sale > Block 'Men’s Deals'>Verify clicking to 'Men's Bargains' image redirect to the 'Men Sale' page")
+def test_011_008_002_mens_deals_img_clickability_and_redirection():
+    sale_page.visit_sale()
+    sale_page.is_mens_deals_img_clickable()
+    sale_page.click_mens_deals_img()
+    sale_page.check_redirection_mens_deals()
+

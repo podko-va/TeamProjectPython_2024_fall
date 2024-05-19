@@ -94,6 +94,6 @@ class TestWhatsNew:
     def test_eco_collection_change_color_in_product_list(self, login):
         page = WhatsNewPage(browser=browser)
         page.open_eco_collection_url()
-        page.change_layla_tee_color()
-        page.is_blue_color_selected()
-        page.is_layla_tee_img_blue()
+        page.change_layla_tee_color('Blue')
+        page.is_color_selected('Blue', '#ff5501')
+        page.is_layla_tee_img_color_correct('blue')

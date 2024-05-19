@@ -29,6 +29,15 @@ def is_mens_deals_img_visible():
     s(SalePageLocators.MENS_DEALS_IMG).should(be.visible)
 
 
+def is_mens_deals_img_clickable():
+    s(SalePageLocators.MENS_DEALS_IMG).should(be.clickable)
+
+def click_mens_deals_img():
+    s(SalePageLocators.MENS_DEALS_IMG).click()
+def check_redirection_mens_deals():
+    assert browser.driver.current_url == 'https://magento.softwaretestingboard.com/promotions/men-sale.html'
+
+
 def is_stretch_your_budget_text_visible():
     s(SalePageLocators.STRETCH_YOUR_BUDGET_TEXT).should(have.text('Stretch your budget with active attire'))
 
