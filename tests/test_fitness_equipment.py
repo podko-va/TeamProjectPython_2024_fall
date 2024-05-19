@@ -1,3 +1,5 @@
+import time
+
 import allure
 from selene import browser
 from pages.set_of_sprite_yoga_straps_page import SetYogaStraps
@@ -6,6 +8,7 @@ from data.page_data import SetYogaStrapsData as SYSD
 from data.links import SET_YOGA_STRAPS_URL
 from pages import set_of_sprite_yoga_straps_page
 import pytest
+
 
 @allure.suite("US_009.005 | Gear catalog > Fitness Equipment > Set of Sprite Yoga Straps")
 class TestFitnessEquipment:
