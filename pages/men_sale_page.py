@@ -10,6 +10,8 @@ from pages.locators import BaseLocators as Header, MenSaleLocators as ms_locator
 class MenSalePage:
 
     title_page = s(ms_locators.PAGE_TITLE)
+    list_items = ss(ms_locators.LIST_ITEM)
+    product_images = ss(ms_locators.PRODUCT_IMAGE)
 
     def __init__(self, browser):
         self.browser = browser
@@ -33,7 +35,16 @@ class MenSalePage:
     def is_page_title_correct(self):
         self.title_page.should(have.text(data.page_title))
 
+    def get_number_of_items_in_te_list(self):
+        return str(len(self.list_items))
+
+    def are_only_product_cards_for_men_present(self):
+        for card in self.product_images:
+            card.should(have.attribute("src").value_containing("/m/"))
+
     @staticmethod
-    def is_number_of_items_in_toolbar_corresponds_to_amount_in_list():
-        number = str(len(ss(ms_locators.LIST_ITEM)))
-        s(ms_locators.TOOLBAR_NUMBER).should(have.text(number))
+    def is_product_list_present():
+        s(ms_locators.PRODUCT_LIST).should(be.present)
+
+    def is_number_of_items_in_toolbar_corresponds_to_amount_in_list(self):
+        s(ms_locators.TOOLBAR_NUMBER).should(have.text(self.get_number_of_items_in_te_list()))
