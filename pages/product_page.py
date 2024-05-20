@@ -49,7 +49,7 @@ class ProductPage(BasePage):
         s(f'a.product-item-link[title="{title}"]').should(be.visible)
  
     def select_size(size):
-        s(f'[option-label={size}]').click()
+        s(f'[option-label="{size}"]').click()
         s(PL.SIZE_INDICATOR).should(be.visible).hover()
 
     @staticmethod
