@@ -171,6 +171,9 @@ class WomenPageLocators:
     BOTTOMS_TITLE = ".ui-corner-all ui-state-focus"
     DROPDOWN_BLOCK = "//*[@id='ui-id-2']/li[2]/ul"
     TEES_LINK = '//*[@id="ui-id-13"]'
+    RADIANT_TEE_HOTSELLERS_SECT = "//a[contains(text(), 'Radiant Tee')]"
+    ADD_TO_COMPARE_ICON = "(//a[@title='Add to Compare'])[1]"
+    COMPARE_BTN = "//span[text()='Compare']"
 
 
 class WhatsNewPageLocators:
@@ -406,3 +409,7 @@ class AdvancedSearchLocators:
 class ProductPageLocators:
     WINDOW_MORE_INFO = '#tab-label-additional-title'
     DESCRIBE_MATERIAL = '[data-th="Material"]'
+
+
+class CompareProductsPage:
+    COMP_LIST_RADIANT_TEE = "//a[contains(text(), 'Radiant Tee')]"
