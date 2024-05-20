@@ -50,7 +50,7 @@ class ProductPage(BasePage):
  
     def select_size(size):
         s(f'[option-label={size}]').click()
-        s(PL.SIZE_INDICATOR).hover()
+        s(PL.SIZE_INDICATOR).should(be.visible).hover()
 
     @staticmethod
     def is_size_selected(size, color_hex):
