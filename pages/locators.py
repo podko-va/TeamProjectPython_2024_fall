@@ -338,13 +338,24 @@ class PopularSearchTermsLocators:
 class TeesPageLocators:
     FOUR_TEES_DISCOUNT_TAB = '//span[contains(text(),"4 tees for the price of 3. Right now")]'
     TEES = 'img[alt="Desiree Fitness Tee"]'
-    TEES_SIZE = '#option-label-size-143-item-166'
-    TEES_COLORS = '#option-label-color-93-item-49'
+    TEES_SIZE_XS = '#option-label-size-143-item-166'
+    TEES_COLOR_BLACK = '#option-label-color-93-item-49'
+    TEES_COLOR_GREEN = '#option-label-color-93-item-53'
+    TEES_COLOR_ORANGE = '#option-label-color-93-item-56'
+    TEES_COLOR_YELLOW = '#option-label-color-93-item-60'
     TEES_QTY = "#qty"
     VIEW_AND_EDIT_CART_LINK = '//span[contains(text(),"View and Edit Cart")]'
     DISCOUNT_SUMM = 'td[data-th="Discount"] span.price'
     REMOVE_TEES_BTN_FROM_CART_AFTER_TEST = 'a[class="action action-delete"]'
     COUNT_NUMBER = 'span.counter-number'
+    TEES_ONE = 'img[alt="Gwyn Endurance Tee"]'
+    TEES_TWO = 'img[alt="Radiant Tee"]'
+    TEES_THREE = 'img[alt="Diva Gym Tee"]'
+    TEES_SIZE_S = "#option-label-size-143-item-167"
+    TEES_SIZE_M = "#option-label-size-143-item-168"
+    TEES_SIZE_L = "#option-label-size-143-item-169"
+    TEES_TAB = "ul.items li.item.category:nth-child(4)"
+
 
 
 class WomenLocators:
