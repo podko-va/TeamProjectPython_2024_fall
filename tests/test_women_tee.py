@@ -68,12 +68,23 @@ class TestRadiantTeePage:
         page.is_minicart_quantity_correct("2")
         page.is_minicart_subtotal_correct("2")
         page.delete_product_from_cart()
-        
+
     @allure.link('https://trello.com/c/EXhjde1P')
-    @allure.title('TC_002.001.004 | Radiant Tee product page > Visibility of the product description and detailed information')
+    @allure.title(
+        'TC_002.001.004 | Radiant Tee product page > Visibility of the product description and detailed information')
     def test_radiant_tee_visibility_of_description(self, login):
         page = ProductPage(browser=browser)
         page.open_radiant_tee_page()
         page.is_product_details_visible()
         page.click_more_information_tab()
         page.is_more_information_visible()
+
+    @allure.link('https://trello.com/c/5xoWR2Ef/')
+    @allure.title('TC_002.001.007 | Radiant Tee product page > Product parameters > Changing the product size')
+    def test_radiant_tee_changing_size(self, login):
+        page = ProductPage(browser=browser)
+        page.open_radiant_tee_page()
+        page.select_size('XS')
+        page.select_size('M')
+        page.is_size_selected('M', '#ff5501')
+        page.is_size_indicator_correct('M')
