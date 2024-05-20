@@ -47,7 +47,8 @@ class ProductPage(BasePage):
     @staticmethod
     def is_product_title_visible_in_wishlist(title):
         s(f'a.product-item-link[title="{title}"]').should(be.visible)
- 
+        
+    @staticmethod
     def select_size(size):
         s(f'[option-label="{size}"]').click()
         s(PL.SIZE_INDICATOR).should(be.visible).hover()
