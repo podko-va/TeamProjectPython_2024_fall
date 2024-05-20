@@ -70,6 +70,7 @@ class ProductLocators:
     # SHOULD_CHOOSE_SIZE_AND_COLOR = '.swatch-input.super-attribute-select'
     TEXT_REQUIRED_FIELD = 'This is a required field.'
     ADD_TO_WISHLIST_LINK = 'a.action.towishlist'
+    SIZE_INDICATOR = '.swatch-attribute.size span.swatch-attribute-selected-option'
 
 
 class HomeLocators:

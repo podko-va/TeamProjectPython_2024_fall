@@ -88,3 +88,13 @@ class TestRadiantTeePage:
         page.assert_current_url_containing('wishlist')
         page.is_success_message_adding_to_wishlist_visible()
         page.is_product_title_visible_in_wishlist('Radiant Tee')
+ 
+    @allure.link('https://trello.com/c/5xoWR2Ef/')
+    @allure.title('TC_002.001.007 | Radiant Tee product page > Product parameters > Changing the product size')
+    def test_radiant_tee_changing_size(self, login):
+        page = ProductPage(browser=browser)
+        page.open_radiant_tee_page()
+        page.select_size('XS')
+        page.select_size('M')
+        page.is_size_selected('M', '#ff5501')
+        page.is_size_indicator_correct('M')

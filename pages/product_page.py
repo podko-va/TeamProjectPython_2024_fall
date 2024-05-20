@@ -1,6 +1,8 @@
 from selene import query, have
 from selene.support.conditions import be
 from selene.support.shared.jquery_style import s, ss
+from selenium.webdriver.support.color import Color
+
 from pages.base_page import BasePage
 from pages.locators import ProductLocators as PL, HomeLocators as HL, WishListLocators as WLL
 
@@ -45,3 +47,17 @@ class ProductPage(BasePage):
     @staticmethod
     def is_product_title_visible_in_wishlist(title):
         s(f'a.product-item-link[title="{title}"]').should(be.visible)
+ 
+    def select_size(size):
+        s(f'[option-label={size}]').click()
+        s(PL.SIZE_INDICATOR).hover()
+
+    @staticmethod
+    def is_size_selected(size, color_hex):
+        size_selector = s(f'[option-label={size}]')
+        size_selector.should(have.css_property('outline-color').value(Color.from_string(color_hex).rgba))
+        size_selector.should(have.attribute('aria-checked').value('true'))
+
+    @staticmethod
+    def is_size_indicator_correct(size):
+        s(PL.SIZE_INDICATOR).should(have.text(size))
