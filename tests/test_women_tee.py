@@ -95,6 +95,7 @@ class TestRadiantTeePage:
         page = ProductPage(browser=browser)
         page.open_radiant_tee_page()
         page.select_size('XS')
+        page.is_size_indicator_correct('XS')
         page.select_size('M')
         page.is_size_selected('M', '#ff5501')
         page.is_size_indicator_correct('M')
