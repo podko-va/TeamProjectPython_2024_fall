@@ -1,8 +1,8 @@
-from selene import query
+from selene import query, have
 from selene.support.conditions import be
 from selene.support.shared.jquery_style import s, ss
 from pages.base_page import BasePage
-from pages.locators import ProductLocators as PL, HomeLocators as HL
+from pages.locators import ProductLocators as PL, HomeLocators as HL, WishListLocators as WLL
 
 
 class ProductPage(BasePage):
@@ -33,3 +33,15 @@ class ProductPage(BasePage):
         for n in range(1, 5):
             text.append(s(f'//tbody/tr[{n}]/td').get(query.text))
         assert text != []
+
+    @staticmethod
+    def add_product_to_wishlist():
+        s(PL.ADD_TO_WISHLIST_LINK).click()
+
+    @staticmethod
+    def is_success_message_adding_to_wishlist_visible():
+        s(WLL.SUCCESS_MESSAGE).should(have.text('has been added to your Wish List.'))
+
+    @staticmethod
+    def is_product_title_visible_in_wishlist(title):
+        s(f'a.product-item-link[title="{title}"]').should(be.visible)
