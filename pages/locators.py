@@ -45,7 +45,10 @@ class ProductLocators:
     SIZE_M = '//*[@class="product options list"]//*[text()="M"]'
     COLOR_GRAY = '//*[@class="product options list"]//*[text()="Gray"]'
     NAME_ITEM = '//*[text()="Argus All-Weather Tank"]'
+    ARGUS_ALL_WEATHER_TANK_PRODUCT_NAME_TEXT = 'Argus All-Weather Tank'
     PRICE_ITEM = '//*[@class="minicart-price"]//*[@class="price"]'
+    PRODUCT_PRICE_BASE = '//*[@class="price"]'
+    PRODUCT_IMAGE_BASE = '//img[@class="fotorama__img"]'
     CART_SUBTOTAL = '.subtotal .price'
     QTY_FIELD = ".details-qty input"
     UPDATE = '[title="Update"]'
@@ -59,6 +62,7 @@ class ProductLocators:
     RADIANT_TEE_IMG = '//div[1]/div[3]/div[1]/img[@alt="Radiant Tee"]'
     RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
     RADIANT_TEE_PRICE = '#product-price-1556'
+    PRODUCT_TITLE = 'span[data-ui-id="page-title-wrapper"]'
     PRODUCT_PRICE = 'span[id="product-price-1556"] span'
     PRODUCT_DETAILS_TEXT = 'div.product.attribute.description div p'
     MORE_INFO_TAB = '#tab-label-additional-title'
