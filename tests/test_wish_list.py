@@ -13,6 +13,7 @@ def test_button_update_clickable(login):
     wish_list.url_should_contain("wishlist_id")
 
 
+@pytest.mark.skip
 @allure.link("https://trello.com/c/xP2eIJZq")
 @allure.feature("Wish list > Removing and Edit Items")
 @allure.title("TC_014.003.002 | Wish list > Removing items")

@@ -42,7 +42,7 @@ def grid_button_click():
 
 
 def is_wrapper_list_view_visible():
-    s('.products.wrapper.list').should(be.visible)
+    s('.products.wrapper.list').should(be.present).should(be.visible)
 
 
 def is_wrapper_grid_view_visible():
