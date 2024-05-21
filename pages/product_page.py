@@ -33,3 +33,18 @@ class ProductPage(BasePage):
         for n in range(1, 5):
             text.append(s(f'//tbody/tr[{n}]/td').get(query.text))
         assert text != []
+
+
+product_qty = s('#qty')
+add_to_cart_button = s('#product-addtocart-button')
+add_to_cart_success_msg = s("//div[contains(text(), 'You added')]")
+
+
+def add_product_to_cart_with_qty(size, color, qty):
+    s(f'[option-label={size}]').click()
+    s(f'[option-label={color}]').click()
+    product_qty.click() \
+        .clear() \
+        .type(qty)
+    add_to_cart_button.click()
+    add_to_cart_success_msg.wait_until(be.visible)
