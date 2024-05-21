@@ -1,16 +1,17 @@
 import allure
-from selene import browser
 import pytest
 from pages import wish_list, sale_page, sign_in
-from pages.whats_new_page import WhatsNewPage
+from pages import whats_new_page
+
 
 @pytest.mark.skip
 @allure.link("https://trello.com/c/kVWLOEl5")
 def test_button_update_clickable(login):
-    WhatsNewPage(browser=browser).add_item_to_wish_list()
+    whats_new_page.add_item_to_wish_list()
     wish_list.visit()
     wish_list.click_update()
     wish_list.url_should_contain("wishlist_id")
+
 
 @allure.link("https://trello.com/c/xP2eIJZq")
 @allure.feature("Wish list > Removing and Edit Items")

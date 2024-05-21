@@ -154,9 +154,9 @@ class BaseLocators:
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
     ECO_COLLECTION_NAME = "//span[contains (text(), 'Shop Eco Friendly')]"
-    BUTTON_COMPARE_ITEM_1 = 'li:nth-child(1) a.action.tocompare'  # кнопка сравнить на любой странице для товара 1
-    BUTTON_COMPARE_ITEM_2 = 'li:nth-child(2) a.action.tocompare'  # кнопка сравнить на любой странице для товара 2
-    BUTTON_COMPARE_ITEM_3 = 'li:nth-child(3) a.action.tocompare'  # кнопка сравнить на любой странице для товара 3
+    BUTTON_COMPARE_ITEM_1 = 'li:nth-child(1) a.action.tocompare'
+    BUTTON_COMPARE_ITEM_2 = 'li:nth-child(2) a.action.tocompare'
+    BUTTON_COMPARE_ITEM_3 = 'li:nth-child(3) a.action.tocompare'
     QTY_OF_ITEMS_IN_MINICART = '.counter-number'
 
 
@@ -201,10 +201,6 @@ class WhatsNewPageLocators:
     LAYLA_TEE_IMG = '//li[2]//img[@class="product-image-photo"]'
 
 
-class PrivacyPolicyPageLocators:
-    PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
-
-
 class ProductItemLocators:
     WISH_LIST = "[aria-label='Add to Wish List']"
     PRODUCTS_GRID = ".products-grid.grid"
@@ -212,11 +208,6 @@ class ProductItemLocators:
     LAYLA_TEE_PRODUCT_NAME = "a[title='Layla Tee']"
     LAYLA_TEE_TITLE = "h1.page-title span"
     LAYLA_TEE_IMG = "img[alt='Layla Tee']"
-
-
-class LoginPageLocators:
-    PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
-    MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
 
 
 class LoginLocators:
@@ -315,14 +306,6 @@ class TrainingPageLocators:
     BLOCK_1 = '.blocks-promo a:first-child'
     CONTENT_BLOCK_1 = '.blocks-promo a:first-child .title'
     IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
-
-
-class YogaPageLocators:
-    PAGE_TITLE = '#page-title-heading > span'
-    LIST_BUTTON = '.modes-mode.mode-list'
-    WRAPPER_LIST_VIEW = '.products.wrapper.list'
-    GRID_BUTTON = '.modes-mode.mode-grid'
-    WRAPPER_GRID_VIEW = '.products.wrapper.grid'
 
 
 class MenSaleLocators:
