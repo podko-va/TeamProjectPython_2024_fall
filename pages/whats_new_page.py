@@ -10,7 +10,6 @@ layla_tee = s("//a[@title='Layla Tee']")
 luma_latest_items = ss('.products-grid>ol>li')
 collection_luma_latest_items = ss('.product-image-photo')
 new_yoga_link = s("//*[text()='New Luma Yoga Collection']")
-number_of_luma_latest = len(luma_latest_items)
 
 add_wish_list = "[aria-label='Add to Wish List']"
 
@@ -186,3 +185,7 @@ def hover_on_product():
 def check_redirection_to_login():
     s("span.base[data-ui-id='page-title-wrapper']").should(have.text("Customer Login"))
     s("div[data-bind='html: $parent.prepareMessageForHtml(message.text)']").should(have.text(message))
+
+
+def get_number_of_luma_latest():
+    return len(luma_latest_items)

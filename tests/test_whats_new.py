@@ -42,7 +42,7 @@ class TestWhatsNew:
         page.open_page()
         page.whats_new.click()
         whats_new_page.is_luma_latest_present()
-        item_number = whats_new_page.number_of_luma_latest()
+        item_number = whats_new_page.get_number_of_luma_latest()
         assert item_number == 4
         assert whats_new_page.are_men_and_women_items_present() is True
 
