@@ -40,3 +40,4 @@ class SetYogaStrapsData:
 class PopularSearchTermsData:
     result_page_header = 'Search results for: \'HOODIE\''
 
+
