@@ -108,6 +108,7 @@ def test_015_001_004_check_if_5_search_terms_is_bigger():
             assert False, "List of search terms has not 5 elements which size is bigger than 88%"
 
 
+@allure.title('TC_015.002.007 Popular Search Terms > Visibility and clickability> Verify the visibility of the list')
 @allure.feature('Popular Search Terms')
 @allure.link('https://trello.com/c/MAmB9buH')
 def test_015_002_007_visibility_of_the_list():
