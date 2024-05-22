@@ -1,25 +1,25 @@
 from selene import browser, be, have
 from selene.support.shared.jquery_style import s
 
-URL = 'https://magento.softwaretestingboard.com'
-NAV_WOMEN = '//*[@id="ui-id-4"]'
-NAV_TOPS = '//*[@id="ui-id-9"]'
-NAV_JACKETS = '//*[@id="ui-id-11"]'
-WOMEN_CRUMB = '/html/body/div[2]/div[2]/ul/li[2]'
-BREADCRUMBS = '/html/body/div[2]/div[2]/ul'
-CURRENT_ITEM = '//li[@class = "item category20"]'
+url = 'https://magento.softwaretestingboard.com'
+nav_women = '//*[@id="ui-id-4"]'
+nav_tops = '//*[@id="ui-id-9"]'
+nav_jackets = '//*[@id="ui-id-11"]'
+women_crumb = '/html/body/div[2]/div[2]/ul/li[2]'
+breadcrumbs = '/html/body/div[2]/div[2]/ul'
+current_item = '//li[@class = "item category20"]'
 
 def open_page():
-    browser.open(URL)
+    browser.open(url)
 
 def nav_women_tops_jackets():
-    s(NAV_WOMEN).hover()
-    s(NAV_TOPS).hover()
-    s(NAV_JACKETS).hover().click()
+    s(nav_women).hover()
+    s(nav_women).hover()
+    s(nav_jackets).hover().click()
 
 def click_to_women_crumb():
-    s(WOMEN_CRUMB).click()
+    s(women_crumb).click()
 
 def is_visible():
-    s(BREADCRUMBS).should(be.visible)
-    s(CURRENT_ITEM).should(have.text('Women'))
+    s(breadcrumbs).should(be.visible)
+    s(current_item).should(have.text('Women'))
