@@ -5,7 +5,7 @@ from pages import breadcrumbs
 @allure.feature('Breadcrumbs')
 @allure.title('Verify that the breadcrumbs displayed and clickable')
 
-def test_breadcrumbs(chromium):
+def test_breadcrumbs_visible(chromium):
     breadcrumbs.open_page(chromium)
     breadcrumbs.select_item(chromium)
     breadcrumbs.is_clickable(chromium)
