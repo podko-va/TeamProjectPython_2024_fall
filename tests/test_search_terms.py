@@ -32,6 +32,7 @@ def test_015_001_003_check_if_search_terms_has_size_from_76_till_136():
     assert min(list_font_sizes) <= 76 and max(list_font_sizes) >= 136, "Font sizes not between 76 and 136"
 
 
+@allure.feature('Popular Search Terms')
 @pytest.mark.skip('Test have a bug')
 @allure.link('https://trello.com/c/8jDgYDYW')
 def test_015_002_006_order_search_terms():
@@ -56,6 +57,7 @@ def test_015_001_006_check_if_search_terms_are_sorted():
     assert list_of_goods_from_terms == list_of_goods_sorted
 
 
+@allure.feature('Popular Search Terms')
 @allure.link('https://trello.com/c/RGOSzLMa')
 def test_015_002_005_unique_search_terms():
     browser.open(ST.LINK_SEARCH_TERMS)
@@ -65,6 +67,7 @@ def test_015_002_005_unique_search_terms():
     assert len(keyword_texts) == len(keywords_set)
 
 
+@allure.feature('Popular Search Terms')
 @allure.link('https://trello.com/c/9VW3bwiJ')
 def test_015_002_003_keywords_clickable():
     browser.open(ST.LINK_SEARCH_TERMS)
@@ -103,3 +106,10 @@ def test_015_001_004_check_if_5_search_terms_is_bigger():
     for size in range(0, 5):
         if sizes_sorted[size] < 88:
             assert False, "List of search terms has not 5 elements which size is bigger than 88%"
+
+
+@allure.feature('Popular Search Terms')
+@allure.link('https://trello.com/c/MAmB9buH')
+def test_015_002_007_visibility_of_the_list():
+    search_terms_page.open()
+    search_terms_page.visibility_of_the_list()
