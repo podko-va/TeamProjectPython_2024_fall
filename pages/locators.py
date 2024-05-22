@@ -154,9 +154,9 @@ class BaseLocators:
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
     ECO_COLLECTION_NAME = "//span[contains (text(), 'Shop Eco Friendly')]"
-    BUTTON_COMPARE_ITEM_1 = 'li:nth-child(1) a.action.tocompare'  # кнопка сравнить на любой странице для товара 1
-    BUTTON_COMPARE_ITEM_2 = 'li:nth-child(2) a.action.tocompare'  # кнопка сравнить на любой странице для товара 2
-    BUTTON_COMPARE_ITEM_3 = 'li:nth-child(3) a.action.tocompare'  # кнопка сравнить на любой странице для товара 3
+    BUTTON_COMPARE_ITEM_1 = 'li:nth-child(1) a.action.tocompare'
+    BUTTON_COMPARE_ITEM_2 = 'li:nth-child(2) a.action.tocompare'
+    BUTTON_COMPARE_ITEM_3 = 'li:nth-child(3) a.action.tocompare'
     QTY_OF_ITEMS_IN_MINICART = '.counter-number'
 
 
@@ -193,15 +193,11 @@ class WhatsNewPageLocators:
     ERROR_MASSAGE_UNDER_COLOR = '//*[@id="super_attribute[93]-error"]'
     BREATHE_EASY_TANK = "a.product-item-link[href*='breathe-easy-tank']"
     ADD_TO_COMPARE = '.product-social-links a:last-child'
-    YOU_ADDED_PRODUCT = '.product-social-links a:last-child'
+    YOU_ADDED_PRODUCT = '.message-success'
     ADD_TO_WISH_LIST_BUTTON = '.product-social-links a:first-child'
     ERROR_MASSAGE_YOU_MUST_LOGIN_OR_REGISTER = '//*[@id="maincontent"]/div[2]/div[2]/div/div/div'
     LAYLA_TEE_NAME = "//a[@title='Layla Tee']"
     LAYLA_TEE_IMG = '//li[2]//img[@class="product-image-photo"]'
-
-
-class PrivacyPolicyPageLocators:
-    PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
 
 
 class ProductItemLocators:
@@ -211,11 +207,6 @@ class ProductItemLocators:
     LAYLA_TEE_PRODUCT_NAME = "a[title='Layla Tee']"
     LAYLA_TEE_TITLE = "h1.page-title span"
     LAYLA_TEE_IMG = "img[alt='Layla Tee']"
-
-
-class LoginPageLocators:
-    PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
-    MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
 
 
 class LoginLocators:
@@ -296,6 +287,7 @@ class WishListLocators:
     COLORS = "div.swatch-attribute.color .swatch-option.color"
     SIZES = "div.swatch-attribute.size .swatch-option.text"
     UPDATED = "a.action.towishlist.updated"
+    MESSAGE_WISH_LIST_IS_EMPTY = 'div.block.block-wishlist > div.block-content > div'
     SUCCESS_MESSAGE = 'div.message-success.success.message div'
 
 
@@ -313,14 +305,6 @@ class TrainingPageLocators:
     BLOCK_1 = '.blocks-promo a:first-child'
     CONTENT_BLOCK_1 = '.blocks-promo a:first-child .title'
     IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
-
-
-class YogaPageLocators:
-    PAGE_TITLE = '#page-title-heading > span'
-    LIST_BUTTON = '.modes-mode.mode-list'
-    WRAPPER_LIST_VIEW = '.products.wrapper.list'
-    GRID_BUTTON = '.modes-mode.mode-grid'
-    WRAPPER_GRID_VIEW = '.products.wrapper.grid'
 
 
 class MenSaleLocators:
@@ -407,6 +391,14 @@ class Compare:
 class AdvancedSearchLocators:
     BUTTON_SEARCH = '//button[contains(@class, "primary")]'
     ERROR_MESSAGE = '//div[contains(@class, "error")]/div'
+    FIELD_PRODUCT_NAME = '#name'
+    FIELD_SKU = '#sku'
+    FIELD_DESCRIPTION = '#description'
+    FIELD_SHORT_DESC = '#short_description'
+    FIELD_PRICE_FROM = '#price'
+    FIELD_PRICE_TO = '#price_to'
+    PRICE_ERROR_MESSAGE = '#price-error'
+    PRICE_TO_ERROR_MESSAGE = '#price_to-error'
 
 
 class ProductPageLocators:
