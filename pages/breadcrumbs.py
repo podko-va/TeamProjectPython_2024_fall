@@ -14,7 +14,7 @@ def open_page():
 
 def nav_women_tops_jackets():
     s(nav_women).hover()
-    s(nav_women).hover()
+    s(nav_tops).hover()
     s(nav_jackets).hover().click()
 
 def click_to_women_crumb():
