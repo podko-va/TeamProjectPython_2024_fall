@@ -10,6 +10,7 @@ success_msg = "div[class='message-success success message']"
 item_card = "(//div[@class='product-item-info'])[1]"
 REMOVE_ITEM = "//div[@class='product-item-actions']/a[@class='btn-remove action delete']"
 item_title = "(//div[@class='products-grid wishlist']//a[@class='product-item-link'])[1]"
+success_add_msg_text = s("div[class='message-success success message'] div")
 
 ITEM_6_ADD_TO_WISH_LIST = 'ol > li:nth-child(6) a.action.towishlist'
 ITEM_8_ADD_TO_WISH_LIST = 'ol > li:nth-child(8) a.action.towishlist'
@@ -121,3 +122,11 @@ def clear_wish_list():
         items_in_wish_list = ss(delete_bucket)
         for item in items_in_wish_list:
             item.should(be.clickable).click()
+
+
+def success_adding_msg_should_have_text(text):
+    success_add_msg_text.should(have.text(text))
+
+
+def product_should_have_title(title):
+    s(f'a.product-item-link[title="{title}"]').should(be.visible)
