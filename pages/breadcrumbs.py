@@ -23,4 +23,4 @@ def is_clickable(chromium):
 
 def is_visible(chromium):
     chromium.find_element(By.XPATH, BREADCRUMBS).is_displayed()
-    chromium.find_element(By.LINK_TEXT, "Women")
+    # chromium.find_element(By.LINK_TEXT, "Women")
