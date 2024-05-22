@@ -49,6 +49,7 @@ class ProductLocators:
     CART_SUBTOTAL = '.subtotal .price'
     QTY_FIELD = ".details-qty input"
     UPDATE = '[title="Update"]'
+    ADD_TO_CART_BUTTON = '#product-addtocart-button'
     NAME_ARGUS_ALL_WEATHER_TANK_CHECKOUT_CART = '//*[@id="shopping-cart-table"] //*[text()="Argus All-Weather Tank"]'
     SIZE_M_ARGUS_ALL_WEATHER_TANK_CHECKOUT_CART = '// *[contains(text(), "M")]/../..// *[ @ id = "shopping-cart-table"]'
     COLOR_GRAY_ARGUS_CHECKOUT_CART = '//*[@id="shopping-cart-table"]//*[contains(text(),"Gray")]'
