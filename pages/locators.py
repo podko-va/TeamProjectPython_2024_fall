@@ -329,6 +329,9 @@ class SetYogaStrapsLocators:
 class PopularSearchTermsLocators:
     HOODIE_LINK = '//a[contains(text(),"HOODIE")]'
     SEARCH_RESULTS_HEADER = '//h1/span[@data-ui-id="page-title-wrapper"]'
+    PRODUCT_ITEM_NAMES = '[class=product-item-link]'
+    JACKET_LINK = '//*[@id="maincontent"]/div[3]/div/ul/li[32]/a'
+
 
 class TeesPageLocators:
     FOUR_TEES_DISCOUNT_TAB = '//span[contains(text(),"4 tees for the price of 3. Right now")]'

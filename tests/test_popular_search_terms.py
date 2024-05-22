@@ -8,7 +8,6 @@ from pages import popular_search_terms
 from pages.popular_search_terms import PopularSearchTerms
 
 
-
 @allure.suite("US_015.003 | Popular Search Terms > Redirection")
 class TestPopularSearchTerms:
     @allure.link("https://trello.com/c/YgMgvvIu")
