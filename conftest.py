@@ -126,3 +126,10 @@ def driver():
     driver = webdriver.Chrome(options=options)
     yield driver
     driver.quit()
+
+@pytest.fixture(autouse=True, scope='function')
+def chromium(request):
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.implicitly_wait(5)
+    return driver
