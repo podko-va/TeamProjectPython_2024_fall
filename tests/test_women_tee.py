@@ -59,8 +59,8 @@ def test_product_quantity_added_to_cart(login):
     product.open('radiant-tee')
     product.add_to_cart_with_qty("M", "Blue", "2")
     cart.click_cart_icon()
-    cart.counter_should_be_equal('2')
     cart.minicart_quantity_should_be_equal('2')
+    cart.counter_should_be_equal('2')
     cart.minicart_subtotal_should_be_calculated_with_qty_equal('2')
     cart.delete_product_from_cart()
 

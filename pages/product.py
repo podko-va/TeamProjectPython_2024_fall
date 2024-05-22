@@ -75,6 +75,7 @@ def size_should_be_selected(size, true_or_false):
 
 def add_to_wish_list():
     s('a.action.towishlist').click()
+    s("div[class='message-success success message'] div").should(be.visible)
 
 
 def click_reviews_tab():
