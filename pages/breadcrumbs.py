@@ -27,4 +27,4 @@ def is_clickable(driver):
 
 def is_visible(driver):
     driver.find_element(By.XPATH, BREADCRUMBS).is_displayed()
-    # driver.find_element(By.LINK_TEXT, "Women")
+    driver.find_element(By.LINK_TEXT, "Women")
