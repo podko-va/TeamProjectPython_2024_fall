@@ -16,7 +16,11 @@ def select_item(chromium):
     women = chromium.find_element(By.XPATH, NAV_WOMEN)
     tops = chromium.find_element(By.XPATH, NAV_TOPS)
     jackets = chromium.find_element(By.XPATH, NAV_JACKETS)
-    actions.move_to_element(women).move_to_element(tops).move_to_element(jackets).click(jackets).perform()
+    actions.move_to_element(women)
+    actions.move_to_element(tops)
+    actions.move_to_element(jackets)
+    actions.click(jackets)
+    actions.perform()
 
 def is_clickable(chromium):
     chromium.find_element(By.XPATH, WOMEN_BREAD).click()
