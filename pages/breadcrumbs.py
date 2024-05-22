@@ -1,30 +1,25 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
+from selene import browser, be, have
+from selene.support.shared.jquery_style import s
 
 URL = 'https://magento.softwaretestingboard.com'
 NAV_WOMEN = '//*[@id="ui-id-4"]'
 NAV_TOPS = '//*[@id="ui-id-9"]'
 NAV_JACKETS = '//*[@id="ui-id-11"]'
-WOMEN_BREAD = '/html/body/div[2]/div[2]/ul/li[2]'
+WOMEN_CRUMB = '/html/body/div[2]/div[2]/ul/li[2]'
 BREADCRUMBS = '/html/body/div[2]/div[2]/ul'
+CURRENT_ITEM = '//li[@class = "item category20"]'
 
-def open_page(driver):
-    driver.get(URL)
+def open_page():
+    browser.open(URL)
 
-def select_item(driver):
-    actions = ActionChains(driver)
-    women = driver.find_element(By.XPATH, NAV_WOMEN)
-    tops = driver.find_element(By.XPATH, NAV_TOPS)
-    jackets = driver.find_element(By.XPATH, NAV_JACKETS)
-    actions.move_to_element(women)
-    actions.move_to_element(tops)
-    actions.move_to_element(jackets)
-    actions.click(jackets)
-    actions.perform()
+def nav_women_tops_jackets():
+    s(NAV_WOMEN).hover()
+    s(NAV_TOPS).hover()
+    s(NAV_JACKETS).hover().click()
 
-def is_clickable(driver):
-    driver.find_element(By.XPATH, WOMEN_BREAD).click()
+def click_to_women_crumb():
+    s(WOMEN_CRUMB).click()
 
-def is_visible(driver):
-    driver.find_element(By.XPATH, BREADCRUMBS).is_displayed()
-    driver.find_element(By.LINK_TEXT, "Women")
+def is_visible():
+    s(BREADCRUMBS).should(be.visible)
+    s(CURRENT_ITEM).should(have.text('Women'))
