@@ -85,6 +85,7 @@ def click_reviews_tab():
 def reviews_should_have_title(title, text):
     try:
         s('#tab-label-reviews-title span.counter')
+        s('.items.review-items').wait_until(be.visible)
         reviews_block.should(have.text(title))
     except:
         product_name_in_reviews.should(have.text(text))
