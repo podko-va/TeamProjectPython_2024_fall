@@ -114,6 +114,7 @@ def delete_product_from_cart():
 
 def click_cart_icon():
     cart_icon.click()
+    mini_cart.wait_until(be.visible)
 
 
 def product_in_minicart_should_have_name(name):
