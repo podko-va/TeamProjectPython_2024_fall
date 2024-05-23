@@ -1,25 +1,22 @@
 from selene import have, be, Element
 from selene.core import command, query
 from selene.support.shared.jquery_style import s, ss
-
-from data.links import CART_LINK
-from pages.components.mini_card import MiniCard
-from pages.components.nav_wigdet import NavComponent
-from pages.locators import BaseLocators, ProductItemLocators, HomeLocators, ProductLocators as PL, CartLocators as Cart, CreateAccountLocators
+from pages.components import mini_card
+from pages.components import nav
+from pages.locators import ProductItemLocators, HomeLocators, CreateAccountLocators
 
 
 class BasePage:
-
     mini_cart = s(HomeLocators.MINICART)
     cart_icon = s(HomeLocators.CART_ICON)
     products = ss(ProductItemLocators.ITEM_INFO)
     mini_cart_counter = s(HomeLocators.MINICART_COUNTER)
-    message = s(BaseLocators.SUCCESS_MESSAGE)
+    message = s(".success.message")
 
     def __init__(self, browser):
         self.browser = browser
-        self.nav = NavComponent()
-        self.mini_card = MiniCard()
+        self.nav = nav
+        self.mini_card = mini_card
 
     def visit(self, url):
         self.browser.open(url)
@@ -64,7 +61,7 @@ class BasePage:
     def goto_card_page(self):
         self.is_cart_icon_present()
         self.cart_icon.hover().click()
-        self.mini_card.is_minicart_visible()
+        self.mini_card.is_mini_cart_visible()
         self.mini_card.click_mini_cart()
 
     def scroll_to_hot_sellers(self):
@@ -101,40 +98,6 @@ class BasePage:
     @staticmethod
     def click_on_link(locator):
         s(locator).click()
-
-    def clear_cart(self):
-        self.visit(CART_LINK)
-        try:
-            self.delete_product_from_cart()
-        except:
-            pass
-
-    def delete_product_from_cart(self):
-        self.visit(CART_LINK)
-        s(Cart.REMOVE_ITEM_ICON).click()
-        s(Cart.NO_ITEMS_MESSAGE).wait_until(be.visible)
-
-    def add_product_to_cart_with_qty(self, size, color, qty):
-        s(f'[option-label={size}]').click()
-        s(f'[option-label={color}]').click()
-        s(PL.PRODUCT_QTY).click()
-        s(PL.PRODUCT_QTY).clear()
-        s(PL.PRODUCT_QTY).type(qty)
-        s(PL.ADD_TO_CART_BUTTON).click()
-        self.is_visible_success_message()
-
-    def is_minicart_subtotal_correct(self, qty):
-        self.mini_cart.wait_until(be.visible)
-        product_price = float(s(PL.PRODUCT_PRICE).get(query.text).strip('$'))
-        assert self.get_subtotal() == product_price * int(qty)
-
-    def is_minicart_quantity_correct(self, qty):
-        self.mini_cart.wait_until(be.visible)
-        mini_cart_qty = s(HomeLocators.MINICART_PRODUCT_QTY).get(query.attribute("data-item-qty"))
-        assert mini_cart_qty == qty
-
-    def is_cart_counter_shows_correct_number(self, qty):
-        assert self.mini_cart_counter.get(query.text) == qty
 
     def is_create_account_link_visible(self) -> bool:
         try:
