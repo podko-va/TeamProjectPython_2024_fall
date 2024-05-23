@@ -7,7 +7,6 @@ nav_tops = '#ui-id-9'
 nav_jackets = '#ui-id-11'
 women_crumb = '//li[@class = "item category20"]'
 breadcrumbs = '//ul[@class = "items"]'
-current_item = '//li[@class = "item category20"]'
 
 def open_page():
     browser.open(url)
@@ -22,4 +21,4 @@ def click_to_women_crumb():
 
 def is_visible():
     s(breadcrumbs).should(be.visible)
-    s(current_item).should(have.text('Women'))
+    s(women_crumb).should(have.text('Women'))
