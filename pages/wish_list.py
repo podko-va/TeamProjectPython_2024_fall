@@ -10,10 +10,13 @@ success_msg = "div[class='message-success success message']"
 item_card = "(//div[@class='product-item-info'])[1]"
 REMOVE_ITEM = "//div[@class='product-item-actions']/a[@class='btn-remove action delete']"
 item_title = "(//div[@class='products-grid wishlist']//a[@class='product-item-link'])[1]"
+success_add_msg_text = s("div[class='message-success success message'] div")
+
 url_login = "https://magento.softwaretestingboard.com/customer/account/login"
 user_email = s("div.login-container #email")
 user_password = s("div.login-container #pass")
 sign_in_button = s("div.login-container #send2")
+
 ITEM_6_ADD_TO_WISH_LIST = 'ol > li:nth-child(6) a.action.towishlist'
 ITEM_8_ADD_TO_WISH_LIST = 'ol > li:nth-child(8) a.action.towishlist'
 ITEM_9_ADD_TO_WISH_LIST = 'ol > li:nth-child(9) a.action.towishlist'
@@ -126,6 +129,15 @@ def clear_wish_list():
             item.should(be.clickable).click()
 
 
+
+def success_adding_msg_should_have_text(text):
+    success_add_msg_text.should(have.text(text))
+
+
+def product_should_have_title(title):
+    s(f'a.product-item-link[title="{title}"]').should(be.visible)
+
+    
 def visit_women_jackets():
     browser.open(WOMEN_JACKET_LINK)
 
@@ -182,3 +194,4 @@ def count_images_in_wishlist(nr):
 
 def visit_sale():
     browser.open(LINK_SALE)
+
