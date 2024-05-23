@@ -1,8 +1,8 @@
 import pytest
+from selene import browser, have
 
-from pages.locators import *
 from data.links import *
-from selene import browser, by, be, have, support
+from pages.locators import *
 
 
 def test_redirect_from_contact_to_privacy_policy():
