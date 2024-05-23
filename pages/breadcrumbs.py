@@ -2,11 +2,11 @@ from selene import browser, be, have
 from selene.support.shared.jquery_style import s
 
 url = 'https://magento.softwaretestingboard.com'
-nav_women = '//*[@id="ui-id-4"]'
-nav_tops = '//*[@id="ui-id-9"]'
-nav_jackets = '//*[@id="ui-id-11"]'
-women_crumb = '/html/body/div[2]/div[2]/ul/li[2]'
-breadcrumbs = '/html/body/div[2]/div[2]/ul'
+nav_women = '#ui-id-4'
+nav_tops = '#ui-id-9'
+nav_jackets = '#ui-id-11'
+women_crumb = '//li[@class = "item category20"]'
+breadcrumbs = '//ul[@class = "items"]'
 current_item = '//li[@class = "item category20"]'
 
 def open_page():
