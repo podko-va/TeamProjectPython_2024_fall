@@ -110,3 +110,8 @@ def unique_search_terms():
     keyword_texts = [k.get(query.attribute("text")).strip() for k in keyword_elements]
     keywords_set = set(keyword_texts)
     assert len(keyword_texts) == len(keywords_set)
+
+
+def clickable_by_keywords():
+    keyword_elements = ss(LIST_OF_SEARCH_TERMS)
+    [k.should(be.clickable) for k in keyword_elements]

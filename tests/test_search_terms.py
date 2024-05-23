@@ -1,8 +1,5 @@
 import allure
 import pytest
-from pages.locators import SearchTermsLocators
-from selene import be, query
-from selene.support.shared.jquery_style import ss
 from pages import search_terms_page
 
 
@@ -49,11 +46,11 @@ def test_015_002_005_unique_search_terms():
     search_terms_page.unique_search_terms()
 
 
+@allure.feature('Popular Search Terms')
 @allure.link('https://trello.com/c/9VW3bwiJ')
-def test_015_002_003_keywords_clickable():
+def test_015_002_003_clickable_by_keywords():
     search_terms_page.visit()
-    keyword_elements = ss(SearchTermsLocators.LIST_OF_SEARCH_TERMS)
-    [k.should(be.visible).should(be.clickable) for k in keyword_elements]
+    search_terms_page.clickable_by_keywords()
 
 
 @allure.link("https://trello.com/c/I0RafTpi")
