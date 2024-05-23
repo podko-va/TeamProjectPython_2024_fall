@@ -103,3 +103,10 @@ def visibility_of_the_list():
     list_items = ss(LIST_OF_SEARCH_TERMS)
     for item in list_items:
         item.should(be.visible)
+
+
+def unique_search_terms():
+    keyword_elements = ss(LIST_OF_SEARCH_TERMS)
+    keyword_texts = [k.get(query.attribute("text")).strip() for k in keyword_elements]
+    keywords_set = set(keyword_texts)
+    assert len(keyword_texts) == len(keywords_set)

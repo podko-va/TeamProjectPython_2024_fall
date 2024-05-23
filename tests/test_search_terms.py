@@ -42,13 +42,11 @@ def test_015_001_006_check_if_search_terms_are_sorted():
     search_terms_page.compare_list_sorted_stripped_and_original(lst_nonsorted, lst_sorted)
 
 
+@allure.feature('Popular Search Terms')
 @allure.link('https://trello.com/c/RGOSzLMa')
 def test_015_002_005_unique_search_terms():
     search_terms_page.visit()
-    keyword_elements = ss(SearchTermsLocators.LIST_OF_SEARCH_TERMS)
-    keyword_texts = [k.get(query.attribute("text")).strip() for k in keyword_elements]
-    keywords_set = set(keyword_texts)
-    assert len(keyword_texts) == len(keywords_set)
+    search_terms_page.unique_search_terms()
 
 
 @allure.link('https://trello.com/c/9VW3bwiJ')
