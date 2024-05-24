@@ -43,7 +43,8 @@ def test_015_001_006_check_if_search_terms_are_sorted():
 @allure.link('https://trello.com/c/RGOSzLMa')
 def test_015_002_005_unique_search_terms():
     search_terms_page.visit()
-    search_terms_page.unique_search_terms()
+    keyword_texts, keywords_set = search_terms_page.unique_search_terms()
+    assert len(keyword_texts) == len(keywords_set)
 
 
 @allure.feature('Popular Search Terms')
@@ -75,3 +76,4 @@ def test_015_001_004_check_if_5_search_terms_is_bigger():
 def test_015_002_007_visibility_of_the_list():
     search_terms_page.visit()
     search_terms_page.visibility_of_the_list()
+
