@@ -1,16 +1,8 @@
-import time
 from data.page_data import SignInData
 from pages import sign_in
 from selene import be, have
 from selene.support.shared.jquery_style import s, ss
 from pages.locators import *
-
-email = SignInData()
-password = SignInData()
-discount_link = TeesPageLocators()
-sale = SalePageLocators()
-qty_tees = ProductLocators()
-cart = HomeLocators()
 
 
 def open_login_page():
@@ -41,7 +33,7 @@ def add_four_same_model_tees():
 
 def click_on_add_to_cart_btn():
     s(ProductLocators.ADD_TO_CART_BUTTON).click()
-    browser.execute_script("window.history.go(-1)")
+    browser.driver.back()
     browser.should(have.url("https://magento.softwaretestingboard.com/women/tops-women/tees-women.html"))
 
 
@@ -53,11 +45,10 @@ def check_discount_is_applied_for_four_different_tees():
     try:
         s(TeesPageLocators.DISCOUNT_SUMM).should(be.visible)
     except Exception as e:
-        print("error discount did not apply, write bug report", e)
+        print("Error discount did not apply, write bug report", e)
 
 
 def click_on_the_shopping_cart_icon():
-    time.sleep(3)
     s(TeesPageLocators.COUNT_NUMBER).should(be.visible)
     s(HomeLocators.CART_ICON).click()
     s(TeesPageLocators.VIEW_AND_EDIT_CART_LINK).should(be.visible).click()
@@ -77,7 +68,7 @@ def add_one_tees_yellow_color_size_m():
     try:
         s("div[class='ea-stickybox-hide']").should(be.visible).click()
     except Exception as e:
-        print("window not founded", e)
+        print("Window did not found", e)
     s(TeesPageLocators.TEES_THREE).click()
     s(TeesPageLocators.TEES_SIZE_M).click()
     s(TeesPageLocators.TEES_COLOR_YELLOW).click()
