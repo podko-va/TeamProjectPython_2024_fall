@@ -28,11 +28,8 @@ class SalePageLocators:
 
 
 class ProductLocators:
-    RADIANT_TEE_URL = 'https://magento.softwaretestingboard.com/radiant-tee.html'
     RADIANT_TEE_SIZE = '[option-label="XS"]'
     RADIANT_TEE_COLOR = '[option-label="Orange"]'
-    PRODUCT_QTY = '#qty'
-    ADD_TO_CART_BUTTON = '#product-addtocart-button'
     ADD_TO_CART_BUTTON_FROM_MAINPAGE = 'form[data-product-sku="WS12"] button'
     ARGUS_All_WEATHER_TANK = '[alt="Argus All-Weather Tank"]'
     ARGUS_All_WEATHER_TANK_SIZE = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="M"]'
@@ -52,6 +49,7 @@ class ProductLocators:
     CART_SUBTOTAL = '.subtotal .price'
     QTY_FIELD = ".details-qty input"
     UPDATE = '[title="Update"]'
+    ADD_TO_CART_BUTTON = '#product-addtocart-button'
     NAME_ARGUS_ALL_WEATHER_TANK_CHECKOUT_CART = '//*[@id="shopping-cart-table"] //*[text()="Argus All-Weather Tank"]'
     SIZE_M_ARGUS_ALL_WEATHER_TANK_CHECKOUT_CART = '// *[contains(text(), "M")]/../..// *[ @ id = "shopping-cart-table"]'
     COLOR_GRAY_ARGUS_CHECKOUT_CART = '//*[@id="shopping-cart-table"]//*[contains(text(),"Gray")]'
@@ -59,13 +57,7 @@ class ProductLocators:
     CART_SUBTOTAL_CHECKOUT_CART = '//*[@class="col subtotal"] //*[text()="$22.00"]'
     QTY_FIELD_CHECKOUT_CART = '[class="field qty"] input'
     RADIANT_TEE_LINK = "//a[contains(text(), 'Radiant Tee ')]"
-    RADIANT_TEE_IMG = '//div[1]/div[3]/div[1]/img[@alt="Radiant Tee"]'
-    RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
-    RADIANT_TEE_PRICE = '#product-price-1556'
     PRODUCT_TITLE = 'span[data-ui-id="page-title-wrapper"]'
-    PRODUCT_PRICE = 'span[id="product-price-1556"] span'
-    PRODUCT_DETAILS_TEXT = 'div.product.attribute.description div p'
-    MORE_INFO_TAB = '#tab-label-additional-title'
     ADDING_TO_CART_SUCCESSFULL_MSG = "//div[contains(text(), 'You added')]"
     SIZE_XS = '#option-label-size-143-item-166'
     COLOR_BLUE = '#option-label-color-93-item-50'
@@ -87,7 +79,6 @@ class HomeLocators:
     EMPTY_MINICART = 'span.counter.qty.empty'
     MINICART_RADIANT_TEE_NAME = "//*[@id='mini-cart']/li/div/div/strong/a[contains(text(), 'Radiant Tee')]"
     MINICART_PRODUCT_QTY = 'input[class="item-qty cart-item-qty"]'
-    MINICART_SUBTOTAL = '//*[@id="minicart-content-wrapper"]/div[2]/div[2]/div/span/span'
     MINICART_DELETE_BUTTON = "a[class='action delete']"
     DELETE_ITEM_CONFIRM_OK = 'button.action-primary.action-accept'
     MINICART_CLOSE = 'button#btn-minicart-close.action.close'
@@ -154,9 +145,9 @@ class BaseLocators:
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
     ECO_COLLECTION_NAME = "//span[contains (text(), 'Shop Eco Friendly')]"
-    BUTTON_COMPARE_ITEM_1 = 'li:nth-child(1) a.action.tocompare'  # кнопка сравнить на любой странице для товара 1
-    BUTTON_COMPARE_ITEM_2 = 'li:nth-child(2) a.action.tocompare'  # кнопка сравнить на любой странице для товара 2
-    BUTTON_COMPARE_ITEM_3 = 'li:nth-child(3) a.action.tocompare'  # кнопка сравнить на любой странице для товара 3
+    BUTTON_COMPARE_ITEM_1 = 'li:nth-child(1) a.action.tocompare'
+    BUTTON_COMPARE_ITEM_2 = 'li:nth-child(2) a.action.tocompare'
+    BUTTON_COMPARE_ITEM_3 = 'li:nth-child(3) a.action.tocompare'
     QTY_OF_ITEMS_IN_MINICART = '.counter-number'
 
 
@@ -164,7 +155,6 @@ class SearchTermsLocators:
     LINK_SEARCH_TERMS = "https://magento.softwaretestingboard.com/search/term/popular/"
     TERMS_FOR_SEARCH_LIST_QTY = '[class="item"]'
     LIST_OF_SEARCH_TERMS = '[class="item"] a'
-    PRODUCT_ITEM_NAMES = '[class=product-item-link]'
     BASE_TITLE = '[class=base]'
 
 
@@ -194,15 +184,11 @@ class WhatsNewPageLocators:
     ERROR_MASSAGE_UNDER_COLOR = '//*[@id="super_attribute[93]-error"]'
     BREATHE_EASY_TANK = "a.product-item-link[href*='breathe-easy-tank']"
     ADD_TO_COMPARE = '.product-social-links a:last-child'
-    YOU_ADDED_PRODUCT = '.product-social-links a:last-child'
+    YOU_ADDED_PRODUCT = '.message-success'
     ADD_TO_WISH_LIST_BUTTON = '.product-social-links a:first-child'
     ERROR_MASSAGE_YOU_MUST_LOGIN_OR_REGISTER = '//*[@id="maincontent"]/div[2]/div[2]/div/div/div'
     LAYLA_TEE_NAME = "//a[@title='Layla Tee']"
     LAYLA_TEE_IMG = '//li[2]//img[@class="product-image-photo"]'
-
-
-class PrivacyPolicyPageLocators:
-    PAGE_MAIN_HEADER_LOCATOR = "span[data-ui-id='page-title-wrapper']"
 
 
 class ProductItemLocators:
@@ -212,11 +198,6 @@ class ProductItemLocators:
     LAYLA_TEE_PRODUCT_NAME = "a[title='Layla Tee']"
     LAYLA_TEE_TITLE = "h1.page-title span"
     LAYLA_TEE_IMG = "img[alt='Layla Tee']"
-
-
-class LoginPageLocators:
-    PAGE_TITLE_WRAPPER = "span.base[data-ui-id='page-title-wrapper']"
-    MESSAGE_TEXT = "div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"
 
 
 class LoginLocators:
@@ -297,6 +278,7 @@ class WishListLocators:
     COLORS = "div.swatch-attribute.color .swatch-option.color"
     SIZES = "div.swatch-attribute.size .swatch-option.text"
     UPDATED = "a.action.towishlist.updated"
+    MESSAGE_WISH_LIST_IS_EMPTY = 'div.block.block-wishlist > div.block-content > div'
     SUCCESS_MESSAGE = 'div.message-success.success.message div'
 
 
@@ -314,14 +296,6 @@ class TrainingPageLocators:
     BLOCK_1 = '.blocks-promo a:first-child'
     CONTENT_BLOCK_1 = '.blocks-promo a:first-child .title'
     IMG_BLOCK_1 = 'a[class="block-promo training-main"] img'
-
-
-class YogaPageLocators:
-    PAGE_TITLE = '#page-title-heading > span'
-    LIST_BUTTON = '.modes-mode.mode-list'
-    WRAPPER_LIST_VIEW = '.products.wrapper.list'
-    GRID_BUTTON = '.modes-mode.mode-grid'
-    WRAPPER_GRID_VIEW = '.products.wrapper.grid'
 
 
 class MenSaleLocators:
@@ -409,6 +383,14 @@ class Compare:
 class AdvancedSearchLocators:
     BUTTON_SEARCH = '//button[contains(@class, "primary")]'
     ERROR_MESSAGE = '//div[contains(@class, "error")]/div'
+    FIELD_PRODUCT_NAME = '#name'
+    FIELD_SKU = '#sku'
+    FIELD_DESCRIPTION = '#description'
+    FIELD_SHORT_DESC = '#short_description'
+    FIELD_PRICE_FROM = '#price'
+    FIELD_PRICE_TO = '#price_to'
+    PRICE_ERROR_MESSAGE = '#price-error'
+    PRICE_TO_ERROR_MESSAGE = '#price_to-error'
 
 
 class ProductPageLocators:

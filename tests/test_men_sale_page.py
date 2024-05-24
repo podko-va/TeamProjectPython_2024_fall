@@ -6,7 +6,6 @@ from selene import browser
 from data.page_data import MenSalePageData as data
 
 
-@pytest.mark.xfail
 @allure.link('https://trello.com/c/j98xpncK/402-tc011012001-sale-mens-deals-verify-bread-crumbs-display')
 @allure.title('Verify Bread Crumbs display')
 def test_verify_bread_crumbs_display():
@@ -24,7 +23,7 @@ def test_verify_page_title():
     page.is_page_title_correct()
 
 
-# @pytest.mark.skip
+@pytest.mark.skip
 @allure.link("https://trello.com/c/wnMvuIUl")
 @allure.title("Verify total number of items on the page")
 def test_verify_total_number_of_items():
