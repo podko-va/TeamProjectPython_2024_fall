@@ -1,4 +1,4 @@
-from selene import browser, have, be, command
+from selene import browser, have, be, command, by
 from selene.support.shared.jquery_style import s, ss
 from selenium.webdriver.support.color import Color
 
@@ -20,7 +20,7 @@ PRICE_TO_ERROR_MESSAGE = '#price_to-error'
 def open():
     browser.open(url)
 
-def click_button():
+def click_search_button():
     s(BUTTON_SEARCH).perform(command.js.click)
 
 def message_text():
@@ -46,3 +46,12 @@ def fill_prohibited_characters_in_price():
 def invalid_number_price_error_message():
     s(PRICE_ERROR_MESSAGE).should(have.text('Please enter a valid number.'))
     s(PRICE_TO_ERROR_MESSAGE).should(have.text('Please enter a valid number.'))
+
+def search_by_product_name():
+    product_name = 'Jacket'
+    s(FIELD_PRODUCT_NAME).type(product_name)
+
+def check_search_result():
+    product_name = 'Jacket'
+    for item in ss(by.class_name('product-item-link')):
+        item.should(have.text(product_name))
