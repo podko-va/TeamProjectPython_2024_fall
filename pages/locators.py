@@ -25,6 +25,8 @@ class SalePageLocators:
     MENS_BARGAINS_TEXT = 'a.block-promo.sale-mens span strong'
     STRETCH_YOUR_BUDGET_TEXT = "//span[text()='Stretch your budget with active attire']"
     SHOP_MENS_DEALS = "//span[text()='Shop Men’s Deals']"
+    MENS_DEALS_BASE_LOCATOR = '//strong[@class="title"]/span[text()="Mens\'s Deals"]/../' \
+                              'following-sibling::ul[@class="items"]/li[@class="item"]/a[text()="{item}"]'
 
 
 class ProductLocators:
