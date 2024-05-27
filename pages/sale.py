@@ -25,7 +25,7 @@ def visit_women_jackets():
     browser.open(women_jacket_link)
 
 
-def open():
+def open_page():
     browser.open(sale_page_url)
 
 
