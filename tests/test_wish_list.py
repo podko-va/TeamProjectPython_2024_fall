@@ -1,6 +1,6 @@
 import allure
 import pytest
-from pages import wish_list, sale_page, sign_in
+from pages import wish_list, sale, sign_in
 from pages import whats_new_page
 
 

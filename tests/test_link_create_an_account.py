@@ -1,7 +1,7 @@
 import allure
 from selene import browser
 from pages import gear_page
-from pages import sale_page
+from pages import sale
 from pages.main_page import MainPage
 
 
