@@ -1,7 +1,7 @@
 import allure
 import pytest
 from pages import wish_list, sale, sign_in
-from pages import whats_new_page
+from pages import whats_new
 
 # @pytest.mark.skip
 @allure.link("https://trello.com/c/kVWLOEl5")
