@@ -109,3 +109,26 @@ def add_to_compare_success_msg_should_gave_text(text):
     s(".message-success div").should(have.text(f'You added product {text} to the '))
 
 
+def put_review_stars(number):
+    s(f'#Rating_{number}_label').double_click()
+    s(f'#Rating_{number}_label').wait_until(be.selected)
+
+
+def fill_summary_field_with_text(text):
+    s('#summary_field').type(text)
+
+
+def fill_review_field_with_text(text):
+    s('#review_field').type(text)
+
+
+def submit_review():
+    s('.action.submit.primary').click()
+
+
+def success_msg_should_have_text(text):
+    s('.message-success.success.message div').should(have.text(text))
+
+
+def fill_nickname_field_with_text(text):
+    s('#nickname_field').type(text)
