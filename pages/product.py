@@ -109,6 +109,3 @@ def add_to_compare_success_msg_should_gave_text(text):
     s(".message-success div").should(have.text(f'You added product {text} to the '))
 
 
-def get_product_id():
-    id = s('.price-box.price-final_price').get(query.attribute('data-product-id'))
-    return id
