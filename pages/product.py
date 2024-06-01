@@ -12,6 +12,7 @@ product_img = s('//div[1]/div[3]/div[1]/img[@class="fotorama__img"]')
 details = s('div.product.attribute.description div p')
 more_info_tab = s('#tab-label-additional-title')
 size_indicator = s('.swatch-attribute.size span.swatch-attribute-selected-option')
+color_indicator = s('.swatch-attribute.color span.swatch-attribute-selected-option')
 reviews_block = s('#customer-reviews div.block-title strong')
 product_name_in_reviews = s('.legend.review-legend strong')
 comparison_list_link = s("//a[text()='comparison list']")
@@ -60,8 +61,17 @@ def select_size(size):
     size_indicator.should(be.visible).hover()
 
 
+def select_color(color):
+    s(f'[option-label="{color}"]').click()
+    color_indicator.should(be.visible).hover()
+
+
 def size_indicator_should_have_text(text):
     size_indicator.should(have.text(text))
+
+
+def color_indicator_should_have_text(text):
+    color_indicator.should(have.text(text))
 
 
 def size_label_should_have_frame_with_color(size, color_hex):
@@ -69,9 +79,19 @@ def size_label_should_have_frame_with_color(size, color_hex):
     size_label.should(have.css_property('outline-color').value(Color.from_string(color_hex).rgba))
 
 
+def color_label_should_have_frame_with_color(color, color_hex):
+    color_label = s(f'[option-label={color}]')
+    color_label.should(have.css_property('outline-color').value(Color.from_string(color_hex).rgba))
+
+
 def size_should_be_selected(size, true_or_false):
     size_label = s(f'[option-label={size}]')
     size_label.should(have.attribute('aria-checked').value(true_or_false))
+
+
+def color_should_be_selected(color, true_or_false):
+    color_label = s(f'[option-label={color}]')
+    color_label.should(have.attribute('aria-checked').value(true_or_false))
 
 
 def add_to_wish_list():
@@ -132,3 +152,8 @@ def success_msg_should_have_text(text):
 
 def fill_nickname_field_with_text(text):
     s('#nickname_field').type(text)
+
+    
+def image_should_have_color(color):
+    assert color in product_img.get(query.attribute('src'))
+

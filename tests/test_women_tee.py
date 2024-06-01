@@ -135,3 +135,17 @@ def test_product_reviews_writing(login):
     product.fill_review_field_with_text('Great! Soft and beautiful')
     product.submit_review()
     product.success_msg_should_have_text('You submitted your review for moderation.')
+
+    
+@allure.suite('US_002.001 | Page of any product')    
+@allure.link('https://trello.com/c/Ik5u2Zsm')
+@allure.title('TC_002.001.008 | Radiant Tee product page > Product parameters > Changing the product color')
+def test_changing_product_color(login):
+    product.open('radiant-tee')
+    product.select_color('Blue')
+    product.select_color('Orange')
+    product.color_should_be_selected('Orange', 'true')
+    product.color_label_should_have_frame_with_color('Orange', '#ff5501')
+    product.color_indicator_should_have_text('Orange')
+    product.image_should_have_color('orange')
+
