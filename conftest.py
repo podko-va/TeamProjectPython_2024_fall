@@ -1,16 +1,12 @@
 import os
-from time import time
-from selenium.webdriver.chrome.options import Options
 import allure
-import allure_commons
 import pytest
+from time import time
 from faker import Faker
-from selene import browser, support
-from selenium import webdriver
-
-from pages import sign_in
+from playwright.sync_api import sync_playwright
 
 
+# Configure the Allure report directory
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
     cwd_report = os.path.join(os.path.dirname(os.path.abspath(__file__)), "allure-results")
@@ -19,39 +15,32 @@ def pytest_configure(config):
         setattr(config.option, "allure_report_dir", cwd_report)
 
 
+# Fixture for managing Playwright browser instance
 @pytest.fixture(autouse=True)
 def browser_management(request):
-    options = webdriver.ChromeOptions()
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--incognito")
-    # options.add_argument('--headless=new')
-    options.add_argument("--lang=en")
-    if os.environ.get("CI_RUN"):
-        options.add_argument("--headless=new")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-    browser.config.driver_options = options
+    with sync_playwright() as p:
+        # Configure the browser options
+        browser = p.chromium.launch(
+            headless=True if os.environ.get("CI_RUN") else False
+        )  # Launch browser in headless mode if CI_RUN environment variable is set
+        page = browser.new_page()
 
-    browser.config.timeout = 25
-    # browser.config.log_outer_html_on_failure = True !!! DISABLES STEPS !!!
-    browser.config.reports_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "driver-report")
+        # Attach some custom configuration to page or browser if needed
+        page.set_default_timeout(25000)  # Set a default timeout for actions (e.g., waits)
+        
+        # Yielding browser and page for tests
+        yield page
 
-    browser.config._wait_decorator = support._logging.wait_with(
-        context=allure_commons._allure.StepContext
-    )
-    failed_before = request.session.testsfailed
+        # Capture screenshot if test fails
+        if request.session.testsfailed > 0:
+            screenshot = page.screenshot()
+            allure.attach(screenshot, name="screenshot", attachment_type=allure.attachment_type.PNG)
 
-    yield
-
-    if request.session.testsfailed != failed_before:
-        allure.attach(
-            browser.driver.get_screenshot_as_png(),
-            name="screenshot",
-            attachment_type=allure.attachment_type.PNG
-        )
-    browser.quit()
+        # Close browser after test
+        browser.close()
 
 
+# Fixtures for Faker data generation
 @pytest.fixture
 def first_name():
     return Faker().first_name()
@@ -98,31 +87,28 @@ def city():
     return Faker().city()
 
 
+# Fixture to log in using predefined credentials
 @pytest.fixture
 def login():
+    from pages import sign_in
     sign_in.visit()
-    sign_in.login("pamela341714226113@example.com", "@8j%Yltt(E")
+    sign_in.login("pamela341714226113@example.com", "@8j%Yltt(E)")
 
 
+# Fixture to visit any page using Playwright's open method
 @pytest.fixture
 def visit_page():
-    def visit(url):
-        browser.open(url)
+    def visit(url, page):
+        page.goto(url)
 
     return visit
 
 
+# Optional custom page fixture for direct Playwright manipulation
 @pytest.fixture(scope="function")
-def driver():
-    # for selenium
-    options = Options()
-    options.add_argument("--window-size=1920,1080")
-    # options.add_argument('--headless=new')
-    options.add_argument("--lang=en")
-    if os.environ.get("CI_RUN"):
-        options.add_argument("--headless=new")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-    driver = webdriver.Chrome(options=options)
-    yield driver
-    driver.quit()
+def page_fixture():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        yield page
+        browser.close()

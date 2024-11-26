@@ -1,14 +1,9 @@
-from selene import browser
-from selene.support.shared.jquery_style import s
-from selene import query
+import allure
+from playwright.sync_api import sync_playwright
 
-product_url = 'https://magento.softwaretestingboard.com/desiree-fitness-tee.html'
-cart_counter = s('.counter-label')
-
+product_url = 'http://195.133.27.184'
 
 def open_product_url():
     browser.open(product_url)
 
 
-def counter_should_be_equal(qty):
-    assert cart_counter.get(query.text) == qty
