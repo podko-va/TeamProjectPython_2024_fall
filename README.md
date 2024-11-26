@@ -1,4 +1,4 @@
-# LumaProjectPython_2024_spring
+# Mislesplav_2024_fall
 
 Перед написанием тестов очень рекомендуются к прочтению, просмотру данные материалы.
 
@@ -33,20 +33,25 @@
 4. Тестовые данные прокидываем только в тестах
 
 ```python
-from selene import browser
-from selene.support.shared.jquery_style import s
+from playwright.sync_api import sync_playwright
 
-url = "https://magento.softwaretestingboard.com/customer/account/login"
+url = "http://195.133.27.184/"
 
+def visit(page):
+    page.goto(url)
 
-def visit():
-    browser.open(url)
+def login(page, user, password):
+    page.fill("#email", user)
+    page.fill("#pass", password)
+    page.click("#send2")
 
-
-def login(user, password):
-    s("#email").type(user)
-    s("#pass").type(password)
-    s("#send2").click()
+# Пример использования
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)  # Запуск браузера (headless=False для видимого окна)
+    page = browser.new_page()  # Открытие новой страницы
+    visit(page)  # Переход на сайт
+    login(page, "your_username", "your_password")  # Ввод данных и отправка формы
+    browser.close()  # Закрытие браузера
 ```
 
 Пример реализации можно глянуть в репозитории c кодом 8 занятия:
